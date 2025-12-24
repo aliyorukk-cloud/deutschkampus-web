@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeutschKampus | Almanya'da Eğitim Danışmanlığı</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; }
+        
+        /* Renkler: Logonuzdaki Lacivert (#0B2142) ve Kırmızı (#D62727) */
+        header { background-color: #ffffff; padding: 20px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .logo { font-size: 24px; font-weight: bold; color: #0B2142; text-decoration: none; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #0B2142; font-weight: 500; }
+        
+        .hero { background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.9)), url('https://images.unsplash.com/photo-1527866959252-deab85ef7d1b?auto=format&fit=crop&w=1600'); background-size: cover; background-position: center; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
+        
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
+        
+        .btn { background-color: #D62727; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        .btn:hover { background-color: #b01f1f; }
+
+        .features { padding: 50px 10%; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
+        .card { padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .card h3 { color: #0B2142; }
+
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 20px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">DeutschKampus</a>
+        <nav class="nav-links">
+            <a href="#">Üniversiteler</a>
+            <a href="#">Hizmetler</a>
+            <a href="#">İletişim</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Almanya'da Üniversite Hayalin</h1>
+        <p>Dein Weg zum Studium in Deutschland</p>
+        <a href="mailto:seninmailin@gmail.com" class="btn">Ücretsiz Ön Görüşme Yap</a>
+    </section>
+
+    <section class="features">
+        <h2>Neden DeutschKampus?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Ücretsiz Danışmanlık</h3>
+                <p>İlk görüşmemizde profilinizi analiz ediyor ve size en uygun yolu çiziyoruz.</p>
+            </div>
+            <div class="card">
+                <h3>Güncel Bilgi</h3>
+                <p>Vize, bloke hesap ve kabul şartlarında en güncel prosedürlere hakimiz.</p>
+            </div>
+            <div class="card">
+                <h3>Öğrenci Dostu</h3>
+                <p>Almanya'da yaşayan birinden, gerçekçi ve bütçe dostu tavsiyeler alın.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
