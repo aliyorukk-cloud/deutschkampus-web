@@ -10,21 +10,39 @@
         /* HEADER VE LOGO AYARLARI */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         
-        /* Logo Resim Ayarı */
-        .logo img { height: 100px; width: auto; } 
+        /* Logo Boyutu (Büyük istedigin icin 120px yaptim) */
+        .logo img { height: 120px; width: auto; } 
 
         .nav-links a { margin-left: 20px; text-decoration: none; color: #0B2142; font-weight: 500; font-size: 1.1rem; }
         
-        /* Geri kalan tasarım aynı */
-        .hero { background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.9)), url('https://images.unsplash.com/photo-1527866959252-deab85ef7d1b?auto=format&fit=crop&w=1600'); background-size: cover; background-position: center; height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px; }
+        /* --- YENİ ARKA PLAN FOTOĞRAFI --- */
+        /* Modern bir üniversite kütüphanesi/kampüs ortamı */
+        .hero { 
+            background: linear-gradient(rgba(11, 33, 66, 0.8), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1600'); 
+            background-size: cover; 
+            background-position: center; 
+            height: 80vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            color: white; 
+            padding: 0 20px; 
+        }
+        
         .hero h1 { font-size: 3rem; margin-bottom: 10px; }
         .hero p { font-size: 1.5rem; margin-bottom: 30px; font-weight: 300; }
-        .btn { background-color: #D62727; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; }
+        
+        /* Buton Rengi */
+        .btn { background-color: #D62727; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; transition: 0.3s; font-size: 1.1rem;}
         .btn:hover { background-color: #b01f1f; }
+
         .features { padding: 50px 10%; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px; }
         .card { padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
         .card h3 { color: #0B2142; }
+
         footer { background-color: #0B2142; color: white; text-align: center; padding: 20px; margin-top: 50px; }
     </style>
 </head>
@@ -44,15 +62,15 @@
     <section class="hero">
         <h1>Almanya'da Üniversite Hayalin</h1>
         <p>Dein Weg zum Studium in Deutschland</p>
-        <a href="mailto:seninmailin@gmail.com" class="btn">Ücretsiz Ön Görüşme Yap</a>
+        <a href="mailto:seninmailin@gmail.com" class="btn">Bize Ulaşın</a>
     </section>
 
     <section class="features">
         <h2>Neden DeutschKampus?</h2>
         <div class="grid">
             <div class="card">
-                <h3>Ücretsiz Danışmanlık</h3>
-                <p>İlk görüşmemizde profilinizi analiz ediyor ve size en uygun yolu çiziyoruz.</p>
+                <h3>Profesyonel Planlama</h3>
+                <p>Kişiye özel analiz, bölüm seçimi ve strateji ile kabul şansınızı maksimize ediyoruz.</p>
             </div>
             <div class="card">
                 <h3>Güncel Bilgi</h3>
