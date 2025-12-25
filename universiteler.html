@@ -53,8 +53,9 @@
         }
         .uni-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-color: #D62727; }
 
-        .card-header { padding: 20px; text-align: center; background: #fff; border-bottom: 1px solid #f9f9f9; height: 100px; display: flex; align-items: center; justify-content: center; position: relative; }
-        .uni-logo { width: 64px; height: 64px; object-fit: contain; border-radius: 8px; }
+        .card-header { padding: 20px; text-align: center; background: #fff; border-bottom: 1px solid #f9f9f9; height: 120px; display: flex; align-items: center; justify-content: center; position: relative; }
+        /* Logo ayarları güncellendi: Özel logolar için contain */
+        .uni-logo { width: auto; height: auto; max-width: 80%; max-height: 80px; object-fit: contain; }
         .uni-logo-fallback { font-size: 40px; color: #0B2142; display: none; }
 
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
@@ -88,7 +89,7 @@
         @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
         .modal-header { background: #0B2142; padding: 30px; color: white; display: flex; align-items: center; gap: 20px; border-radius: 20px 20px 0 0; }
-        .modal-logo { height: 70px; width: 70px; background: white; border-radius: 10px; padding: 5px; object-fit: contain; }
+        .modal-logo { height: 80px; width: 80px; background: white; border-radius: 10px; padding: 5px; object-fit: contain; }
         .modal-close { 
             position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; transition: 0.3s;
         }
@@ -161,7 +162,7 @@
     <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
 
     <script>
-        // 60 ÜNİVERSİTENİN TAM LİSTESİ (ORİJİNAL ALMANCA İSİMLERLE)
+        // 60 ÜNİVERSİTENİN TAM LİSTESİ + ÖZEL LOGO EŞLEŞTİRMELERİ
         const universities = [
             {
                 name: "Technische Universität München (TUM)",
@@ -181,6 +182,7 @@
                 name: "Technische Universität Berlin (TU Berlin)",
                 city: "Berlin",
                 domain: "tu-berlin.de",
+                customLogo: "TUBerlin.png",
                 summary: "Almanya'nın başkentinde, teknoloji ve inovasyonun merkezinde yer alan; uluslararası öğrenci oranı en yüksek teknik üniversitelerden biri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nStart-up ekosisteminin göbeğindedir. <strong>Bilgisayar Mühendisliği, Mimarlık, Şehir ve Bölge Planlama, Çevre Mühendisliği</strong> ve <strong>Ulaştırma Sistemleri</strong> en popüler bölümleridir. Ayrıca "Wirtschaftsingenieurwesen" (Endüstri Müh.) bölümünün doğduğu üniversitedir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Yöntemi:</strong> Başvuruların tamamı <strong>Uni-Assist</strong> üzerinden yürütülür. Bürokratik süreçleri uzundur, belgelerin eksiksiz olması hayati önem taşır.\n<strong>NC Durumu:</strong> Popüler bölümlerde (Mimarlık, Psikoloji, Bilgisayar) <strong>NC puanları oldukça yüksektir</strong>. Türkiye not ortalamasının 85-90 üzeri olması avantaj sağlar.\n<strong>Dil Şartı:</strong> Lisans için C1 düzeyinde Almanca (TestDaF 4x4, DSH-2, Telc C1 Hochschule) istenir. Bazı master programları %100 İngilizcedir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konut Krizi:</strong> Berlin'de son yıllarda ciddi bir konut krizi yaşanmaktadır. Devlet yurtlarına (Studierendenwerk Berlin) bekleme süresi <strong>3 dönemi</strong> bulabilir.\n<strong>Özel Konaklama:</strong> "WG Gesucht" gibi sitelerden oda bulmak yoğun çaba gerektirir. Kiralar semtine göre <strong>500€ ile 800€</strong> arasında değişir.\n<strong>Ulaşım Avantajı:</strong> Öğrencilere verilen "Semesterticket" ile Berlin'in tamamında (ABC Zone) metro, otobüs ve trenler ücretsizdir, bu da şehrin uzak ama ucuz bölgelerinde oturmayı mümkün kılar.`
             },
@@ -188,6 +190,7 @@
                 name: "Karlsruher Institut für Technologie (KIT)",
                 city: "Karlsruhe",
                 domain: "kit.edu",
+                customLogo: "KIT.png",
                 summary: "Almanya'nın en eski teknik üniversitesi ile bir ulusal araştırma merkezinin birleşimi; Bilgisayar Bilimleri ve Enerji araştırmalarında Avrupa lideri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nAlmanya'da <strong>Informatik (Bilgisayar Bilimleri)</strong> fakültesinin kurulduğu ilk üniversitedir ve bu alanda hala liderdir. Ayrıca <strong>Makine Mühendisliği, Kimya Mühendisliği</strong> ve <strong>Fizik</strong> bölümleri çok güçlüdür. Araştırma bütçesi en yüksek kurumlardan biridir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Yöntemi:</strong> Başvurular üniversitenin kendi portalından yapılır. Teknik bölümler için Matematik, Fizik ve Kimya notlarının ortalamasına özel önem verilir.\n<strong>Şartlı Kabul:</strong> KIT, belirli bir seviyede Almancası (genellikle B1/B2) olan öğrencilere şartlı kabul vererek kendi bünyesindeki dil kursuna (Studienkolleg veya DSH hazırlık) davet edebilir.\n<strong>Seçme Sınavları:</strong> Bazı bölümler için "Online Matematik Testi" veya mülakat talep edilebilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yurtlar:</strong> Karlsruhe Öğrenci İşleri (Studierendenwerk) yurtları fiyat/performans açısından çok iyidir (<strong>250€ - 350€</strong>). Ancak erken başvuru şarttır.\n<strong>Şehir Yaşamı:</strong> "Yelpaze Şehir" planına sahip Karlsruhe düz bir şehirdir, ulaşım bisikletle sağlanır. Yaşam maliyetleri güney Almanya standartlarına göre (Münih ve Stuttgart'a kıyasla) daha makuldür.`
             },
@@ -209,6 +212,7 @@
                 name: "Technische Universität Darmstadt (TU Darmstadt)",
                 city: "Darmstadt",
                 domain: "tu-darmstadt.de",
+                customLogo: "TUDarmstadt.png",
                 summary: "Frankfurt'un hemen yanı başında; Bilgisayar Bilimleri (Siber Güvenlik) ve İşletme Mühendisliği (Wirtschaftsingenieurwesen) alanının öncüsü.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nDünyada Elektrik Mühendisliği kürsüsünü kuran ilk üniversitedir. Günümüzde <strong>Siber Güvenlik, Yapay Zeka, Makine Mühendisliği</strong> ve <strong>Wirtschaftsingenieurwesen</strong> alanlarında Almanya'nın zirvesindedir. Frankfurt finans merkezine yakınlığı staj için avantajdır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Yöntemi:</strong> Başvurular genellikle doğrudan üniversiteye yapılır.\n<strong>Zorunlu Sınavlar:</strong> Bazı mühendislik bölümleri için kabulden sonra veya önce bir "Seviye Tespit Sınavı" (Aufnahmeprüfung) yapılabilir.\n<strong>Dil Şartı:</strong> C1 seviyesi Almanca zorunludur.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Durum:</strong> Frankfurt'a yakınlığı nedeniyle (trenle 20 dk) kiralar ortalamanın üzerindedir. Ancak Frankfurt'ta oturup Darmstadt'a gelmek veya tam tersi mümkündür.\n<strong>Semesterticket:</strong> Eyalet genelinde geçerli ulaşım kartı ile tüm Rhein-Main bölgesinde seyahat ücretsizdir.`
             },
@@ -223,6 +227,7 @@
                 name: "Technische Universität Braunschweig (TU Braunschweig)",
                 city: "Braunschweig",
                 domain: "tu-braunschweig.de",
+                customLogo: "TUBraunschweig.png",
                 summary: "Almanya'nın en eski teknik üniversitesi; Volkswagen fabrikasına komşu, Havacılık ve Otomotiv odaklı pratik eğitim.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nBölge, Avrupa'nın Ar-Ge harcamalarının en yoğun olduğu yerdir. <strong>Otomotiv, Havacılık ve Uzay, Ulaşım Teknolojileri</strong> ve <strong>Biyoloji</strong> bölümleri öne çıkar. Üniversitenin kendi araştırma havalimanı vardır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> Başvurular genellikle doğrudan üniversite portalından veya Uni-Assist üzerinden yapılır.\n<strong>Vorpraktikum:</strong> Mühendislik bölümlerinde ön staj şartı aranır.\n<strong>Şartlı Kabul:</strong> Belli seviyede (B1) Almanca ile şartlı kabul başvurusu yapılabilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Sakin, orta ölçekli ve güvenli bir şehirdir. Öğrenciler için yaşam kolaydır.\n<strong>Kiralar:</strong> Yurt ve ev kiraları oldukça uygundur. Ulaşım bisikletle sağlanır.`
             },
@@ -237,6 +242,7 @@
                 name: "Technische Universität Clausthal (TU Clausthal)",
                 city: "Clausthal-Zellerfeld",
                 domain: "tu-clausthal.de",
+                customLogo: "TUClausthal.png",
                 summary: "Doğa ile iç içe, yaşam maliyeti çok düşük ve uluslararası öğrencilere kabul konusunda en esnek davranan teknik üniversitelerden biri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nHarz Dağları'nın ortasında, küçük ama teknik açıdan çok donanımlı bir üniversitedir. Özellikle <strong>Enerji Mühendisliği, Petrol ve Doğalgaz Mühendisliği, Malzeme Bilimi</strong> ve <strong>Informatik</strong> alanlarında Almanya'nın gizli hazinesidir. Öğrenci nüfusunun %30'undan fazlası yabancıdır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Şartlı Kabul Cenneti:</strong> Almanya'da henüz hiç Almanca bilmeyen veya A2/B1 seviyesinde olan öğrencilere en kolay kabul veren üniversitelerden biridir.\n<strong>Başvuru Yöntemi:</strong> Başvurular genellikle Uni-Assist üzerinden yürütülür.\n<strong>Dil Kursu:</strong> Kabul alan öğrenciler, üniversitenin kendi bünyesindeki dil kursuna kayıt yaptırarak DSH sınavına burada hazırlanabilirler.\n<strong>Esneklik:</strong> Not ortalaması (NC) konusunda TU9 üniversitelerine göre çok daha esnektir. Mühendislik okumak isteyen ancak ortalaması sınırda olan öğrenciler için ideal bir B planıdır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Maliyet:</strong> Almanya'nın en ucuz öğrenci şehirlerinden biridir. 250€ - 300€ bandında yurt veya özel oda bulmak mümkündür.\n<strong>Yaşam:</strong> Çok küçük bir kasaba olduğu için sosyal hayat sınırlıdır; bu durum öğrencilerin derslerine odaklanmasını kolaylaştırır. Doğa sporları sevenler için idealdir.`
             },
@@ -265,6 +271,7 @@
                 name: "Ruhr-Universität Bochum (RUB)",
                 city: "Bochum",
                 domain: "ruhr-uni-bochum.de",
+                customLogo: "RUB.png",
                 summary: "Almanya'nın ilk ve en büyük kampüs üniversitelerinden biri; İnşaat Mühendisliği ve IT Güvenliği alanında devasa araştırma olanakları.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nTüm fakültelerin tek bir dev kampüste toplandığı nadir Alman üniversitelerindendir. <strong>İnşaat Mühendisliği, Makine, Psikoloji</strong> ve <strong>IT-Security (Siber Güvenlik)</strong> alanlarında Avrupa çapında üne sahiptir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru Sistemi:</strong> RUB, genellikle <strong>kendi online başvuru portalını</strong> kullanır (bazı bölümler için Uni-Assist gerekebilir, kontrol edilmelidir). Bu, başvuru ücreti ödememek anlamına gelebilir.\n<strong>Dil Kursu:</strong> Kampüs içinde çok organize bir dil eğitim merkezi vardır. Şartlı kabul imkanı bulunur.\n<strong>NC:</strong> Psikoloji ve İşletme gibi bölümlerde NC (Not Ortalaması) rekabeti çok yüksektir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yurtlar:</strong> AKAFÖ (Öğrenci İşleri) tarafından işletilen çok sayıda yurt kompleksi vardır. Fiyatlar <strong>300€</strong> civarındadır.\n<strong>Yaşam:</strong> Bochum tam bir öğrenci şehridir. Kampüs şehrin biraz dışındadır ancak metro (U-Bahn) doğrudan kampüsün içine girer.`
             },
@@ -272,6 +279,7 @@
                 name: "Justus-Liebig-Universität Gießen",
                 city: "Gießen",
                 domain: "uni-giessen.de",
+                customLogo: "JLUG.png",
                 summary: "Şehir nüfusunun %50'sini öğrencilerin oluşturduğu, Tıp, Veterinerlik ve Hukuk alanlarında köklü, Frankfurt'a yakın öğrenci kenti.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\n1607'de kurulan üniversite, özellikle <strong>Tıp (Humanmedizin), Veterinerlik, Diş Hekimliği</strong> ve <strong>Hukuk</strong> alanlarında Almanya'nın en iyilerindendir. Psikoloji bölümü de oldukça prestijlidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> Tıp ve Diş Hekimliği için "devlet sınavı" (Staatsexamen) prosedürleri geçerlidir ve kabul çok zordur (1.0 - 1.2 not ortalaması gerekir).\n<strong>Şartlı Kabul:</strong> Diğer bölümler için şartlı kabul verir. Üniversitenin dil kursları kalitelidir.\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konut Durumu:</strong> Şehir küçük ve öğrenci sayısı çok fazla olduğu için dönem başlarında ev bulmak biraz zor olabilir. Erken başvuru şarttır.\n<strong>Ulaşım:</strong> Frankfurt'a trenle 40 dk mesafededir. Semesterticket ile tüm Hessen eyaletinde ulaşım ücretsizdir.`
             },
@@ -279,6 +287,7 @@
                 name: "Philipps-Universität Marburg",
                 city: "Marburg",
                 domain: "uni-marburg.de",
+                customLogo: "PUM.png",
                 summary: "\"Grimm Kardeşler\"in şehri; tarihi dokusu, Eczacılık ve Psikoloji bölümleriyle ünlü, dünyanın en eski Protestan üniversitesi.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\n<strong>Eczacılık, Biyoloji, Psikoloji</strong> ve <strong>Sosyal Bilimler</strong> alanında çok güçlüdür. Ayrıca görme engelli öğrenciler için sunduğu imkanlarla "Körler Başkenti" olarak bilinir ve engelsiz üniversite konusunda dünyada liderdir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 genellikle istenen seviyedir.\n<strong>Şartlı Kabul:</strong> Üniversitenin "Studienkolleg" (Hazırlık koleji) ve dil kursu imkanları vardır. Uni-Assist üzerinden başvurulur.\n<strong>Atmosfer:</strong> Akademik kadrosu çok güçlüdür, teorik eğitime ağırlık verir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Şehir Yapısı:</strong> Şehir çok engebeli ve merdivenli bir yapıdadır ("Oberstadt" - Yukarı Şehir). Asansörlerle ulaşım sağlanır.\n<strong>Kiralar:</strong> Tarihi bir şehir olduğu için merkezde kiralar biraz yüksektir ancak çevre semtlerde uygun yurtlar bulunur.`
             },
@@ -286,6 +295,7 @@
                 name: "Universität Siegen",
                 city: "Siegen",
                 domain: "uni-siegen.de",
+                customLogo: "US.png",
                 summary: "Türk nüfusunun ve öğrencilerin yoğun olduğu, Medya ve Mühendislik odaklı, samimi ve düşük maliyetli bir üniversite.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nÖzellikle <strong>İnşaat Mühendisliği, Makine Mühendisliği</strong> ve <strong>Medya Bilimleri</strong> alanlarında popülerdir. Son yıllarda "Unteres Schloss" kampüsü ile şehir merkezine inmiştir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Türk Öğrenci Dostu:</strong> Yabancı öğrenci ofisi, Türk öğrencilerin sorunlarına aşinadır ve çözüm odaklıdır.\n<strong>Şartlı Kabul:</strong> Dil kursu öncesi kabul (B1/B2 belgesi ile) almak mümkündür. DSH sınavını kendi bünyesinde yapar.\n<strong>Başvuru:</strong> Uni-Assist zorunluluğu vardır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Ekonomi:</strong> Almanya'nın en ucuz kiralarına sahip şehirlerinden biridir. Öğrenciler maddi olarak çok rahat eder.\n<strong>Doğa:</strong> Ormanlık ve tepelik bir alandadır. Sessiz ve sakin bir öğrencilik hayatı sunar.`
             },
@@ -293,6 +303,7 @@
                 name: "Universität Kassel",
                 city: "Kassel",
                 domain: "uni-kassel.de",
+                customLogo: "UK.png",
                 summary: "Almanya'nın tam ortasında; Çevre Mühendisliği, Sürdürülebilirlik ve Güzel Sanatlar alanında yenilikçi, modern kampüs üniversitesi.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nYenilenebilir Enerji, Çevre Mühendisliği ve Ekolojik Tarım konularında Almanya'nın öncü üniversitesidir. Ayrıca şehirdeki dünyaca ünlü "Documenta" sergisi nedeniyle <strong>Güzel Sanatlar, Mimarlık</strong> ve <strong>Görsel İletişim</strong> bölümleri çok prestijlidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Şartlı Kabul:</strong> Dil hazırlık sınıfı (DSH kursu) mevcuttur. Başvurularda Uni-Assist kullanılır.\n<strong>Sanat Bölümleri:</strong> Güzel Sanatlar ve Mimarlık için yetenek sınavı ve portfolyo (Mappe) sunumu şarttır. Bu bölümlerin başvuru tarihleri diğerlerinden farklı (daha erken) olabilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konum:</strong> Almanya'nın ulaşım kavşağıdır, her yere trenle gitmek kolaydır.\n<strong>Yaşam:</strong> Kiralar ve yaşam maliyetleri ortalama seviyededir. Şehir parkları ve UNESCO mirası Bergpark Wilhelmshöhe ile harika bir doğaya sahiptir.`
             },
@@ -300,6 +311,7 @@
                 name: "Universität Bremen",
                 city: "Bremen",
                 domain: "uni-bremen.de",
+                customLogo: "UB.png",
                 summary: "\"Excellence\" (Mükemmeliyet) unvanına sahip; Deniz Bilimleri, Uzay Mühendisliği ve Hukuk alanında kuzeyin en prestijli kampüsü.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKuzey Almanya'nın bilim merkezidir. <strong>Uzay Mühendisliği (Production Engineering - Aerospace), Deniz Biyolojisi, Dijital Medya</strong> ve <strong>Hukuk</strong> alanlarında çok güçlüdür. Kampüs içinde "Drop Tower" (Yerçekimsiz ortam deney kulesi) bulunur.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Genellikle doğrudan üniversite portalı (MOIN) üzerinden veya Uni-Assist ile yapılır (Bölüme göre değişir).\n<strong>Dil:</strong> C1 seviyesi Almanca şarttır. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesinin başvuru anında sunulması istenir.\n<strong>Kabul:</strong> "Excellence" statüsünde olduğu için akademik kriterleri yüksektir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Bremen, "Hanse" birliği şehri olarak ticari ve kozmopolit bir geçmişe sahiptir. İnsanları kuzeyli olmasına rağmen sıcakkanlıdır.\n<strong>Konaklama:</strong> Kampüs çevresinde ve şehir merkezinde yurt imkanları vardır. Fiyatlar Hamburg'a göre çok daha uygundur. Bisiklet kullanımı çok yaygındır.`
             },
@@ -307,6 +319,7 @@
                 name: "Universität zu Köln",
                 city: "Köln",
                 domain: "uni-koeln.de",
+                customLogo: "UzK.png",
                 summary: "50.000'i aşkın öğrencisiyle Almanya'nın en büyüklerinden; İşletme, Medya ve Hukuk alanında lider, Türk öğrenciler için sosyal açıdan en rahat şehir.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKöln Üniversitesi, özellikle <strong>"WiSo Faculty" (İşletme, İktisat ve Sosyal Bilimler)</strong> ile dünya çapında bir markadır. Hukuk, Psikoloji ve Medya Bilimleri bölümleri de çok prestijlidir. Şehir bir medya üssü (RTL, WDR merkezleri burada) olduğu için iletişim öğrencileri için staj cennetidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Rekabet (NC):</strong> İşletme (BWL) ve Psikoloji bölümlerine girmek çok zordur; NC (Not Ortalaması) çok yüksektir. Başvurular <strong>Uni-Assist</strong> üzerinden yapılır.\n<strong>TestAS:</strong> AB dışından gelen öğrenciler için (Türkiye dahil), İşletme ve İktisat başvurularında <strong>TestAS sınav sonucu sunmak</strong> kabul şansını ciddi oranda artırır, hatta bazen zorunlu tutulabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 kesindir. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesi başvuru anında istenir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Sosyal Yaşam:</strong> Köln, Türk nüfusunun en yoğun olduğu şehirdir. Öğrenciler yabancılık çekmez, Türk marketleri ve restoranları her köşe başındadır.\n<strong>Konaklama:</strong> Konut piyasası gergindir. "Kölner Studierendenwerk" yurtlarına bekleme süresi uzundur. Ancak çevre ilçelerden veya banliyölerden ev bulup trenle merkeze gelmek yaygındır.`
             },
@@ -321,6 +334,7 @@
                 name: "Ludwig-Maximilians-Universität München (LMU München)",
                 city: "Münih",
                 domain: "lmu.de",
+                customLogo: "LMU.png",
                 summary: "Dünya sıralamalarında düzenli olarak Almanya'nın 1 numarası seçilen; Tıp, Fizik ve Sosyal Bilimlerde devleşmiş, tarihi bir bilim yuvası.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nTeknik konular için TUM neyse, diğer tüm bilimler için LMU odur. <strong>Tıp, Fizik, Psikoloji, İşletme</strong> ve <strong>Siyaset Bilimi</strong> bölümleri dünyada ilk sıralardadır. "Geschwister-Scholl-Platz"taki tarihi ana binası ikoniktir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru Yöntemi:</strong> Başvurular genellikle doğrudan LMU Uluslararası Ofisi'ne posta yoluyla veya online portal üzerinden yapılır (Bölüme göre değişir).\n<strong>Dil Şartı:</strong> C1/C2 seviyesinde Almanca şarttır. LMU, dil konusunda tavizsizdir.\n<strong>NC Puanları:</strong> Neredeyse tüm popüler bölümlerde "Numerus Clausus" (Kontenjan kısıtlaması) vardır. Çok yüksek not ortalaması gerekir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>En Büyük Sorun:</strong> Münih'te ev bulmak, üniversiteye girmekten daha zordur. Kiralar çok yüksektir (Oda fiyatları 700€+).\n<strong>Öneri:</strong> LMU'yu kazanan öğrencilerin yurt başvurularını kabul mektubu gelmeden aylar önce yapması, gerekirse Augsburg gibi komşu şehirlerden gidip gelmeyi göze alması gerekir.`
             },
@@ -335,6 +349,7 @@
                 name: "Universität Hamburg",
                 city: "Hamburg",
                 domain: "uni-hamburg.de",
+                customLogo: "UH.png",
                 summary: "Almanya'nın dünyaya açılan kapısı; Hukuk, İklim Bilimleri ve Tıp alanında kuzeyin en büyük araştırma ve eğitim kurumu.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKozmopolit bir liman kentinde eğitim fırsatı sunar. <strong>Hukuk Fakültesi</strong> Almanya'nın en iyilerindendir. Ayrıca <strong>Denizcilik Hukuku, Tıp (Eppendorf Hastanesi)</strong> ve <strong>Medya/İletişim</strong> bölümleri çok talep görür.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Uni-Assist prosedürü yerine genellikle doğrudan üniversite sistemi üzerinden başvuru alır (VPD süreci olabilir).\n<strong>Akademik Beklenti:</strong> Hamburg popüler bir şehir olduğu için başvuru sayısı çoktur, bu da kabul kriterlerini yukarı çeker.\n<strong>Dil:</strong> C1 Almanca zorunluluğu esastır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Şehir Hayatı:</strong> Hamburg, kanalları ve gece hayatıyla öğrencilerin en sevdiği şehirlerdendir.\n<strong>Konut:</strong> Şehir pahalıdır ve kiralık ev bulmak zordur. Öğrenci yurtlarına talep çok fazladır.`
             },
@@ -342,6 +357,7 @@
                 name: "Freie Universität Berlin (FU Berlin)",
                 city: "Berlin",
                 domain: "fu-berlin.de",
+                customLogo: "FUBerlin.png",
                 summary: "Soğuk Savaş döneminde özgür düşüncenin kalesi olarak kurulan; Siyaset Bilimi, Sosyoloji ve Beşeri Bilimlerde dünya markası.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nYeşillikler içindeki Dahlem semtinde, Amerikan kampüs tarzında (villa tipi binalar) eğitim verir. <strong>Siyaset Bilimi (Otto-Suhr-Institut), Kuzey Amerika Çalışmaları, Arkeoloji</strong> ve <strong>Eczacılık</strong> alanlarında çok güçlüdür.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Tamamen <strong>Uni-Assist</strong> üzerinden yürütülür. Süreçlerde bürokrasi fazladır.\n<strong>Dil Şartı:</strong> Lisans bölümleri için C1 Almanca şarttır.\n<strong>NC:</strong> Özellikle Psikoloji, Eczacılık ve Siyaset Bilimi bölümlerinde not ortalaması rekabeti çok yüksektir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konum:</strong> Berlin'in en nezih ve sakin bölgesindedir. Şehir merkezine (Mitte/Kreuzberg) metroyla 30-40 dakika sürer.\n<strong>Barınma:</strong> Berlin genelindeki konut krizi burada da geçerlidir, ancak kampüs çevresinde özel yurt imkanları mevcuttur.`
             },
@@ -356,6 +372,7 @@
                 name: "Universität Münster (WWU)",
                 city: "Münster",
                 domain: "uni-muenster.de",
+                customLogo: "WWU.png",
                 summary: "Almanya'nın bisiklet başkenti; İşletme, Hukuk ve Siyaset Bilimi alanında devasa bir öğrenci kitlesine sahip, en yaşanabilir şehirlerden biri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\n45.000 öğrencisiyle Almanya'nın en büyüklerinden biridir. <strong>İşletme (BWL), Hukuk</strong> ve <strong>İletişim Bilimleri</strong> alanlarında çok popülerdir. Şehirde üniversite kampüsü yoktur, üniversite tüm şehre yayılmıştır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Münster Sınavı:</strong> İşletme gibi bazı bölümler için özel giriş sınavları veya ek kriterler uygulanabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4.\n<strong>Şartlı Kabul:</strong> Dil eğitimi için "Lehrgebiet Deutsch als Fremdsprache" bölümü çok kalitelidir, şartlı kabul imkanı bulunur.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Şehirde arabadan çok bisiklet vardır. Çok güvenli, yeşil ve canlı bir öğrenci hayatı sunar.\n<strong>Konaklama:</strong> Öğrenci sayısı çok fazla olduğu için dönem başlarında oda bulmak zorlaşır. "Studierendenwerk" yurtlarına erken başvuru elzemdir.`
             },
@@ -370,6 +387,7 @@
                 name: "Johannes Gutenberg Universität Mainz (JGU Mainz)",
                 city: "Mainz",
                 domain: "uni-mainz.de",
+                customLogo: "JGUMainz.png",
                 summary: "Frankfurt havalimanına 20 dakika mesafede; Medya, Çeviribilim ve Tıp alanında uzman, kampüs üniversitesi rahatlığı sunan kurum.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nAlman devlet televizyonu ZDF'in merkezi Mainz'dadır, bu yüzden <strong>Medya ve İletişim</strong> bölümleri çok güçlüdür. Dünyanın en iyi <strong>Mütercim-Tercümanlık</strong> fakültelerinden biri (Germersheim kampüsü) buradadır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kolaylık:</strong> Uni-Assist yerine doğrudan üniversiteye başvuru alan (bazı bölümlerde) ve başvuru sürecini hızlı yöneten bir üniversitedir.\n<strong>Dil Kursu:</strong> Kampüs içindeki dil kursu (ISSK) çok aktiftir ve şartlı kabul ile öğrenci alır.\n<strong>Denklik:</strong> Türkiye diplomasının tanınması konusunda sorun çıkarmaz.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konum:</strong> Ren nehri kıyısında, şarap bağlarıyla çevrili keyifli bir şehirdir.\n<strong>Ulaşım:</strong> Frankfurt'a çok yakın olduğu için öğrenciler stajlarını Frankfurt'ta yapıp Mainz'da (daha uygun kiralarla) yaşayabilirler.`
             },
@@ -377,6 +395,7 @@
                 name: "Universität Mannheim",
                 city: "Mannheim",
                 domain: "uni-mannheim.de",
+                customLogo: "UM.png",
                 summary: "İşletme (BWL) alanında tartışmasız \"Almanya'nın Harvard'ı\". Barok bir sarayda eğitim veren, ülkenin en prestijli ekonomi üniversitesi.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nMannheim, Almanya'da İşletme Fakültesi (Mannheim Business School) denince akla gelen ilk isimdir. <strong>İşletme (BWL), Ekonomi (VWL)</strong> ve <strong>Siyaset Bilimi</strong> alanlarında dünya sıralamalarındadır. Kampüsü, Almanya'nın en büyük ikinci barok sarayıdır; öğrenciler sarayda ders işler.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Akademik Takvim Farkı:</strong> Mannheim, uluslararası sisteme uymak için akademik takvimi değiştiren nadir Alman üniversitelerindendir. Sömestrler Eylül ve Şubat aylarında başlar (Diğerlerinde Ekim/Nisan).\n<strong>Kabul:</strong> İşletme bölümüne kabul almak son derece zordur. Sadece not ortalaması değil, lisedeki matematik başarısı, dil puanları ve ders dışı aktiviteler de puanlanır.\n<strong>Dil:</strong> C1 Almanca şarttır. İngilizce bölümler için yüksek TOEFL/IELTS gerekir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Şehir:</strong> "Kareler Şehri" (Quadratestadt) olarak bilinir, ızgara planlıdır.\n<strong>Konaklama:</strong> Öğrenci yurtları mevcuttur ancak saray çevresindeki evler pahalıdır. Öğrenciler genellikle şehrin biraz dışındaki semtleri veya komşu Ludwigshafen şehrini tercih eder.`
             },
@@ -398,6 +417,7 @@
                 name: "Universität Konstanz",
                 city: "Konstanz",
                 domain: "uni-konstanz.de",
+                customLogo: "UKO.png",
                 summary: "İsviçre sınırında, Konstanz Gölü (Bodensee) kıyısında; \"Excellence\" unvanlı, Almanya'nın \"Küçük Ivy League\" okulu.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nGöl manzaralı kütüphanesiyle ünlüdür. <strong>Siyaset Bilimi, Psikoloji, Biyoloji</strong> ve <strong>Hukuk</strong> alanlarında çok prestijlidir. Küçük ama akademik etkisi (Impact Factor) çok yüksek bir "Araştırma Üniversitesi"dir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Seçicilik:</strong> "Excellence Cluster" üyesi olduğu için kabul kriterleri yüksektir. Not ortalaması önemlidir.\n<strong>Başvuru:</strong> Doğrudan başvuru kabul eder (ZEUS Portalı).\n<strong>Dil:</strong> C1 Almanca (DSH-2/TestDaF) şarttır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Turistik Bölge:</strong> Almanya'nın en turistik ve pahalı bölgelerinden biridir. Ev bulmak zor olabilir.\n<strong>Yaşam:</strong> Öğrenciler yazın ders aralarında gölde yüzer. İsviçre'ye yürüyerek geçilebilir, hafta sonu gezileri için harika bir konumdadır.`
             },
@@ -412,6 +432,7 @@
                 name: "Technische Universität Chemnitz",
                 city: "Chemnitz",
                 domain: "tu-chemnitz.de",
+                customLogo: "TUC.png",
                 summary: "Doğu Almanya'nın yükselen değeri; Otomotiv ve Makine alanında güçlü, yaşam maliyeti en düşük üniversitelerden biri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nSaksonya eyaletinin sanayi merkezidir. <strong>Otomotiv Yazılımları, Makine Mühendisliği, Mikroteknoloji</strong> ve <strong>Psikoloji</strong> bölümleri öne çıkar. NC (Not barajı) sorunu yaşayan öğrenciler için mükemmel bir alternatiftir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Kolaylığı:</strong> TU9 üniversitelerine kıyasla kabul almak daha kolaydır, ancak eğitim kalitesi standart Alman seviyesindedir (Yüksektir).\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Dil:</strong> DSH hazırlık kursu sunan ve şartlı kabul veren öğrenci dostu bir yapısı vardır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Ekonomi:</strong> Almanya'nın en ucuz şehirlerinden biridir. 200€ - 250€'ya çok kaliteli yurt odaları bulunabilir.\n<strong>Avantaj:</strong> Maddi durumu kısıtlı olan ancak kaliteli bir teknik eğitim almak isteyen Türk öğrenciler için 1 numaralı tavsiyedir.`
             },
@@ -419,6 +440,7 @@
                 name: "Technische Universität Ilmenau",
                 city: "Ilmenau",
                 domain: "tu-ilmenau.de",
+                customLogo: "TUI.png",
                 summary: "Thüringen ormanlarında, Medya Teknolojileri ve Mühendislik odaklı, özel üniversite ilgisi sunan butik teknik üniversite.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nBüyük şehir karmaşasından uzak, tamamen eğitime odaklıdır. Özellikle <strong>Medya Teknolojisi (Medientechnologie), Elektrik Mühendisliği</strong> ve <strong>Otomotiv</strong> alanlarında çok özel bir yere sahiptir. Fraunhofer Enstitüsü ile ortaktır (MP3 formatı burada geliştirilmiştir).\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Butik Eğitim:</strong> Öğrenci sayısı azdır, bu sayede profesörlerle birebir iletişim kurmak çok kolaydır.\n<strong>Şartlı Kabul:</strong> "We4You" adlı öğrenci destek birimi çok aktiftir. Şartlı kabul ve dil kursu imkanları geniştir.\n<strong>Başvuru:</strong> Doğrudan online portal üzerinden veya Uni-Assist ile yapılabilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Kampüs:</strong> Kampüs ile yurtlar yan yanadır.\n<strong>Maliyet:</strong> Yaşam çok ucuzdur. Doğa ile iç içedir. Sosyal hayat kısıtlıdır ancak öğrenci kulüpleri çok aktiftir.`
             },
@@ -433,6 +455,7 @@
                 name: "Universität Augsburg",
                 city: "Augsburg",
                 domain: "uni-augsburg.de",
+                customLogo: "UA.png",
                 summary: "Münih'e 30 dakika mesafede; Hukuk, Ekonomi ve Bilgisayar Bilimleri alanında modern kampüsüyle öne çıkan, Bavyera'nın en popüler alternatiflerinden.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nMünih'in pahalılığından kaçan ama kalitesinden vazgeçmeyenlerin tercihidir. <strong>Hukuk, İşletme, Coğrafya</strong> ve son yıllarda kurulan <strong>Tıp Fakültesi</strong> ile dikkat çeker. Kampüsü göletler ve yeşil alanlarla doludur.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> LMU veya TUM Münih'e giremeyen öğrenciler için mükemmel bir B planıdır, ancak eğitim kalitesi çok yüksektir.\n<strong>Başvuru:</strong> Genellikle doğrudan üniversiteye yapılır.\n<strong>Dil:</strong> DSH-2 veya TestDaF 4x4.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Münih Banliyösü Gibi:</strong> Birçok öğrenci Augsburg'da yaşayıp Münih'e staja gider.\n<strong>Konaklama:</strong> Kiralar artışta olsa da Münih'in yarısı kadardır. Yurt imkanları kampüs çevresinde yoğundur.`
             },
@@ -440,6 +463,7 @@
                 name: "Universität Regensburg",
                 city: "Regensburg",
                 domain: "uni-regensburg.de",
+                customLogo: "UR.png",
                 summary: "UNESCO Dünya Mirası bir orta çağ şehrinde; Tıp, Psikoloji ve Doğa Bilimleri ağırlıklı, köklü bir kampüs üniversitesi.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nTarihi taş köprüsü ve katedraliyle ünlü şehirde, modern bir kampüste eğitim verir. <strong>Tıp, Moleküler Tıp, Psikoloji</strong> ve <strong>Amerikan Çalışmaları</strong> alanlarında tanınır. Kütüphanesi ve araştırma merkezleri çok geniştir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> Tıp bölümleri için çok yüksek puanlar gerekir. Diğer bölümlerde şartlı kabul imkanı (dil kursu) sunabilir.\n<strong>Başvuru:</strong> Doğrudan başvuru veya Uni-Assist (bölüme göre değişir).\n<strong>Ulaşım:</strong> Bavyera eyalet bileti ile Münih ve Nürnberg'e kolay ulaşım sağlar.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Öğrenci yoğunluğu çok fazladır, şehir cıvıl cıvıldır. Barlar ve kafeler tarihi sokaklardadır.\n<strong>Konut:</strong> Yurtlar için bekleme süresi olabilir, özel sektörde ev kiraları orta-üst seviyededir.`
             },
@@ -447,6 +471,7 @@
                 name: "Universität Rostock",
                 city: "Rostock",
                 domain: "uni-rostock.de",
+                customLogo: "URO.png",
                 summary: "Baltık Denizi kıyısında, Kuzey Avrupa'nın en eski üniversitesi (1419). Denizcilik, Mühendislik ve Tıp alanında köklü, turistik bir liman kenti.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nDeniz esintili kampüsleriyle ünlüdür. <strong>Makine Mühendisliği (Gemi İnşaatı), Tıp, Tarım Bilimleri</strong> ve <strong>Biyolojik Bilimler</strong> çok güçlüdür. Almanya'nın en yaşlı üniversitelerinden biri olmanın verdiği akademik ağırlığı taşır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Fırsatı:</strong> Mühendislik alanlarında NC (not barajı) genellikle uygulanmaz, bu da kabul almayı kolaylaştırır.\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Dil:</strong> Genellikle DSH-2 veya TestDaF 4x4 istenir. Şartlı kabul imkanları mevcuttur ancak kontenjanlar yıllara göre değişebilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Rostock, yazın plajlarıyla çok canlı, kışın rüzgarlı ve sakindir.\n<strong>Ekonomi:</strong> Kiralar kuzeydeki diğer şehirlere (Hamburg, Bremen) göre çok uygundur. Yurt bulmak nispeten kolaydır.`
             },
@@ -482,6 +507,7 @@
                 name: "Christian-Albrechts-Universität zu Kiel (CAU)",
                 city: "Kiel",
                 domain: "uni-kiel.de",
+                customLogo: "CAU.png",
                 summary: "Baltık Denizi'nin kıyısında, yelken şehri; Deniz Bilimleri, Hukuk ve Tıp alanında kuzeyin en prestijli adreslerinden biri.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nDenizle bütünleşmiş bir şehirdir. <strong>Oşinografi (Deniz Bilimleri), Hukuk, Tıp</strong> ve <strong>Ekonomi</strong> fakülteleri çok popülerdir. Dünya Ekonomisi Enstitüsü (IfW) buradadır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Kabul:</strong> Tıp ve Diş Hekimliği için rekabet yüksektir. Diğer bölümlerde standart prosedürler işler.\n<strong>Dil:</strong> C1 Almanca şarttır. Kampüs içinde dil kursları vardır ancak kabul öncesi dil belgesi talep edilebilir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Şehirde plajlar ve yelken kulüpleri vardır. İskandinavya'ya feribotla gidilebilir.\n<strong>Konaklama:</strong> Yurt bulmak dönem başlarında zordur, erken hareket edilmelidir.`
             },
@@ -503,6 +529,7 @@
                 name: "FH Aachen (Fachhochschule Aachen)",
                 city: "Aachen",
                 domain: "fh-aachen.de",
+                customLogo: "FHAachen.png",
                 summary: "Almanya'nın en iyi Uygulamalı Bilimler Üniversitesi; RWTH ile aynı şehirde, Makine ve Elektrik alanında tamamen pratik odaklı, iş garantili eğitim.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nAlmanya'daki İK müdürlerinin anketlerinde sürekli 1. sırada çıkan FH'dır. RWTH Aachen'ın teorik ağırlığının aksine burası tamamen sanayi pratiğine odaklanır. <strong>Makine Mühendisliği, Mekatronik, Havacılık</strong> ve <strong>Biyomedikal</strong> bölümleri çok popülerdir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Vorpraktikum (Ön Staj):</strong> FH'ların genelinde olduğu gibi, eğitime başlamadan önce veya ilk sömestrde 6-12 haftalık teknik staj belgesi istenir.\n<strong>Freshman Programı:</strong> Üniversitenin (ücretli olsa da) kendi hazırlık yılı programı vardır, bu sayede Türk öğrencileri sınavsız geçiş veya dil hazırlığı için kabul edebilir.\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konum:</strong> Aachen tam bir öğrenci kentidir. Hollanda ve Belçika sınırındadır.\n<strong>Barınma:</strong> RWTH öğrencileriyle aynı yurtları paylaşırlar. Kiralar uygundur ancak rekabet vardır.`
             },
@@ -517,6 +544,7 @@
                 name: "HTW Berlin (Hochschule für Technik und Wirtschaft Berlin)",
                 city: "Berlin",
                 domain: "htw-berlin.de",
+                customLogo: "HTWBerlin.png",
                 summary: "Başkentin en popüler FH'sı; Oyun Tasarımı, Moda ve İşletme Bilişimi alanlarında yaratıcı ve teknik zekayı birleştiren modern okul.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nBerlin'in start-up ruhunu en iyi yansıtan okuldur. <strong>Game Design (Oyun Tasarımı), Moda Tasarımı, Wirtschaftsinformatik</strong> ve <strong>Makine Mühendisliği</strong> bölümleri çok talep görür. Spree nehri kıyısında harika bir kampüsü vardır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Seçicilik:</strong> Tasarım bölümleri için yetenek sınavı ve portfolyo (Mappe) sunumu şarttır.\n<strong>Mühendislik:</strong> NC puanları Berlin'deki diğer üniversitelere göre daha erişilebilirdir ancak eğitim kalitesi çok yüksektir.\n<strong>Başvuru:</strong> Uni-Assist ile yapılır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Lokasyon:</strong> Doğu Berlin tarafındadır (Oberschöneweide).\n<strong>Konut:</strong> Şehir merkezine göre kiralar daha uygundur. Sanatçıların ve öğrencilerin yoğun olduğu bir bölgedir.`
             },
@@ -531,6 +559,7 @@
                 name: "HAW Hamburg (Hochschule für Angewandte Wissenschaften Hamburg)",
                 city: "Hamburg",
                 domain: "haw-hamburg.de",
+                customLogo: "HAWHamburg.png",
                 summary: "Havacılık ve gemi inşaatının merkezi; Airbus fabrikasına öğrenci yetiştiren, Kuzey Almanya'nın teknoloji ve tasarım üssü.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nHamburg bir havacılık (Airbus) şehridir. HAW Hamburg, <strong>Uçak Mühendisliği (Fahrzeugbau - Aviation), Bilişim</strong> ve <strong>Medya Tasarımı</strong> alanlarında özelleşmiştir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Vorpraktikum:</strong> Mühendislik bölümleri için 13 haftaya varan ön staj belgeleri istenebilir.\n<strong>Başvuru:</strong> Doğrudan üniversiteye veya Uni-Assist'e (bölüme göre değişir) yapılır.\n<strong>Dil:</strong> DSH-2 veya TestDaF 16 puan.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Şehir:</strong> Hamburg çok canlı ama pahalı bir şehirdir.\n<strong>Ulaşım:</strong> Öğrenciler genellikle şehrin güneyinde (Harburg tarafı) veya banliyölerde yaşayarak kiradan tasarruf ederler.`
             },
@@ -538,6 +567,7 @@
                 name: "Hochschule Darmstadt",
                 city: "Darmstadt",
                 domain: "h-da.de",
+                customLogo: "hda.png",
                 summary: "\"Plastik Vadisi\"nin kalbinde; Plastik Mühendisliği ve Bilgisayar Bilimleri alanında TU Darmstadt kadar saygın, pratik odaklı dev FH.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nTU Darmstadt'ın teorik eğitimine alternatif olarak pratik arayanların adresidir. <strong>Plastik Mühendisliği (Kunststofftechnik), Mimarlık</strong> ve <strong>Medya (Animation/Game)</strong> alanlarında Almanya'nın en iyilerindendir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> Uni-Assist üzerinden başvurulur. Not ortalaması beklentisi makuldür.\n<strong>Dil:</strong> DSH sınavına hazırlık kursları mevcuttur.\n<strong>Konum:</strong> Frankfurt'a yakınlığı nedeniyle iş ve staj bulmak çok kolaydır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Barınma:</strong> Darmstadt bir öğrenci kentidir. Kiralar Frankfurt'a göre uygundur. Kampüs çevresinde çok sayıda yurt bulunur.`
             },
@@ -552,6 +582,7 @@
                 name: "Heinrich-Heine-Universität Düsseldorf",
                 city: "Düsseldorf",
                 domain: "hhu.de",
+                customLogo: "HHUD.png",
                 summary: "Almanya'nın moda ve ticaret başkentinde; Tıp, Hukuk ve İşletme alanında güçlü, Japon kültürüyle iç içe kampüs üniversitesi.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nRen nehri kıyısında modern bir kampüstür. <strong>Tıp, Diş Hekimliği, Hukuk</strong> ve <strong>İşletme</strong> bölümleri çok talep görür. Şehirde yoğun bir Japon nüfusu olduğu için "Modern Japonya Çalışmaları" bölümü de meşhurdur.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul:</strong> Popüler bir şehir olduğu için NC puanları yüksektir.\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Dil:</strong> DSH sınavını kendi bünyesinde yapar. Şartlı kabul imkanı kısıtlıdır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Yaşam:</strong> Almanya'nın en lüks ve yaşam standardı en yüksek şehirlerinden biridir.\n<strong>Konaklama:</strong> Kiralar yüksektir. Öğrenciler genellikle çevre semtlerde (Wersten, Bilk) veya komşu şehirlerde (Neuss, Duisburg) ikamet eder.`
             },
@@ -573,6 +604,7 @@
                 name: "Universität Trier",
                 city: "Trier",
                 domain: "uni-trier.de",
+                customLogo: "UT.png",
                 summary: "Almanya'nın en eski şehrinde (Roma kenti); Hukuk, Psikoloji ve Coğrafya alanında ünlü, Lüksemburg sınırında yeşil kampüs.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nTarihi bir Roma şehrinde yer almasına rağmen kampüsü çok moderndir. <strong>Hukuk, Psikoloji, Coğrafi Bilgi Sistemleri</strong> ve <strong>Ekonomi</strong> bölümleri öne çıkar. Lüksemburg'a yakınlığı finans stajları için avantajdır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Kabul Kolaylığı:</strong> Psikoloji hariç birçok bölümde NC uygulanmaz veya düşüktür.\n<strong>Dil:</strong> Üniversite bünyesinde DSH kursları mevcuttur. Şartlı kabul verir.\n<strong>Başvuru:</strong> Uni-Assist üzerinden.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Ekonomi:</strong> Kiralar ve yaşam maliyetleri öğrenciler için çok uygundur.\n<strong>Ulaşım:</strong> Semesterticket ile Lüksemburg'a trenle gidilebilir.`
             },
@@ -591,8 +623,15 @@
         function renderUniversities(list) {
             grid.innerHTML = "";
             list.forEach(uni => {
-                // LOGO İÇİN GOOGLE API KULLANIMI (Çok daha stabil)
-                const logoUrl = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
+                let logoUrl;
+                
+                // ÖZEL LOGO VAR MI KONTROL ET
+                if (uni.customLogo) {
+                    logoUrl = uni.customLogo;
+                } else {
+                    // YOKSA GOOGLE API KULLAN
+                    logoUrl = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
+                }
                 
                 const card = document.createElement('div');
                 card.className = 'uni-card';
@@ -640,10 +679,14 @@
                 modalCity.textContent = uni.city;
                 modalBody.innerHTML = uni.detail; 
                 
-                const logoUrl = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
-                modalLogo.src = logoUrl;
-                modalLogo.onerror = function() { this.src = 'https://via.placeholder.com/80?text=UNI'; };
+                // Modalda da aynı mantık (Özel logo mu API mi?)
+                if (uni.customLogo) {
+                    modalLogo.src = uni.customLogo;
+                } else {
+                    modalLogo.src = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
+                }
                 
+                modalLogo.onerror = function() { this.src = 'https://via.placeholder.com/80?text=UNI'; };
                 modalWeb.href = `https://${uni.domain}`;
                 
                 modalOverlay.style.display = 'flex';
