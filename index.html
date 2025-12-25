@@ -4,29 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DeutschKampus | Almanya'da Eğitim Danışmanlığı</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Modern Font Ayarı */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
-        
-        /* HEADER VE LOGO AYARLARI */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        
-        .logo img { height: 100px; width: auto; } 
-
+        .logo img { height: 120px; width: auto; } 
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
         
-        /* ARKA PLAN - MODERN KAMPÜS */
+        /* --- SEÇENEK 1: MODERN BİNA --- */
         .hero { 
-            background: linear-gradient(rgba(11, 33, 66, 0.85), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1600'); 
+            background: linear-gradient(rgba(11, 33, 66, 0.7), rgba(11, 33, 66, 0.7)), url('https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600'); 
             background-size: cover; 
             background-position: center; 
-            height: 85vh; /* Biraz daha genişlettim */
+            height: 85vh; 
             display: flex; 
             flex-direction: column; 
             justify-content: center; 
@@ -38,50 +32,22 @@
         
         .hero h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 700; letter-spacing: -1px; }
         .hero p { font-size: 1.3rem; margin-bottom: 40px; font-weight: 300; max-width: 600px; }
-        
-        /* Modern Buton */
-        .btn { 
-            background-color: #D62727; 
-            color: white; 
-            padding: 18px 40px; 
-            text-decoration: none; 
-            border-radius: 50px; /* Tam oval modern buton */
-            font-weight: 600; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 10px 20px rgba(214, 39, 39, 0.3);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
+        .btn { background-color: #D62727; color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 10px 20px rgba(214, 39, 39, 0.3); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
         .btn:hover { background-color: #b01f1f; transform: translateY(-3px); box-shadow: 0 15px 25px rgba(214, 39, 39, 0.4); }
-
         .features { padding: 80px 10%; text-align: center; background-color: #f9f9f9; }
         .features h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; font-weight: 700; }
-        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 30px; }
-        
-        /* Kart Tasarımı */
-        .card { 
-            background: white;
-            padding: 40px 30px; 
-            border: none; 
-            border-radius: 20px; /* Köşeleri yuvarladım */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Hafif gölge */
-            transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-10px); } /* Üzerine gelince yukarı kalkar */
+        .card { background: white; padding: 40px 30px; border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); } 
         .card h3 { color: #0B2142; font-size: 1.4rem; margin-bottom: 15px; }
         .card p { color: #666; font-size: 1rem; line-height: 1.7; }
-
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">
-            <img src="logo.png" alt="DeutschKampus Logo">
-        </a>
+        <a href="#" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
         <nav class="nav-links">
             <a href="#">Üniversiteler</a>
             <a href="#">Hizmetler</a>
@@ -98,24 +64,12 @@
     <section class="features">
         <h2>Neden DeutschKampus?</h2>
         <div class="grid">
-            <div class="card">
-                <h3>Profesyonel Planlama</h3>
-                <p>Not ortalamanıza ve hedeflerinize en uygun üniversiteleri analiz ediyor, kabul şansınızı artıran stratejiler geliştiriyoruz.</p>
-            </div>
-            <div class="card">
-                <h3>Güncel Mevzuat</h3>
-                <p>Vize prosedürleri, bloke hesap limitleri ve yasal değişiklikleri anlık takip ederek dosyanızı eksiksiz hazırlıyoruz.</p>
-            </div>
-            <div class="card">
-                <h3>Yerel Deneyim</h3>
-                <p>Almanya'da yaşayan birinden; konaklama, sigorta ve şehir yaşamına dair gerçekçi ve tecrübeye dayalı tavsiyeler.</p>
-            </div>
+            <div class="card"><h3>Profesyonel Planlama</h3><p>Not ortalamanıza ve hedeflerinize en uygun üniversiteleri analiz ediyor, kabul şansınızı artıran stratejiler geliştiriyoruz.</p></div>
+            <div class="card"><h3>Güncel Mevzuat</h3><p>Vize prosedürleri, bloke hesap limitleri ve yasal değişiklikleri anlık takip ederek dosyanızı eksiksiz hazırlıyoruz.</p></div>
+            <div class="card"><h3>Yerel Deneyim</h3><p>Almanya'da yaşayan birinden; konaklama, sigorta ve şehir yaşamına dair gerçekçi ve tecrübeye dayalı tavsiyeler.</p></div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p>
-    </footer>
-
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
 </body>
 </html>
