@@ -1,1 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+    <style>
+        /* ANA SAYFA İLE AYNI TASARIM DİLİ */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #f9f9f9; }
+        
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo img { height: 100px; width: auto; } 
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 1rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+
+        /* İLETİŞİM KUTUSU */
+        .contact-section { padding: 60px 20px; display: flex; justify-content: center; }
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        /* SOL TARAF: BİLGİLER */
+        .contact-info {
+            background-color: #0B2142;
+            color: white;
+            padding: 50px;
+            flex: 1;
+            min-width: 300px;
+        }
+        .contact-info h2 { margin-top: 0; font-size: 2rem; }
+        .contact-info p { margin-bottom: 30px; opacity: 0.8; }
+        .info-item { display: flex; align-items: center; margin-bottom: 20px; font-size: 1.1rem; }
+        .info-item i { font-size: 1.5rem; margin-right: 15px; color: #D62727; }
+        .social-links { margin-top: 40px; }
+        .social-links a { color: white; font-size: 1.5rem; margin-right: 20px; transition: 0.3s; }
+        .social-links a:hover { color: #D62727; }
+
+        /* SAĞ TARAF: FORM */
+        .contact-form { padding: 50px; flex: 1.5; min-width: 300px; }
+        .contact-form h2 { color: #0B2142; margin-top: 0; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem;
+        }
+        .btn-submit {
+            background-color: #D62727; color: white; border: none; padding: 15px 40px; font-size: 1rem; font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s;
+        }
+        .btn-submit:hover { background-color: #b01f1f; }
+
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="#">Üniversiteler</a>
+            <a href="iletisim.html" style="color: #D62727;">İletişim</a> </nav>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>İletişime Geçin</h2>
+                <p>Almanya eğitim yolculuğunuzda aklınıza takılan her şey için bize yazabilirsiniz.</p>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@deutschkampus.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>+49 176 123 456 78</span>
+                </div>
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Berlin, Almanya</span>
+                </div>
+
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Bize Yazın</h2>
+                <form action="mailto:seninmailin@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label>Adınız Soyadınız</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-posta Adresiniz</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Mesajınız</label>
+                        <textarea name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+</body>
+</html>
