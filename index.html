@@ -6,7 +6,6 @@
     <title>DeutschKampus | Almanya'da Eğitim Danışmanlığı</title>
     
     <link rel="icon" href="logo.png" type="image/png">
-    <link rel="shortcut icon" href="logo.png" type="image/png">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -15,104 +14,105 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        /* GENEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
         
         /* HEADER */
-        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: relative; z-index: 1000; }
-        .logo img { height: 120px; width: auto; } 
-        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 80px; width: auto; } 
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
 
-        /* --- WHATSAPP BUTONU TASARIMI --- */
+        /* WHATSAPP BUTONU */
         .whatsapp-btn {
-            position: fixed; /* Sayfada sabit dur */
-            bottom: 30px;    /* Alttan mesafe */
-            right: 30px;     /* Sağdan mesafe */
-            background-color: #25D366; /* WhatsApp Yeşili */
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%; /* Tam yuvarlak */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 35px; /* İkon boyutu */
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
-            z-index: 9999; /* Her şeyin üstünde dursun */
-            transition: all 0.3s ease;
-            text-decoration: none;
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; transition: all 0.3s ease; text-decoration: none;
         }
-        
-        .whatsapp-btn:hover {
-            transform: scale(1.1); /* Üzerine gelince biraz büyüsün */
-            background-color: #20BA5C;
-        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
 
-        /* --- SLAYT AYARLARI --- */
-        .slider-container {
-            position: relative;
-            height: 85vh;
-            width: 100%;
-            overflow: hidden;
-            background-color: #0B2142; 
-        }
-
+        /* SLAYT ALANI */
+        .slider-container { position: relative; height: 85vh; width: 100%; overflow: hidden; background-color: #0B2142; }
         .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0; 
-            transition: opacity 1s ease-in-out; 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1s ease-in-out; 
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
         }
-
         .slide.active { opacity: 1; }
-
-        .overlay {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(11, 33, 66, 0.5); 
-            z-index: 1;
-        }
-
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(11, 33, 66, 0.5); z-index: 1; }
         .content { position: relative; z-index: 2; max-width: 800px; }
-        .content h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 700; letter-spacing: -1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .content h1 { font-size: 3.5rem; margin-bottom: 15px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
         .content p { font-size: 1.4rem; margin-bottom: 40px; font-weight: 300; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-
+        
         .btn { 
-            background-color: #D62727; 
-            color: white; 
-            padding: 18px 40px; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 600; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 10px 20px rgba(214, 39, 39, 0.3);
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            display: inline-block;
+            background-color: #D62727; color: white; padding: 18px 40px; 
+            text-decoration: none; border-radius: 50px; font-weight: 600; 
+            transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px;
         }
-        .btn:hover { background-color: #b01f1f; transform: translateY(-3px); box-shadow: 0 15px 25px rgba(214, 39, 39, 0.4); }
+        .btn:hover { background-color: #b01f1f; transform: translateY(-3px); }
 
+        /* HİZMETLER (FEATURES) */
         .features { padding: 80px 10%; text-align: center; background-color: #f9f9f9; }
         .features h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; font-weight: 700; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 30px; }
-        .card { background: white; padding: 40px 30px; border: none; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .card { background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
         .card:hover { transform: translateY(-10px); }
+        .card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
         .card h3 { color: #0B2142; font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { color: #666; font-size: 1rem; line-height: 1.7; }
-        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; }
+
+        /* ÖĞRENCİ YORUMLARI */
+        .testimonials { padding: 80px 10%; background-color: #0B2142; color: white; text-align: center; }
+        .testimonials h2 { font-size: 2.2rem; margin-bottom: 50px; }
+        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .testi-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: left; }
+        .testi-card p { font-style: italic; opacity: 0.9; margin-bottom: 20px; }
+        .student-info { display: flex; align-items: center; gap: 15px; }
+        .student-img { width: 50px; height: 50px; border-radius: 50%; background: #ddd; object-fit: cover; }
+        .student-name h4 { margin: 0; font-size: 1rem; }
+        .student-name span { font-size: 0.8rem; opacity: 0.7; }
+
+        /* YENİ: EĞİTİM TÜRLERİ KARŞILAŞTIRMA TABLOSU */
+        .edu-types { padding: 80px 10%; background-color: #fff; }
+        .edu-types h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
+        
+        .table-container { overflow-x: auto; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        thead { background-color: #0B2142; color: white; }
+        th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid #eee; }
+        th { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
+        tr:hover { background-color: #f9f9f9; }
+        .type-badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; }
+        .bg-uni { background-color: #3498db; }
+        .bg-fh { background-color: #e67e22; }
+        .bg-aus { background-color: #27ae60; }
+
+        /* SSS (FAQ) */
+        .faq-section { padding: 80px 10%; background-color: #f4f7f6; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
+        .accordion-item { background: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); overflow: hidden; }
+        .accordion-header {
+            background: none; border: none; width: 100%; text-align: left;
+            padding: 20px; font-size: 1.1rem; font-weight: 600; color: #0B2142;
+            cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+            font-family: 'Montserrat', sans-serif; transition: 0.3s;
+        }
+        .accordion-header:hover { background-color: #fdfdfd; color: #D62727; }
+        .accordion-content {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
+            padding: 0 20px; color: #555; font-size: 0.95rem; line-height: 1.6;
+        }
+        .accordion-content p { margin-bottom: 20px; }
+        .icon-plus { transition: 0.3s; }
+        .active .icon-plus { transform: rotate(45deg); color: #D62727; }
+
+        /* FOOTER */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
 <body>
@@ -120,59 +120,187 @@
     <header>
         <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
         <nav class="nav-links">
-    <a href="index.html">Ana Sayfa</a>
-    <a href="universiteler.html">Üniversiteler</a> 
-    <a href="iletisim.html">İletişim</a>
-</nav>
+            <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
     </header>
 
-    <a href="https://wa.me/4917672489386" class="whatsapp-btn" target="_blank">
+    <a href="https://wa.me/4917612345678" class="whatsapp-btn" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <section class="slider-container">
-        
         <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=1600');">
             <div class="overlay"></div>
             <div class="content">
                 <h1>Almanya'da Geleceğini Tasarla</h1>
                 <p>Hayalindeki üniversiteye giden yolda, bürokrasiyle değil hedeflerinle ilgilen. Profesyonel rehberlikle yanındayız.</p>
-                <a href="mailto:seninmailin@gmail.com" class="btn">Bize Ulaşın</a>
+                <a href="iletisim.html" class="btn">Ücretsiz Ön Görüşme</a>
             </div>
         </div>
-
         <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600');">
             <div class="overlay"></div>
             <div class="content">
                 <h1>Unutulmaz Bir Deneyim</h1>
                 <p>Sadece bir diploma değil; uluslararası bir vizyon, yeni bir dil ve zengin bir kültür kazanın.</p>
-                <a href="mailto:seninmailin@gmail.com" class="btn">Bize Ulaşın</a>
+                <a href="universiteler.html" class="btn">Üniversiteleri İncele</a>
             </div>
         </div>
-
         <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1600');">
             <div class="overlay"></div>
             <div class="content">
                 <h1>Dünya Standartlarında Kariyer</h1>
                 <p>Mühendislikten tıbba, kariyerinizi Avrupa'nın zirvesinde, modern kampüslerde başlatın.</p>
-                <a href="mailto:seninmailin@gmail.com" class="btn">Bize Ulaşın</a>
+                <a href="iletisim.html" class="btn">Bize Ulaşın</a>
             </div>
         </div>
-
     </section>
 
     <section class="features">
         <h2>Neden DeutschKampus?</h2>
         <div class="grid">
-            <div class="card"><h3>Profesyonel Planlama</h3><p>Not ortalamanıza ve hedeflerinize en uygun üniversiteleri analiz ediyor, kabul şansınızı artıran stratejiler geliştiriyoruz.</p></div>
-            <div class="card"><h3>Güncel Mevzuat</h3><p>Vize prosedürleri, bloke hesap limitleri ve yasal değişiklikleri anlık takip ederek dosyanızı eksiksiz hazırlıyoruz.</p></div>
-            <div class="card"><h3>Yerel Deneyim</h3><p>Almanya'da yaşayan birinden; konaklama, sigorta ve şehir yaşamına dair gerçekçi ve tecrübeye dayalı tavsiyeler.</p></div>
+            <div class="card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Profesyonel Planlama</h3>
+                <p>Not ortalamanıza ve hedeflerinize en uygun üniversiteleri analiz ediyor, kabul şansınızı artıran stratejiler geliştiriyoruz.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-passport"></i>
+                <h3>Vize & Bürokrasi</h3>
+                <p>Bloke hesap, sağlık sigortası ve vize başvuru dosyanızı eksiksiz hazırlıyor, sizi karmaşık süreçlerden kurtarıyoruz.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-house-user"></i>
+                <h3>Yerel Destek</h3>
+                <p>Almanya'ya indikten sonra da yanınızdayız. Konaklama bulma ve şehir kaydı gibi işlemlerde rehberlik ediyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="edu-types">
+        <h2>Hangi Eğitim Modeli Sana Uygun?</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Eğitim Türü</th>
+                        <th>Odak Noktası</th>
+                        <th>Kabul Şartı</th>
+                        <th>Kimler İçin Uygun?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="type-badge bg-uni">Universität</span><br><small>(Klasik Üniversite)</small></td>
+                        <td>Teori, Araştırma, Bilim</td>
+                        <td>Lise Diploması + YKS Yerleşimi</td>
+                        <td>Tıp, Hukuk, Öğretmenlik isteyenler ve Akademik Kariyer (PhD) düşünenler.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="type-badge bg-fh">Fachhochschule</span><br><small>(Uygulamalı Bilimler)</small></td>
+                        <td>Pratik, Uygulama, Endüstri</td>
+                        <td>Lise Diploması + YKS + Staj (Bazen)</td>
+                        <td>Mühendislik, IT, İşletme okuyup hemen iş hayatına atılmak isteyenler.</td>
+                    </tr>
+                    <tr>
+                        <td><span class="type-badge bg-aus">Ausbildung</span><br><small>(Mesleki Eğitim)</small></td>
+                        <td>İş Başında Öğrenme + Maaş</td>
+                        <td>Lise Diploması + B1/B2 Almanca</td>
+                        <td>Üniversite okumadan meslek sahibi olup (Hemşire, Yazılımcı vb.) para kazanmak isteyenler.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2>Öğrencilerimiz Ne Diyor?</h2>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <p>"NC puanım sınırdaydı ve çok endişeliydim. DeutschKampus ekibi motivasyon mektubumu öyle bir düzenledi ki TUM'dan kabul aldım!"</p>
+                <div class="student-info">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Öğrenci" class="student-img">
+                    <div class="student-name"><h4>Ayşe Y.</h4><span>Münih Teknik Üni.</span></div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <p>"Vize sürecindeki evrak karmaşasından beni kurtardılar. Bloke hesabımdan sigortama kadar her şeyi 1 haftada hallettik."</p>
+                <div class="student-info">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Öğrenci" class="student-img">
+                    <div class="student-name"><h4>Mert K.</h4><span>TU Berlin</span></div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <p>"Almancam yetersizdi. Doğru dil kursuna yönlendirerek şartlı kabul almamı sağladılar. Şu an lisansa başlıyorum."</p>
+                <div class="student-info">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Öğrenci" class="student-img">
+                    <div class="student-name"><h4>Zeynep S.</h4><span>Heidelberg Üni.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2>Sıkça Sorulan Sorular</h2>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Almanca bilmeden üniversite okuyabilir miyim?
+                    <i class="fa-solid fa-plus icon-plus"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Bazı üniversiteler "Şartlı Kabul" verse de, <strong>hiç Almanca bilmeden vize almak oldukça risklidir.</strong> Konsolosluklar genellikle en az A2/B1 seviyesinde dil bilgisi görmek ister. Tamamen İngilizce bölümler (International Programs) için ise yüksek seviyede TOEFL/IELTS gereklidir.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Üniversite eğitimi ücretli mi?
+                    <i class="fa-solid fa-plus icon-plus"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Almanya genelinde devlet üniversiteleri ücretsizdir; sadece dönemlik 150€-350€ katkı payı ödenir. <br><br><strong>Önemli İstisna:</strong> Baden-Württemberg eyaletinde (Stuttgart, Heidelberg, Karlsruhe vb.) AB dışı öğrenciler için <strong>dönemlik 1.500€</strong> harç ücreti uygulanmaktadır.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Bloke Hesap (Sperrkonto) tutarı nedir?
+                    <i class="fa-solid fa-plus icon-plus"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>2025 yılı itibariyle vize için gereken yıllık tutar <strong>11.904€</strong> (aylık 992€) olarak belirlenmiştir. Bu rakam enflasyona göre her yıl güncellenmektedir, 2026 yılı için artış olması muhtemeldir.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    NC (Numerus Clausus) nedir?
+                    <i class="fa-solid fa-plus icon-plus"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>"Kapalı Sayı" anlamına gelir. Popüler bölümlerde (Tıp, Psikoloji, İşletme vb.) kontenjan sınırlıdır ve sadece en yüksek not ortalamasına sahip öğrenciler kabul edilir. Örneğin NC 1.5 ise, notunuzun 1.5 veya daha iyi (Alman sisteminde 1 en iyidir) olması gerekir.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Başvuru süreci ne kadar sürer?
+                    <i class="fa-solid fa-plus icon-plus"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Üniversite kabulü 4-8 hafta sürer. Ancak vize randevusu bulmak ve sonucunu beklemek süreci uzatabilir. Eğitime başlamayı planladığınız tarihten en az 6 ay önce danışmanlık sürecine başlamanızı öneriyoruz.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
 
     <script>
+        // SLAYT SCRIPT
         const slides = document.querySelectorAll('.slide');
         let currentSlide = 0;
         function nextSlide() {
@@ -181,6 +309,20 @@
             slides[currentSlide].classList.add('active');
         }
         setInterval(nextSlide, 5000);
+
+        // SSS (ACCORDION) SCRIPT
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                this.parentElement.classList.toggle('active');
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
     </script>
 </body>
 </html>
