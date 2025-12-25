@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Üniversiteler | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* GENEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #f9f9f9; }
+        
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo img { height: 100px; width: auto; } 
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 1rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+
+        /* BAŞLIK ALANI */
+        .page-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+        .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .page-header p { font-size: 1.2rem; font-weight: 300; opacity: 0.9; }
+
+        /* ÜNİVERSİTE KARTLARI (GRID) */
+        .uni-container { padding: 60px 10%; }
+        .uni-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; 
+        }
+
+        .uni-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            position: relative;
+        }
+        .uni-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+
+        .uni-img { height: 200px; width: 100%; object-fit: cover; }
+        
+        .uni-content { padding: 25px; }
+        .uni-tag { 
+            background-color: #eef2f6; color: #0B2142; 
+            padding: 5px 12px; border-radius: 20px; 
+            font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 10px;
+        }
+        .uni-content h3 { margin: 10px 0; color: #0B2142; }
+        .uni-content p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
+        
+        .uni-btn { 
+            display: block; text-align: center; 
+            background-color: #D62727; color: white; 
+            padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; 
+        }
+        .uni-btn:hover { background-color: #b01f1f; }
+
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+        
+        /* WhatsApp Butonu */
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; transition: all 0.3s ease; text-decoration: none;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="universiteler.html" style="color: #D62727;">Üniversiteler</a> <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Anlaşmalı Üniversiteler</h1>
+        <p>Almanya'nın en prestijli eğitim kurumlarıyla geleceğinizi inşa edin.</p>
+    </div>
+
+    <section class="uni-container">
+        <div class="uni-grid">
+            
+            <div class="uni-card">
+                <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=800" class="uni-img" alt="TUM">
+                <div class="uni-content">
+                    <span class="uni-tag">Münih</span> <span class="uni-tag">Teknik</span>
+                    <h3>TUM - Münih Teknik</h3>
+                    <p>Mühendislik ve teknoloji alanında Avrupa'nın lider üniversitesi. İnovasyon odaklı eğitim.</p>
+                    <a href="iletisim.html" class="uni-btn">Bilgi Al</a>
+                </div>
+            </div>
+
+            <div class="uni-card">
+                <img src="https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=800" class="uni-img" alt="Heidelberg">
+                <div class="uni-content">
+                    <span class="uni-tag">Heidelberg</span> <span class="uni-tag">Tıp & Hukuk</span>
+                    <h3>Heidelberg Üniversitesi</h3>
+                    <p>Almanya'nın en eski üniversitesi. Özellikle Tıp ve Sosyal Bilimler alanında dünya markası.</p>
+                    <a href="iletisim.html" class="uni-btn">Bilgi Al</a>
+                </div>
+            </div>
+
+            <div class="uni-card">
+                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800" class="uni-img" alt="Berlin FU">
+                <div class="uni-content">
+                    <span class="uni-tag">Berlin</span> <span class="uni-tag">Sosyal Bilimler</span>
+                    <h3>Freie Universität Berlin</h3>
+                    <p>Başkentin kalbinde, uluslararası çeşitliliği en yüksek ve özgürlükçü eğitim ekolü.</p>
+                    <a href="iletisim.html" class="uni-btn">Bilgi Al</a>
+                </div>
+            </div>
+
+            <div class="uni-card">
+                <img src="https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&w=800" class="uni-img" alt="RWTH Aachen">
+                <div class="uni-content">
+                    <span class="uni-tag">Aachen</span> <span class="uni-tag">Mühendislik</span>
+                    <h3>RWTH Aachen</h3>
+                    <p>Sanayi ile iç içe, pratik odaklı mühendislik eğitimi için Almanya'nın bir numarası.</p>
+                    <a href="iletisim.html" class="uni-btn">Bilgi Al</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <a href="https://wa.me/4917612345678" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+</body>
+</html>
