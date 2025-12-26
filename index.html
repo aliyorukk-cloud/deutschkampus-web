@@ -6,6 +6,28 @@
     <title>DeutschKampus | Almanya'da Eğitim Danışmanlığı</title>
     
     <link rel="icon" href="logo.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF9PCGG0SB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NF9PCGG0SB');
+    </script>
+
+    <meta name="description" content="DeutschKampus ile Almanya'da üniversite eğitimi, vize danışmanlığı, NC hesaplama ve şartlı kabul süreçlerinde profesyonel destek alın. Hayallerinizi ertelemeyin.">
+    <meta name="keywords" content="Almanya eğitim danışmanlığı, Almanya üniversite başvurusu, Almanya vizesi, NC hesaplama, Almanya'da üniversite okumak, şartlı kabul, DeutschKampus, blok hesap">
+    <meta name="author" content="DeutschKampus">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="DeutschKampus | Almanya'da Geleceğini Tasarla">
+    <meta property="og:description" content="Profesyonel akademik danışmanlık ve vize rehberliği. Detaylı bilgi için tıklayın.">
+    <meta property="og:image" content="https://deutschkampus.com/logo.png">
+    <meta property="og:url" content="https://deutschkampus.com">
+    <meta property="og:type" content="website">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
@@ -65,17 +87,6 @@
         .card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
         .card h3 { color: #0B2142; font-size: 1.4rem; margin-bottom: 15px; }
 
-        /* ÖĞRENCİ YORUMLARI */
-        .testimonials { padding: 80px 10%; background-color: #0B2142; color: white; text-align: center; }
-        .testimonials h2 { font-size: 2.2rem; margin-bottom: 50px; }
-        .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .testi-card { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; text-align: left; }
-        .testi-card p { font-style: italic; opacity: 0.9; margin-bottom: 20px; }
-        .student-info { display: flex; align-items: center; gap: 15px; }
-        .student-img { width: 50px; height: 50px; border-radius: 50%; background: #ddd; object-fit: cover; }
-        .student-name h4 { margin: 0; font-size: 1rem; }
-        .student-name span { font-size: 0.8rem; opacity: 0.7; }
-
         /* EĞİTİM TÜRLERİ KARŞILAŞTIRMA TABLOSU */
         .edu-types { padding: 80px 10%; background-color: #fff; }
         .edu-types h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
@@ -84,7 +95,10 @@
         thead { background-color: #0B2142; color: white; }
         th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid #eee; }
         th { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        tr:hover { background-color: #f9f9f9; }
+        
+        /* Başlıklar sabit kalsın, sadece satırlar renk değiştirsin */
+        tbody tr:hover { background-color: #f9f9f9; }
+        
         .type-badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; }
         .bg-uni { background-color: #3498db; }
         .bg-fh { background-color: #e67e22; }
@@ -136,11 +150,11 @@
     <header>
         <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
         <nav class="nav-links">
-    <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
-    <a href="universiteler.html">Üniversiteler</a>
-    <a href="hakkimizda.html">Hakkımızda</a> 
-    <a href="iletisim.html">İletişim</a>
-</nav>
+            <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
     </header>
 
     <a href="https://wa.me/4917612345678" class="whatsapp-btn" target="_blank">
@@ -153,7 +167,7 @@
             <div class="content">
                 <h1>Almanya'da Geleceğini Tasarla</h1>
                 <p>Hayalindeki üniversiteye giden yolda, bürokrasiyle değil hedeflerinle ilgilen. Profesyonel rehberlikle yanındayız.</p>
-                <a href="iletisim.html" class="btn">Ücretsiz Ön Görüşme</a>
+                <a href="iletisim.html" class="btn">İletişime Geç</a>
             </div>
         </div>
         <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=1600');">
@@ -228,33 +242,6 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2>Öğrencilerimiz Ne Diyor?</h2>
-        <div class="testi-grid">
-            <div class="testi-card">
-                <p>"NC puanım sınırdaydı ve çok endişeliydim. DeutschKampus ekibi motivasyon mektubumu öyle bir düzenledi ki TUM'dan kabul aldım!"</p>
-                <div class="student-info">
-                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Öğrenci" class="student-img">
-                    <div class="student-name"><h4>Ayşe Y.</h4><span>Münih Teknik Üni.</span></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <p>"Vize sürecindeki evrak karmaşasından beni kurtardılar. Bloke hesabımdan sigortama kadar her şeyi 1 haftada hallettik."</p>
-                <div class="student-info">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Öğrenci" class="student-img">
-                    <div class="student-name"><h4>Mert K.</h4><span>TU Berlin</span></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <p>"Almancam yetersizdi. Doğru dil kursuna yönlendirerek şartlı kabul almamı sağladılar. Şu an lisansa başlıyorum."</p>
-                <div class="student-info">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Öğrenci" class="student-img">
-                    <div class="student-name"><h4>Zeynep S.</h4><span>Heidelberg Üni.</span></div>
-                </div>
-            </div>
         </div>
     </section>
 
