@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Randevu | DeutschKampus</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; background-color: #fcfcfc; }
+        
+        /* HEADER */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo img { height: 60px; width: auto; } 
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+
+        /* RANDEVU KUTUSU */
+        .booking-container { max-width: 1000px; margin: 50px auto; text-align: center; padding: 0 20px; }
+        .booking-header h1 { color: #0B2142; font-size: 2.5rem; margin-bottom: 10px; }
+        .booking-header p { font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 40px auto; }
+        
+        .alert-box {
+            background-color: #fff4e5; border-left: 5px solid #ff9800;
+            color: #d35400; padding: 15px; border-radius: 5px; text-align: left;
+            margin-bottom: 30px; font-size: 0.95rem; max-width: 800px; margin-left: auto; margin-right: auto;
+        }
+
+        /* CALENDLY GÖMME ALANI */
+        .calendly-inline-widget { min-width:320px; height:700px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="booking-container">
+        <div class="booking-header">
+            <h1>Online Görüşme Planla</h1>
+            <p>Size uygun tarihi ve saati seçin. Birebir görüşmemizle Almanya yol haritanızı netleştirelim.</p>
+        </div>
+
+        <div class="alert-box">
+            <strong><i class="fa-solid fa-circle-info"></i> Bilgilendirme:</strong>
+            Randevu talebi oluşturduktan sonra size ödeme bilgileri iletilecektir. Ödeme onayı sonrası <strong>Google Meet</strong> bağlantısı otomatik olarak mail adresinize gönderilir.
+        </div>
+
+        <div class="calendly-inline-widget" data-url="https://calendly.com/deutschkampus-info/45-dakika-danismanlik" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        </div>
+
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+</body>
+</html>
