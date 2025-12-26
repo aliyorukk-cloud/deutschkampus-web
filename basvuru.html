@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danışmanlık Başvuru Formu | DeutschKampus</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f7f6; color: #333; }
+        
+        /* HEADER (Kısa Versiyon) */
+        header { background-color: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .logo img { height: 60px; width: auto; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+
+        /* FORM ALANI */
+        .form-container {
+            max-width: 800px; margin: 50px auto; background: white;
+            padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid #D62727;
+        }
+        .form-header { text-align: center; margin-bottom: 30px; }
+        .form-header h1 { color: #0B2142; font-size: 2rem; margin-bottom: 10px; }
+        .form-header p { color: #666; font-size: 0.95rem; }
+
+        /* INPUT GRUPLARI */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; color: #0B2142; margin-bottom: 8px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-family: 'Montserrat', sans-serif; font-size: 0.95rem; box-sizing: border-box; transition: 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: #D62727; outline: none; box-shadow: 0 0 8px rgba(214, 39, 39, 0.1);
+        }
+
+        /* İKİLİ SÜTUN */
+        .row { display: flex; gap: 20px; }
+        .col { flex: 1; }
+        @media (max-width: 600px) { .row { flex-direction: column; gap: 0; } }
+
+        /* BÖLÜM BAŞLIKLARI */
+        .section-title { 
+            background: #fcfcfc; padding: 10px 15px; border-left: 4px solid #0B2142; 
+            margin: 30px 0 20px 0; color: #0B2142; font-weight: 700; border-radius: 0 8px 8px 0;
+        }
+
+        /* BUTON */
+        .submit-btn {
+            background-color: #D62727; color: white; border: none; padding: 15px 40px;
+            font-size: 1.1rem; font-weight: bold; border-radius: 50px; cursor: pointer;
+            width: 100%; transition: 0.3s; margin-top: 20px;
+        }
+        .submit-btn:hover { background-color: #b01f1f; transform: translateY(-3px); }
+
+        /* ONAY KUTUSU */
+        .checkbox-group { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; }
+        .checkbox-group input { width: auto; margin: 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="Logo"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Danışmanlık Başvuru Formu</h1>
+            <p>Almanya eğitim yolculuğunuzu planlamamız için lütfen bilgileri eksiksiz doldurun.</p>
+        </div>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST">
+            
+            <div class="section-title">1. Kişisel Bilgiler</div>
+            <div class="row">
+                <div class="col form-group">
+                    <label>Adınız</label>
+                    <input type="text" name="ad" required placeholder="Örn: Ahmet">
+                </div>
+                <div class="col form-group">
+                    <label>Soyadınız</label>
+                    <input type="text" name="soyad" required placeholder="Örn: Yılmaz">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <label>E-posta Adresi</label>
+                    <input type="email" name="email" required placeholder="ornek@gmail.com">
+                </div>
+                <div class="col form-group">
+                    <label>Telefon Numarası</label>
+                    <input type="tel" name="telefon" required placeholder="05XX XXX XX XX">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Yaşadığınız Şehir</label>
+                <input type="text" name="sehir" placeholder="İstanbul, Ankara...">
+            </div>
+
+            <div class="section-title">2. Eğitim Durumu</div>
+            <div class="form-group">
+                <label>Şu anki Durumunuz</label>
+                <select name="egitim_durumu">
+                    <option value="lise_ogrencisi">Lise Öğrencisi</option>
+                    <option value="lise_mezunu">Lise Mezunu</option>
+                    <option value="universite_ogrencisi">Üniversite Öğrencisi (Lisans)</option>
+                    <option value="universite_mezunu">Üniversite Mezunu</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col form-group">
+                    <label>Mezun Olunan Okul / Bölüm</label>
+                    <input type="text" name="okul_bolum" placeholder="Örn: Anadolu Lisesi / Fen Lisesi">
+                </div>
+                <div class="col form-group">
+                    <label>Not Ortalaması (OBP / GPA)</label>
+                    <input type="text" name="ortalama" placeholder="Örn: 85/100 veya 3.20/4.00">
+                </div>
+            </div>
+
+            <div class="section-title">3. Hedef ve Dil Seviyesi</div>
+            <div class="row">
+                <div class="col form-group">
+                    <label>Almanca Seviyeniz</label>
+                    <select name="almanca_seviye">
+                        <option value="0">Hiç bilmiyorum (A0)</option>
+                        <option value="A1">Başlangıç (A1)</option>
+                        <option value="A2">Temel (A2)</option>
+                        <option value="B1">Orta (B1)</option>
+                        <option value="B2">İyi (B2)</option>
+                        <option value="C1">İleri (C1)</option>
+                    </select>
+                </div>
+                <div class="col form-group">
+                    <label>İngilizce Seviyeniz</label>
+                    <select name="ingilizce_seviye">
+                        <option value="0">Hiç bilmiyorum</option>
+                        <option value="B1">Orta</option>
+                        <option value="C1">İleri</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Almanya'da Okumak İstediğiniz Bölüm?</label>
+                <input type="text" name="hedef_bolum" placeholder="Örn: Bilgisayar Mühendisliği, Psikoloji...">
+            </div>
+
+            <div class="section-title">4. Mesajınız</div>
+            <div class="form-group">
+                <label>Eklemek İstedikleriniz / Sorularınız</label>
+                <textarea name="mesaj" rows="4" placeholder="Varsa özel durumunuzu veya sorularınızı buraya yazabilirsiniz."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" required>
+                <label>Kişisel verilerimin işlenmesini ve benimle iletişime geçilmesini kabul ediyorum.</label>
+            </div>
+
+            <button type="submit" class="submit-btn">Başvuruyu Gönder <i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+</body>
+</html>
