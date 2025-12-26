@@ -15,7 +15,7 @@
 
     <style>
         /* GENEL AYARLAR */
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; background-color: #fcfcfc; }
         
         /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
@@ -32,47 +32,53 @@
         .page-header h1 { font-size: 3rem; margin: 0; font-weight: 700; }
         .page-header p { font-size: 1.2rem; opacity: 0.9; margin-top: 15px; font-weight: 300; }
 
-        /* HİZMET DETAYLARI */
-        .services-detail { padding: 80px 10%; background-color: #fff; }
-        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 60px auto; font-size: 1.1rem; color: #555; }
+        /* GİRİŞ METNİ */
+        .intro-section { padding: 60px 10%; text-align: center; background-color: #fff; }
+        .intro-text { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #555; }
+        .intro-text h2 { color: #0B2142; margin-bottom: 20px; }
 
-        /* PAKETLER GRID */
-        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .package-card {
-            background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
-            position: relative; display: flex; flex-direction: column;
-        }
-        .package-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
-        
-        .package-header { background-color: #f8f9fa; color: #0B2142; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; }
-        .package-header h3 { margin: 0; font-size: 1.8rem; }
-        .package-header .price { font-size: 1.1rem; color: #777; margin-top: 10px; }
-        
-        /* Öne Çıkan Paket Stili */
-        .package-header.featured { background-color: #0B2142; color: white; }
-        .package-header.featured .price { color: #ccc; }
+        /* SÜREÇ DETAYLARI (YENİ EKLENDİ) */
+        .process-details { padding: 60px 10%; background-color: #f9f9f9; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .process-item h3 { color: #D62727; display: flex; align-items: center; gap: 10px; }
+        .process-item i { font-size: 1.5rem; }
+        .process-item p { font-size: 0.95rem; color: #444; }
 
-        .package-body { padding: 40px 30px; flex-grow: 1; }
-        .package-body ul { list-style: none; padding: 0; margin: 0; }
-        .package-body li { margin-bottom: 20px; color: #555; display: flex; align-items: start; font-size: 0.95rem; }
-        .package-body li i { color: #27ae60; margin-right: 15px; margin-top: 5px; font-size: 1.1rem; }
+        /* PAKETLER GRID (Anasayfa ile aynı stil) */
+        .pricing-section { padding: 80px 10%; background-color: #fcfcfc; }
+        .pricing-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 50px; }
+        .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
         
-        .package-footer { padding: 30px; text-align: center; background-color: #f8f9fa; border-top: 1px solid #eee; }
-        
-        /* Buton Stilleri */
-        .btn-select {
-            display: inline-block; padding: 12px 35px; background-color: #D62727; color: white;
-            text-decoration: none; border-radius: 30px; font-weight: 600; transition: 0.3s;
+        .price-card {
+            flex: 1; min-width: 280px; max-width: 350px;
+            background: white; border: 1px solid #eee; border-radius: 20px;
+            overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column;
         }
-        .btn-select:hover { background-color: #b01f1f; }
+        .price-card.featured { border: 2px solid #D62727; transform: scale(1.05); z-index: 2; box-shadow: 0 10px 30px rgba(214, 39, 39, 0.15); }
+        .price-card:hover { transform: translateY(-10px); }
         
-        /* Beyaz Buton (Standart Paket İçin) */
-        .btn-white {
-            display: inline-block; padding: 12px 35px; background-color: white; color: #0B2142; border: 2px solid #0B2142;
-            text-decoration: none; border-radius: 30px; font-weight: 600; transition: 0.3s;
+        .price-header { background: #0B2142; color: white; padding: 30px; text-align: center; }
+        .featured .price-header { background: #D62727; }
+        .price-header h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+        .price-header .price { font-size: 2.2rem; font-weight: bold; }
+        .price-header .sub { font-size: 0.85rem; opacity: 0.8; }
+        
+        .price-body { padding: 25px; flex-grow: 1; }
+        .price-body ul { list-style: none; padding: 0; margin: 0; }
+        .price-body li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #555; font-size: 0.95rem; }
+        .price-body li i { color: #27ae60; margin-right: 10px; }
+        .price-body li.disabled { color: #aaa; text-decoration: line-through; }
+        .price-body li.disabled i { color: #ccc; }
+        
+        .price-footer { padding: 20px; text-align: center; background: #fcfcfc; }
+        .price-btn { 
+            display: block; padding: 12px; border-radius: 50px; 
+            background: #0B2142; color: white; text-decoration: none; font-weight: bold; transition: 0.3s;
         }
-        .btn-white:hover { background-color: #0B2142; color: white; }
+        .featured .price-btn { background: #D62727; }
+        .price-btn:hover { opacity: 0.9; }
+        .price-note { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #777; }
 
         /* FOOTER */
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -97,69 +103,99 @@
         <p>Bütçenize ve hedeflerinize en uygun danışmanlık çözümünü seçin.</p>
     </section>
 
-    <section class="services-detail">
+    <section class="intro-section">
         <div class="intro-text">
-            <p>Almanya'da üniversite eğitimi sürecinde ihtiyacınız olan desteği, esnek paketlerimizle sunuyoruz. İster sadece başvuru sürecinde, ister vize dahil tüm süreçte yanınızdayız.</p>
+            <h2>Neden Profesyonel Danışmanlık?</h2>
+            <p>Almanya'da üniversite eğitimi, sadece bir başvuru formundan ibaret değildir. Doğru bölüm seçimi, vize dosyasının kusursuz hazırlanması ve bürokratik süreçlerin yönetimi, kabul almanızı sağlayan en önemli faktörlerdir. Biz, sizi sadece bir "dosya numarası" olarak görmüyor; akademik geçmişinize ve kariyer hedeflerinize özel bir yol haritası çiziyoruz.</p>
         </div>
+    </section>
 
-        <div class="package-grid">
-            <div class="package-card">
-                <div class="package-header">
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            
+            <div class="price-card">
+                <div class="price-header">
+                    <h3>Birebir Danışmanlık</h3>
+                    <div class="price">49€</div>
+                    <div class="sub">45 Dakika Online Görüşme</div>
+                </div>
+                <div class="price-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Canlı Video Görüşme</li>
+                        <li><i class="fa-solid fa-check"></i> Kişiye Özel Soru-Cevap</li>
+                        <li><i class="fa-solid fa-check"></i> Yol Haritası Belirleme</li>
+                        <li><i class="fa-solid fa-check"></i> Bölüm & Şehir Tavsiyesi</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Başvuru İşlemleri</li>
+                    </ul>
+                </div>
+                <div class="price-footer">
+                    <a href="randevu.html" class="price-btn">Randevu Al</a>
+                </div>
+            </div>
+
+            <div class="price-card">
+                <div class="price-header">
                     <h3>Başvuru Paketi</h3>
-                    <div class="price">Akademik Kabul Odaklı</div>
+                    <div class="price">350€</div>
+                    <div class="sub">Lisans / Yüksek Lisans Başlangıç</div>
                 </div>
-                <div class="package-body">
+                <div class="price-body">
                     <ul>
-                        <li><i class="fa-solid fa-check"></i> <strong>3 Üniversite Başvurusu</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Bölüm ve Şehir Analizi</li>
-                        <li><i class="fa-solid fa-check"></i> Uni-Assist Hesabı Yönetimi</li>
-                        <li><i class="fa-solid fa-check"></i> Evrak Kontrolü ve Düzenleme</li>
-                        <li><i class="fa-solid fa-check"></i> Motivasyon Mektubu Taslağı</li>
+                        <li><i class="fa-solid fa-check"></i> 5 Üniversiteye Başvuru</li>
+                        <li><i class="fa-solid fa-check"></i> Bölüm Araştırması</li>
+                        <li><i class="fa-solid fa-check"></i> Motivasyon Mektubu Desteği</li>
+                        <li><i class="fa-solid fa-check"></i> Kayıt İşlemleri</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Vize Danışmanlığı</li>
                     </ul>
                 </div>
-                <div class="package-footer">
-                    <a href="iletisim.html" class="btn-select">Randevu Al</a>
+                <div class="price-footer">
+                    <a href="iletisim.html" class="price-btn">Hemen Başvur</a>
                 </div>
             </div>
 
-            <div class="package-card">
-                <div class="package-header featured">
-                    <h3>Standart Paket</h3>
-                    <div class="price">Vize & Kabul Danışmanlığı</div>
-                </div>
-                <div class="package-body">
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> <strong>7 Üniversite Başvurusu</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Profesyonel Motivasyon Mektubu Yazımı</li>
-                        <li><i class="fa-solid fa-check"></i> Şartlı Kabul (Dil Okulu) Başvuruları</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Vize Dosyası Hazırlama</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Vize Motivasyon Mektubu</li>
-                        <li><i class="fa-solid fa-check"></i> Bloke Hesap & Sigorta İşlemleri</li>
-                    </ul>
-                </div>
-                <div class="package-footer">
-                    <a href="iletisim.html" class="btn-white">Hemen Başvur</a>
-                </div>
-            </div>
-
-            <div class="package-card">
-                <div class="package-header">
+            <div class="price-card featured">
+                <div class="price-header">
                     <h3>Premium Paket</h3>
-                    <div class="price">VIP & Kapsamlı Süreç</div>
+                    <div class="price">750€</div>
+                    <div class="sub">Her Şey Dahil (1 Yıl Destek)</div>
                 </div>
-                <div class="package-body">
+                <div class="price-body">
                     <ul>
-                        <li><i class="fa-solid fa-check"></i> <strong>10 Üniversite Başvurusu</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Risk Analizi ve B Planı Oluşturma</li>
-                        <li><i class="fa-solid fa-check"></i> Dil Okulu Kayıt İşlemleri</li>
-                        <li><i class="fa-solid fa-check"></i> <strong>Üniversite Kayıt (Immatrikulation) Desteği</strong></li>
-                        <li><i class="fa-solid fa-check"></i> Yurt Başvuru Yönlendirmesi (Devlet Yurtları)</li>
-                        <li><i class="fa-solid fa-check"></i> Vize Reddi Durumunda İtiraz Desteği</li>
+                        <li><i class="fa-solid fa-check"></i> 10 Üniversiteye Başvuru</li>
+                        <li><i class="fa-solid fa-check"></i> Motivasyon Mektubu & CV</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Vize Danışmanlığı</strong></li>
+                        <li><i class="fa-solid fa-check"></i> <strong>Yurt & Konaklama Desteği</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Bloke Hesap & Sigorta</li>
+                        <li><i class="fa-solid fa-check"></i> <strong>İlk 1 Yıl Danışmanlık</strong></li>
                     </ul>
                 </div>
-                <div class="package-footer">
-                    <a href="iletisim.html" class="btn-select">Hemen Başvur</a>
+                <div class="price-footer">
+                    <a href="iletisim.html" class="price-btn">Hemen Başvur</a>
                 </div>
+            </div>
+
+        </div>
+        <p class="price-note">*Fiyatlara Uni-Assist ve tercüme ücretleri dahil değildir.</p>
+    </section>
+
+    <section class="process-details">
+        <h2 style="text-align: center; color: #0B2142; margin-bottom: 40px;">Hizmet Kapsamımızda Neler Var?</h2>
+        <div class="process-grid">
+            <div class="process-item">
+                <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Üniversite ve Bölüm Analizi</h3>
+                <p>Not ortalamanız, dil seviyeniz ve bütçenize en uygun üniversiteleri analiz ediyoruz. Risk almadan, kabul şansınızın en yüksek olduğu okullara odaklanıyoruz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-file-contract"></i> Profesyonel Evrak Yönetimi</h3>
+                <p>Motivasyon mektubu (Motivationsschreiben) ve CV'nizi Alman akademik formatına uygun hale getiriyoruz. Tercüme ve noter onayı süreçlerinde sizi doğru adreslere yönlendiriyoruz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-passport"></i> Vize Dosyası Hazırlığı</h3>
+                <p>Premium paketimizde, konsolosluğun en çok dikkat ettiği detaylara göre vize dosyanızı hazırlıyor, bloke hesap ve sağlık sigortası açılış işlemlerinizi birebir yönetiyoruz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-language"></i> Dil Okulu ve Şartlı Kabul</h3>
+                <p>Henüz Almanca bilmiyorsanız, sizi üniversite bünyesindeki veya anlaşmalı dil kurslarına kaydediyor; şartlı kabul belgesiyle vize almanızı kolaylaştırıyoruz.</p>
             </div>
         </div>
     </section>
