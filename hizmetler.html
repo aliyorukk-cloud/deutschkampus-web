@@ -14,10 +14,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* GENEL AYARLAR (Index ile aynı) */
+        /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; }
         
-        /* HEADER & MENÜ */
+        /* HEADER & MENÜ (Anasayfa ile birebir aynı) */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
         .nav-links a { margin-left: 20px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
@@ -36,7 +36,7 @@
         .services-detail { padding: 80px 10%; background-color: #fff; }
         .intro-text { text-align: center; max-width: 800px; margin: 0 auto 60px auto; font-size: 1.1rem; color: #555; }
 
-        /* PAKETLER GRID (Index ile uyumlu tasarım) */
+        /* PAKETLER GRID */
         .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .package-card {
             background: white; border-radius: 15px; overflow: hidden; border: 1px solid #eee;
@@ -48,6 +48,8 @@
         .package-header { background-color: #f8f9fa; color: #0B2142; padding: 40px 20px; text-align: center; border-bottom: 1px solid #eee; }
         .package-header h3 { margin: 0; font-size: 1.8rem; }
         .package-header .price { font-size: 1.1rem; color: #777; margin-top: 10px; }
+        
+        /* Öne Çıkan Paket Stili */
         .package-header.featured { background-color: #0B2142; color: white; }
         .package-header.featured .price { color: #ccc; }
 
@@ -57,19 +59,20 @@
         .package-body li i { color: #27ae60; margin-right: 15px; margin-top: 5px; font-size: 1.1rem; }
         
         .package-footer { padding: 30px; text-align: center; background-color: #f8f9fa; border-top: 1px solid #eee; }
+        
+        /* Buton Stilleri */
         .btn-select {
             display: inline-block; padding: 12px 35px; background-color: #D62727; color: white;
             text-decoration: none; border-radius: 30px; font-weight: 600; transition: 0.3s;
         }
         .btn-select:hover { background-color: #b01f1f; }
-
-        /* TEKİL HİZMETLER */
-        .single-services { padding: 60px 10%; background-color: #f4f7f6; }
-        .single-services h2 { text-align: center; color: #0B2142; margin-bottom: 40px; }
-        .single-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .single-card { background: white; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .single-card i { color: #D62727; font-size: 2rem; margin-bottom: 15px; }
-        .single-card h4 { margin: 10px 0; color: #0B2142; }
+        
+        /* Beyaz Buton (Standart Paket İçin) */
+        .btn-white {
+            display: inline-block; padding: 12px 35px; background-color: white; color: #0B2142; border: 2px solid #0B2142;
+            text-decoration: none; border-radius: 30px; font-weight: 600; transition: 0.3s;
+        }
+        .btn-white:hover { background-color: #0B2142; color: white; }
 
         /* FOOTER */
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -81,9 +84,10 @@
         <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
         <nav class="nav-links">
             <a href="index.html">Ana Sayfa</a>
-            <a href="universiteler.html">Üniversiteler</a>
-            <a href="hizmetler.html" style="color: #D62727;">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="hizmetlerimiz.html" style="color: #D62727;">Hizmetlerimiz</a>
+            <a href="almanya-egitim.html">Almanya'da Eğitim</a>
+            <a href="universiteler.html">Üniversiteler</a>
             <a href="iletisim.html">İletişim</a>
         </nav>
     </header>
@@ -114,7 +118,7 @@
                     </ul>
                 </div>
                 <div class="package-footer">
-                    <a href="iletisim.html" class="btn-select">Bilgi Al</a>
+                    <a href="https://meet.google.com/" target="_blank" class="btn-select">Randevu Al</a>
                 </div>
             </div>
 
@@ -134,7 +138,7 @@
                     </ul>
                 </div>
                 <div class="package-footer">
-                    <a href="iletisim.html" class="btn-select" style="background-color: white; color: #0B2142;">Paketi Seç</a>
+                    <a href="iletisim.html" class="btn-white">Hemen Başvur</a>
                 </div>
             </div>
 
@@ -154,30 +158,8 @@
                     </ul>
                 </div>
                 <div class="package-footer">
-                    <a href="iletisim.html" class="btn-select">Bilgi Al</a>
+                    <a href="iletisim.html" class="btn-select">Hemen Başvur</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="single-services">
-        <h2>Ek Hizmetlerimiz</h2>
-        <div class="single-grid">
-            <div class="single-card">
-                <i class="fa-solid fa-file-contract"></i>
-                <h4>Sadece Vize Danışmanlığı</h4>
-            </div>
-            <div class="single-card">
-                <i class="fa-solid fa-language"></i>
-                <h4>Dil Okulu Kaydı</h4>
-            </div>
-            <div class="single-card">
-                <i class="fa-solid fa-house"></i>
-                <h4>Konaklama Danışmanlığı</h4>
-            </div>
-            <div class="single-card">
-                <i class="fa-solid fa-user-graduate"></i>
-                <h4>Garantörlük İşlemleri</h4>
             </div>
         </div>
     </section>
