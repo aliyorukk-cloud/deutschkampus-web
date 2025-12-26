@@ -17,10 +17,10 @@
         /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
         
-        /* HEADER */
+        /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
-        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
 
         /* WHATSAPP BUTONU */
@@ -56,14 +56,48 @@
         }
         .btn:hover { background-color: #b01f1f; transform: translateY(-3px); }
 
-        /* HİZMETLER (FEATURES) */
-        .features { padding: 80px 10%; text-align: center; background-color: #f9f9f9; }
+        /* NEDEN BİZ (Features) */
+        .features { padding: 80px 10%; text-align: center; background-color: #fff; }
         .features h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; font-weight: 700; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .card { background: white; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
-        .card:hover { transform: translateY(-10px); }
-        .card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
-        .card h3 { color: #0B2142; font-size: 1.4rem; margin-bottom: 15px; }
+        .feature-card { background: #f9f9f9; padding: 40px 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
+        .feature-card h3 { color: #0B2142; font-size: 1.4rem; margin-bottom: 15px; }
+
+        /* HİZMET PAKETLERİ (Pricing/Services) */
+        .packages-section { padding: 80px 10%; background-color: #f4f7f6; text-align: center; }
+        .packages-section h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 20px; font-weight: 700; }
+        .packages-section p { margin-bottom: 50px; color: #666; }
+        
+        .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .package-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s;
+            position: relative; display: flex; flex-direction: column;
+        }
+        .package-card:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .package-header { background-color: #0B2142; color: white; padding: 30px 20px; }
+        .package-header h3 { margin: 0; font-size: 1.5rem; }
+        .package-header .price { font-size: 1.1rem; opacity: 0.8; margin-top: 5px; font-weight: 300; }
+        .package-body { padding: 30px; text-align: left; flex-grow: 1; }
+        .package-body ul { list-style: none; padding: 0; margin: 0; }
+        .package-body li { margin-bottom: 15px; color: #555; display: flex; align-items: start; }
+        .package-body li i { color: #27ae60; margin-right: 10px; margin-top: 5px; }
+        .package-footer { padding: 20px; background-color: #f9f9f9; border-top: 1px solid #eee; }
+        .btn-outline {
+            display: inline-block; padding: 10px 25px; border: 2px solid #D62727;
+            color: #D62727; text-decoration: none; border-radius: 30px; font-weight: 600;
+            transition: 0.3s;
+        }
+        .btn-outline:hover { background-color: #D62727; color: white; }
+        
+        /* POPÜLER PAKET VURGUSU */
+        .popular-badge {
+            position: absolute; top: 0; right: 0; background-color: #D62727;
+            color: white; font-size: 0.8rem; padding: 5px 15px;
+            border-bottom-left-radius: 10px; font-weight: bold;
+        }
 
         /* EĞİTİM TÜRLERİ KARŞILAŞTIRMA TABLOSU */
         .edu-types { padding: 80px 10%; background-color: #fff; }
@@ -80,7 +114,7 @@
         .bg-aus { background-color: #27ae60; }
 
         /* SSS (FAQ) ve NC HESAPLAMA CSS */
-        .faq-section { padding: 80px 10%; background-color: #f4f7f6; }
+        .faq-section { padding: 80px 10%; background-color: #f8f9fa; }
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
         
@@ -93,19 +127,17 @@
         }
         .accordion-header:hover { background-color: #fdfdfd; color: #D62727; }
         
-        /* İçeriğin açılıp kapanması için CSS transition */
         .accordion-content {
             max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out;
             padding: 0 20px; color: #555; font-size: 0.95rem; line-height: 1.6;
         }
         .accordion-content p { margin-bottom: 20px; margin-top: 10px;}
-        
         .icon-plus { transition: 0.3s; }
         .active .icon-plus { transform: rotate(45deg); color: #D62727; }
 
         /* NC HESAP MAKİNESİ STİLİ */
         .nc-calculator {
-            background-color: #f8f9fa; border: 1px solid #e0e0e0; padding: 20px; border-radius: 10px; margin: 15px 0 25px 0;
+            background-color: #f0f2f5; border: 1px solid #dcdcdc; padding: 20px; border-radius: 10px; margin: 15px 0 25px 0;
             display: flex; flex-direction: column; gap: 10px;
         }
         .nc-calculator h4 { margin-top: 0; color: #0B2142; }
@@ -131,7 +163,9 @@
         <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
         <nav class="nav-links">
             <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
-            <a href="universiteler.html">Üniversiteler</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="almanya-egitim.html">Almanya'da Eğitim</a> <a href="universiteler.html">Üniversiteler</a>
             <a href="iletisim.html">İletişim</a>
         </nav>
     </header>
@@ -170,20 +204,84 @@
     <section class="features">
         <h2>Neden DeutschKampus?</h2>
         <div class="grid">
-            <div class="card">
+            <div class="feature-card">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <h3>Profesyonel Planlama</h3>
                 <p>Not ortalamanıza ve hedeflerinize en uygun üniversiteleri analiz ediyor, kabul şansınızı artıran stratejiler geliştiriyoruz.</p>
             </div>
-            <div class="card">
+            <div class="feature-card">
                 <i class="fa-solid fa-passport"></i>
                 <h3>Vize & Bürokrasi</h3>
                 <p>Bloke hesap, sağlık sigortası ve vize başvuru dosyanızı eksiksiz hazırlıyor, sizi karmaşık süreçlerden kurtarıyoruz.</p>
             </div>
-            <div class="card">
+            <div class="feature-card">
                 <i class="fa-solid fa-house-user"></i>
                 <h3>Yerel Destek</h3>
                 <p>Almanya'ya indikten sonra da yanınızdayız. Konaklama bulma ve şehir kaydı gibi işlemlerde rehberlik ediyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="packages-section">
+        <h2>Size Uygun Hizmet Paketleri</h2>
+        <p>Bütçenize ve ihtiyacınıza uygun çözümler sunuyoruz.</p>
+        
+        <div class="package-grid">
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Başlangıç</h3>
+                    <div class="price">Temel Danışmanlık</div>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Üniversite Araştırması</li>
+                        <li><i class="fa-solid fa-check"></i> Bölüm Analizi</li>
+                        <li><i class="fa-solid fa-check"></i> Başvuru Evrak Listesi</li>
+                        <li><i class="fa-solid fa-check"></i> 1 Adet Üniversite Başvurusu</li>
+                    </ul>
+                </div>
+                <div class="package-footer">
+                    <a href="iletisim.html" class="btn-outline">Teklif Al</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="popular-badge">Popüler</div>
+                <div class="package-header">
+                    <h3>Standart</h3>
+                    <div class="price">Kapsamlı Süreç</div>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> <strong>5 Üniversite Başvurusu</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Motivasyon Mektubu Yazımı</li>
+                        <li><i class="fa-solid fa-check"></i> Garantili Şartlı Kabul*</li>
+                        <li><i class="fa-solid fa-check"></i> Vize Dosyası Hazırlığı</li>
+                        <li><i class="fa-solid fa-check"></i> Bloke Hesap Açılışı Desteği</li>
+                    </ul>
+                </div>
+                <div class="package-footer">
+                    <a href="iletisim.html" class="btn-outline" style="background-color:#D62727; color:white;">Teklif Al</a>
+                </div>
+            </div>
+
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Premium</h3>
+                    <div class="price">Anahtar Teslim</div>
+                </div>
+                <div class="package-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> <strong>Sınırsız Başvuru</strong></li>
+                        <li><i class="fa-solid fa-check"></i> Vize Mülakat Simülasyonu</li>
+                        <li><i class="fa-solid fa-check"></i> Almanya'da Karşılama</li>
+                        <li><i class="fa-solid fa-check"></i> Konaklama (Yurt/Ev) Bulma</li>
+                        <li><i class="fa-solid fa-check"></i> Şehir Kaydı & Banka İşlemleri</li>
+                    </ul>
+                </div>
+                <div class="package-footer">
+                    <a href="iletisim.html" class="btn-outline">Teklif Al</a>
+                </div>
             </div>
         </div>
     </section>
