@@ -59,14 +59,31 @@
         .contact-info { flex: 1; min-width: 300px; }
         .info-box {
             background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            display: flex; align-items: center; gap: 20px; margin-bottom: 20px; transition: 0.3s;
+            display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; transition: 0.3s; /* align-items: flex-start yapıldı ki ikon yukarıda kalsın */
         }
         .info-box:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .info-box i { font-size: 2rem; color: #D62727; }
+        .info-box i { font-size: 2rem; color: #D62727; margin-top: 5px; }
         .info-box h3 { margin: 0 0 5px 0; font-size: 1.2rem; color: #0B2142; }
         .info-box p { margin: 0; color: #666; font-size: 0.95rem; }
         .info-box a { text-decoration: none; color: #666; transition: 0.3s; }
         .info-box a:hover { color: #D62727; }
+
+        /* UYARI NOTU İÇİN STİL (YENİ EKLENDİ) */
+        .note-text {
+            margin-top: 15px;
+            font-size: 0.85rem;
+            color: #d62727;
+            background-color: #fffafa;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px dashed #d62727;
+            line-height: 1.4;
+        }
+        .note-text a {
+            color: #d62727;
+            font-weight: 700;
+            text-decoration: underline;
+        }
 
         /* İLETİŞİM FORMU */
         .contact-form-wrapper {
@@ -125,11 +142,18 @@
 
     <div class="contact-container">
         <div class="contact-info">
+            
             <div class="info-box">
                 <i class="fa-solid fa-phone"></i>
                 <div>
                     <h3>Telefon / WhatsApp</h3>
                     <p><a href="https://wa.me/4917612345678" target="_blank">+49 176 123 45 678</a></p>
+                    
+                    <div class="note-text">
+                        Sadece danışmanlık başvurusu yapanlara yazılı olarak dönüş yapılır. Telefonla aramalara cevap verilmez. 
+                        Yüz yüze görüşme için <a href="basvuru.html">45 dakikalık online görüşme</a> hizmetimize başvurun.
+                    </div>
+
                 </div>
             </div>
             
@@ -151,7 +175,8 @@
         </div>
 
         <div class="contact-form-wrapper">
-            <h2>İletişim Formu</h2> <form action="ACTION_LINKI_BURAYA_YAPISTIR" method="POST">
+            <h2>İletişim Formu</h2>
+            <form action="ACTION_LINKI_BURAYA_YAPISTIR" method="POST">
                 
                 <div class="form-group">
                     <label>Adınız Soyadınız</label>
