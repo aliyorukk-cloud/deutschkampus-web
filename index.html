@@ -15,8 +15,7 @@
       gtag('config', 'G-NF9PCGG0SB');
     </script>
 
-    <meta name="description" content="Almanya'da üniversite eğitimi, şartlı kabul, vize ve bloke hesap süreçlerinde uzman danışmanlık. Uygun fiyatlı paketlerimizi inceleyin.">
-    <meta name="keywords" content="almanya eğitim, şartlı kabul, almanya vizesi, bloke hesap, deutschkampus, danışmanlık ücretleri">
+    <meta name="description" content="Almanya'da üniversite eğitimi, şartlı kabul, vize ve bloke hesap süreçlerinde uzman danışmanlık.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -63,7 +62,7 @@
         }
         .btn:hover { background-color: #b01f1f; transform: translateY(-3px); }
 
-        /* ÖZELLİKLER */
+        /* ÖZELLİKLER (NEDEN BİZ - GERİ GELDİ) */
         .features { padding: 80px 10%; text-align: center; background-color: #fff; }
         .features h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
@@ -72,28 +71,8 @@
         .card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
         .card h3 { color: #0B2142; margin-bottom: 15px; }
 
-        /* SÜREÇ ADIMLARI */
-        .steps-section { padding: 80px 10%; background-color: #f4f7f6; text-align: center; }
-        .steps-section h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; }
-        .steps-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
-        .step-card { flex: 1; min-width: 200px; max-width: 250px; text-align: center; position: relative; }
-        .step-icon { 
-            width: 70px; height: 70px; background: #D62727; color: white; 
-            border-radius: 50%; display: flex; justify-content: center; align-items: center; 
-            font-size: 1.5rem; margin: 0 auto 20px auto; font-weight: bold;
-            box-shadow: 0 5px 15px rgba(214, 39, 39, 0.3); transition: 0.3s;
-        }
-        .step-card:hover .step-icon { transform: scale(1.1); }
-        .step-card h3 { font-size: 1.2rem; color: #0B2142; margin-bottom: 10px; font-weight: 700; }
-        .step-card::after {
-            content: '\f054'; font-family: "Font Awesome 6 Free"; font-weight: 900;
-            position: absolute; right: -25px; top: 25px; color: #ddd; font-size: 1.5rem;
-        }
-        .step-card:last-child::after { display: none; }
-        @media (max-width: 900px) { .step-card::after { display: none; } }
-
         /* FİYAT PAKETLERİ */
-        .pricing-section { padding: 80px 10%; background-color: white; }
+        .pricing-section { padding: 80px 10%; background-color: #fcfcfc; }
         .pricing-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 50px; }
         .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
         
@@ -126,50 +105,27 @@
         }
         .featured .price-btn { background: #D62727; }
         .price-btn:hover { opacity: 0.9; }
-
         .price-note { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #777; }
 
-        /* DİĞER BÖLÜMLER (Tablo, SSS vb) */
-        .guide-section { padding: 80px 10%; background-color: #f9f9f9; }
-        .guide-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 50px; }
-        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .guide-card { 
-            border: 1px solid #eee; border-radius: 15px; overflow: hidden; transition: 0.3s;
-            background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        /* SÜREÇ ADIMLARI */
+        .steps-section { padding: 80px 10%; background-color: #fff; text-align: center; }
+        .steps-section h2 { font-size: 2.2rem; color: #0B2142; margin-bottom: 50px; }
+        .steps-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        .step-card { flex: 1; min-width: 200px; max-width: 250px; text-align: center; position: relative; }
+        .step-icon { 
+            width: 70px; height: 70px; background: #D62727; color: white; 
+            border-radius: 50%; display: flex; justify-content: center; align-items: center; 
+            font-size: 1.5rem; margin: 0 auto 20px auto; font-weight: bold;
+            box-shadow: 0 5px 15px rgba(214, 39, 39, 0.3); transition: 0.3s;
         }
-        .guide-header { background: #0B2142; color: white; padding: 20px; text-align: center; }
-        .guide-header i { font-size: 2rem; margin-bottom: 10px; display: block; color: #D62727; }
-        .guide-body { padding: 30px; color: #555; font-size: 0.95rem; }
-        .guide-body ul { padding-left: 20px; margin: 0; }
-
-        .edu-types { padding: 80px 10%; background-color: white; }
-        .edu-types h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
-        .table-container { overflow-x: auto; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.05); background: white; border: 1px solid #eee; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        thead { background-color: #0B2142; color: white; }
-        th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid #eee; }
-        tbody tr:hover { background-color: #f9f9f9; }
-        .type-badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; }
-        .bg-uni { background-color: #3498db; }
-        .bg-fh { background-color: #e67e22; }
-        .bg-aus { background-color: #27ae60; }
-
-        .faq-section { padding: 80px 10%; background-color: #f4f7f6; }
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .accordion-item { background: white; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); overflow: hidden; }
-        .accordion-header {
-            background: none; border: none; width: 100%; text-align: left;
-            padding: 20px; font-size: 1.1rem; font-weight: 600; color: #0B2142;
-            cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-family: 'Montserrat', sans-serif;
+        .step-card:hover .step-icon { transform: scale(1.1); }
+        .step-card h3 { font-size: 1.2rem; color: #0B2142; margin-bottom: 10px; font-weight: 700; }
+        .step-card::after {
+            content: '\f054'; font-family: "Font Awesome 6 Free"; font-weight: 900;
+            position: absolute; right: -25px; top: 25px; color: #ddd; font-size: 1.5rem;
         }
-        .active .icon-plus { transform: rotate(45deg); color: #D62727; }
-        .accordion-content { max-height: 0; overflow: hidden; transition: 0.3s; padding: 0 20px; color: #555; }
-
-        .nc-calculator { background: #fdfdfd; border: 1px solid #ddd; padding: 20px; border-radius: 10px; margin: 15px 0; }
-        .nc-row { display: flex; gap: 10px; flex-wrap: wrap; }
-        .nc-calculator select, .nc-calculator input { padding: 10px; border: 1px solid #ccc; flex: 1; border-radius: 5px; }
-        .nc-calculator button { background: #D62727; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
-        .nc-result { font-weight: bold; color: #0B2142; margin-top: 10px; display: none; }
+        .step-card:last-child::after { display: none; }
+        @media (max-width: 900px) { .step-card::after { display: none; } }
 
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; }
     </style>
