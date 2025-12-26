@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz & Danışmanlık Süreci | DeutschKampus</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; background-color: #fcfcfc; line-height: 1.6; }
+        
+        /* HEADER */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 60px; width: auto; } 
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+
+        /* HERO ALANI */
+        .page-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600');
+            background-size: cover; background-position: center;
+            padding: 100px 20px; text-align: center; color: white;
+        }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        /* İÇERİK YAPISI */
+        .content-section { padding: 80px 10%; }
+        .section-title { color: #0B2142; font-size: 2rem; margin-bottom: 30px; border-left: 5px solid #D62727; padding-left: 15px; }
+        .text-block { margin-bottom: 50px; font-size: 1.05rem; color: #555; }
+        
+        /* KİMLER İÇİN? */
+        .target-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .target-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 3px solid #0B2142; }
+        .target-card h3 { color: #D62727; margin-top: 0; }
+
+        /* DETAYLI SÜREÇ (AKORDİYON GÖRÜNÜMÜ) */
+        .process-step { display: flex; gap: 30px; margin-bottom: 40px; align-items: flex-start; }
+        .step-number { 
+            background: #D62727; color: white; font-size: 1.5rem; font-weight: bold; 
+            min-width: 60px; height: 60px; border-radius: 50%; display: flex; 
+            justify-content: center; align-items: center; flex-shrink: 0;
+        }
+        .step-content h3 { margin: 0 0 10px 0; color: #0B2142; font-size: 1.4rem; }
+        .step-content p { margin: 0; color: #666; }
+
+        /* PAKET DETAYLARI TABLOSU */
+        .details-table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .details-table th { background: #0B2142; color: white; padding: 15px; text-align: left; }
+        .details-table td { padding: 15px; border-bottom: 1px solid #eee; color: #555; }
+        .details-table tr:last-child td { border-bottom: none; }
+        .check { color: green; font-weight: bold; }
+        .cross { color: #ccc; }
+
+        /* CTA */
+        .cta-box { background: #0B2142; color: white; padding: 50px; text-align: center; border-radius: 20px; margin-top: 50px; }
+        .cta-btn { 
+            background: #D62727; color: white; padding: 15px 40px; text-decoration: none; 
+            font-weight: bold; border-radius: 50px; display: inline-block; margin-top: 20px; transition: 0.3s;
+        }
+        .cta-btn:hover { background: #b01f1f; transform: translateY(-3px); }
+
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="hizmetler.html" style="color: #D62727;">Hizmetlerimiz</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Almanya Eğitim Danışmanlığı</h1>
+        <p>Geleceğinizi şansa bırakmayın. Başvuru, kabul, vize ve Almanya'ya yerleşim süreçlerinde profesyonel yol arkadaşınız.</p>
+    </div>
+
+    <section class="content-section">
+        
+        <h2 class="section-title">Danışmanlık Süreci Nasıl İşler?</h2>
+        <div class="text-block">
+            <p>Almanya’da üniversite eğitimi almak, karmaşık bürokratik süreçleri ve katı başvuru tarihlerini takip etmeyi gerektirir. DeutschKampus olarak, öğrencinin akademik geçmişine en uygun üniversiteleri belirlemekten, vize dosyasının hazırlanmasına kadar tüm süreçte yanınızdayız.</p>
+            <p>Amacımız sadece bir kabul belgesi almanızı sağlamak değil; Almanya'daki yeni hayatınıza sorunsuz bir başlangıç yapmanızı garanti etmektir.</p>
+        </div>
+
+        <h2 class="section-title">Hizmetlerimiz Kimler İçin?</h2>
+        <div class="target-grid">
+            <div class="target-card">
+                <h3>Lise Mezunları</h3>
+                <p>Türkiye'de YKS sınavını kazanıp Almanya'da Lisans eğitimi almak isteyen öğrenciler.</p>
+            </div>
+            <div class="target-card">
+                <h3>Üniversite Öğrencileri</h3>
+                <p>Eğitimini yarıda bırakıp veya tamamlayıp Almanya'ya geçiş yapmak isteyenler.</p>
+            </div>
+            <div class="target-card">
+                <h3>Yüksek Lisans Adayları</h3>
+                <p>Lisans diplomasına sahip olup kariyerini Almanya'da Master ile taçlandırmak isteyenler.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Adım Adım Yol Haritası</h2>
+        
+        <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Analiz ve Planlama (49€ Paket)</h3>
+                <p>Her öğrencinin durumu farklıdır. İlk aşamada not ortalamanız, dil seviyeniz ve bütçeniz analiz edilir. "Şartlı kabul mü, doğrudan kabul mü?" sorusunun cevabı verilir ve size özel bir üniversite listesi oluşturulur. Bu aşama, 45 dakikalık birebir online görüşmemizi kapsar.</p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Başvuru ve Kabul (350€ Paket)</h3>
+                <p>Belirlenen üniversitelere (Uni-Assist veya doğrudan) başvurular yapılır. Motivasyon mektubunuz (Motivationsschreiben) ve özgeçmişiniz (CV) Alman akademik standartlarına göre düzenlenir. Bürokratik hatalar sıfıra indirilir.</p>
+            </div>
+        </div>
+
+        <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Vize ve Yerleşim (750€ Paket)</h3>
+                <p>Kabul sonrası en kritik aşama vizedir. Bloke hesap açılışı, sağlık sigortası ve vize motivasyon mektubu hazırlanır. Almanya'ya indikten sonra ikametgah kaydı (Anmeldung) ve oturum kartı işlemlerinde de yanınızdayız.</p>
+            </div>
+        </div>
+
+        <h2 class="section-title">Hizmet Kapsamı Detayları</h2>
+        <table class="details-table">
+            <thead>
+                <tr>
+                    <th>Hizmet / Destek</th>
+                    <th>Başvuru Paketi</th>
+                    <th>Premium Paket</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Üniversite Araştırması & Liste Oluşturma</td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td>Motivasyon Mektubu & CV Düzenleme</td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td>Üniversite Başvuruları (Adet)</td>
+                    <td>5 Okul</td>
+                    <td>10 Okul</td>
+                </tr>
+                <tr>
+                    <td>Vize Danışmanlığı & Dosya Hazırlığı</td>
+                    <td class="cross"><i class="fa-solid fa-xmark"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td>Bloke Hesap & Sağlık Sigortası Desteği</td>
+                    <td class="cross"><i class="fa-solid fa-xmark"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td>Yurt & Konaklama Başvurusu</td>
+                    <td class="cross"><i class="fa-solid fa-xmark"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+                <tr>
+                    <td>Almanya İçi Bürokratik Destek (1 Yıl)</td>
+                    <td class="cross"><i class="fa-solid fa-xmark"></i></td>
+                    <td class="check"><i class="fa-solid fa-check"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-box">
+            <h2>Hayallerinizi Ertelemeyin</h2>
+            <p>İlk adımı atmak için profesyonel bir yol haritası belirleyelim.</p>
+            <a href="randevu.html" class="cta-btn">Randevu Al (49€)</a>
+        </div>
+
+    </section>
+
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+</body>
+</html>
