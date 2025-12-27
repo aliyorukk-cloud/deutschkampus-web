@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* GENEL AYARLAR (Diğer sayfalarla uyumlu) */
+        /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
         
         /* HEADER & MENÜ (MOBİL UYUMLU) */
@@ -55,10 +55,39 @@
         .blog-excerpt { font-size: 0.95rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
         
         .read-more {
-            text-decoration: none; color: #0B2142; font-weight: 700; border-bottom: 2px solid #D62727; 
-            align-self: flex-start; transition: 0.3s; padding-bottom: 2px;
+            background: none; border: none; padding: 0; cursor: pointer;
+            color: #0B2142; font-weight: 700; border-bottom: 2px solid #D62727; 
+            align-self: flex-start; transition: 0.3s; font-size: 1rem; font-family: inherit;
         }
         .read-more:hover { color: #D62727; }
+
+        /* MODAL (AÇILIR PENCERE) */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.8); z-index: 2000;
+            display: none; justify-content: center; align-items: flex-start; padding: 40px 20px;
+            backdrop-filter: blur(5px); overflow-y: auto;
+        }
+        .modal-content {
+            background: white; width: 100%; max-width: 800px;
+            border-radius: 20px; position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            animation: slideUp 0.3s ease-out; margin-bottom: 50px;
+        }
+        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+        .modal-header { background: #0B2142; padding: 30px; color: white; border-radius: 20px 20px 0 0; position: relative; }
+        .modal-close { 
+            position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; transition: 0.3s;
+        }
+        .modal-close:hover { color: #D62727; transform: rotate(90deg); }
+        .modal-title { margin: 0; font-size: 1.8rem; line-height: 1.3; padding-right: 30px; }
+
+        .modal-body { padding: 40px; color: #444; font-size: 1rem; line-height: 1.8; } 
+        .modal-body h3 { color: #D62727; margin-top: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px; font-size: 1.3rem; }
+        .modal-body ul { margin-bottom: 20px; padding-left: 20px; }
+        .modal-body li { margin-bottom: 10px; }
+        .modal-body strong { color: #0B2142; font-weight: 700; }
 
         /* FOOTER */
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
@@ -113,17 +142,17 @@
                     <span class="blog-category">Yaşam</span>
                     <h3 class="blog-title">Almanya'da Aylık Öğrenci Giderleri 2025</h3>
                     <p class="blog-excerpt">Kira, sağlık sigortası, market alışverişi ve ulaşım... Bir öğrencinin Almanya'da geçinmesi için gereken minimum bütçe nedir? Kalem kalem hesapladık.</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('yasam')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800" alt="Çalışma İzni" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800" alt="Çalışma İzni" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Kariyer</span>
                     <h3 class="blog-title">Öğrenciyken Çalışmak: 120 Gün Kuralı</h3>
                     <p class="blog-excerpt">Almanya'da okurken part-time çalışarak masraflarınızı nasıl çıkarabilirsiniz? Werkstudent nedir, Mini-Job nedir? Yasal çalışma haklarınız.</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('kariyer')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
@@ -133,48 +162,191 @@
                     <span class="blog-category">Gelecek</span>
                     <h3 class="blog-title">Mezuniyet Sonrası 18 Ay İş Arama Vizesi</h3>
                     <p class="blog-excerpt">Diplomanızı aldıktan sonra Almanya'da kalmak çok kolay. İş arama vizesi süreci ve Mavi Kart (Blue Card) avantajları hakkında bilmeniz gerekenler.</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('mezuniyet')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800" alt="Alman Kültürü" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1565625468205-b3a62ce954d6?auto=format&fit=crop&w=800" alt="Alman Kültürü" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Kültür</span>
                     <h3 class="blog-title">Alman Kültürü ve Sosyal Uyum</h3>
                     <p class="blog-excerpt">Dakiklik, pazar günleri sessizlik kuralı ve Pfand sistemi... Almanya'da sosyal hayata adapte olmanızı sağlayacak altın ipuçları.</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('kultur')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800" alt="Konaklama" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800" alt="Konaklama" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Barınma</span>
                     <h3 class="blog-title">WG Nedir? Almanya'da Ev Bulma Rehberi</h3>
                     <p class="blog-excerpt">Yurt çıkmazsa ne yapmalısınız? WG (Öğrenci Evi) sistemi nasıl işler? Dolandırıcılardan korunma yolları ve en iyi ev arama siteleri.</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('barinma')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
             <article class="blog-card">
-                <img src="https://images.unsplash.com/photo-1626125345510-4603468ee5ec?auto=format&fit=crop&w=800" alt="Sağlık Sigortası" class="blog-img">
+                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800" alt="Sağlık Sigortası" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Bürokrasi</span>
                     <h3 class="blog-title">Sağlık Sigortası: TK mı AOK mı?</h3>
                     <p class="blog-excerpt">Almanya'da öğrenci vizesi için zorunlu olan sağlık sigortası türleri. Kamu (Public) ve Özel (Private) sigorta arasındaki farklar nelerdir?</p>
-                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                    <button class="read-more" onclick="openModal('saglik')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
         </div>
     </section>
 
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <h2 class="modal-title" id="modalTitle">Makale Başlığı</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                </div>
+        </div>
+    </div>
+
     <a href="https://wa.me/4917612345678" class="whatsapp-btn" target="_blank">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+    <script>
+        // MAKALELERİN DETAYLI İÇERİKLERİ
+        const articles = {
+            'yasam': {
+                title: "Almanya'da Aylık Öğrenci Giderleri 2025",
+                content: `
+                    <p>Almanya'da üniversite eğitimi ücretsiz olsa da (dönemlik katkı payları hariç), yaşam masrafları şehrine göre değişiklik gösterir. 2025 yılı itibariyle bir öğrencinin bloke hesap için göstermesi gereken aylık tutar <strong>934 Euro</strong>'dur. Ancak gerçek harcamalar kişiden kişiye değişir.</p>
+                    
+                    <h3>Ortalama Aylık Gider Tablosu</h3>
+                    <ul>
+                        <li><strong>Kira (WG veya Yurt):</strong> 350€ - 600€ (Münih ve Berlin'de daha yüksek olabilir)</li>
+                        <li><strong>Sağlık Sigortası:</strong> 120€ - 130€ (30 yaş altı öğrenciler için standart tarife)</li>
+                        <li><strong>Market ve Beslenme:</strong> 200€ - 250€</li>
+                        <li><strong>Ulaşım:</strong> Genellikle dönemlik ödenen "Semesterbeitrag" içindedir, aylık ek masraf çıkmaz.</li>
+                        <li><strong>İletişim ve İnternet:</strong> 20€ - 30€</li>
+                        <li><strong>Sosyal Yaşam:</strong> 100€</li>
+                    </ul>
+                    
+                    <h3>Tasarruf İpuçları</h3>
+                    <p>Öğrenciler "Mensa" adı verilen üniversite yemekhanelerinde 3-5 Euro'ya öğle yemeği yiyebilirler. Ayrıca öğrenci kimliği ile müzeler, sinemalar ve hatta bazı restoranlarda indirimlerden faydalanabilirsiniz.</p>
+                `
+            },
+            'kariyer': {
+                title: "Öğrenciyken Çalışmak: 120 Gün Kuralı",
+                content: `
+                    <p>Almanya'da üniversite öğrencisi olarak eğitim alırken yasal çalışma hakkına sahipsiniz. Bu hak, finansal bağımsızlığınızı kazanmanız için büyük bir fırsattır.</p>
+                    
+                    <h3>Yasal Çalışma Süreleri</h3>
+                    <p>AB vatandaşı olmayan öğrencilerin yılda <strong>120 tam gün</strong> (günde 8 saat) veya <strong>240 yarım gün</strong> (günde 4 saat) çalışma izni vardır. Bu süre, tatil dönemlerinde tam zamanlı çalışarak veya dönem içinde part-time çalışarak kullanılabilir.</p>
+                    
+                    <h3>Çalışma Türleri</h3>
+                    <ul>
+                        <li><strong>Werkstudent (Çalışan Öğrenci):</strong> Genellikle bölümünüzle ilgili bir işte haftada maksimum 20 saat çalışırsınız. Vergi avantajları vardır ve maaşları yüksektir (saatlik 14€ - 20€).</li>
+                        <li><strong>Mini-Job:</strong> Aylık maksimum 538€ (2024 limiti) kazanabileceğiniz, vergisiz küçük işlerdir. Garsonluk, kuryelik gibi işler bu sınıfa girer.</li>
+                    </ul>
+                    
+                    <p><strong>Önemli:</strong> Dil kursu vizesi ile gelenlerin (üniversiteye başlamadan önce) çalışma izni genellikle yoktur veya sadece tatil dönemleriyle sınırlıdır.</p>
+                `
+            },
+            'mezuniyet': {
+                title: "Mezuniyet Sonrası 18 Ay İş Arama Vizesi",
+                content: `
+                    <p>Almanya'da bir üniversiteden mezun olduğunuzda, ülkeyi terk etmeniz gerekmez. Aksine, Almanya nitelikli iş gücünü ülkede tutmak için mezunlara büyük kolaylıklar sağlar.</p>
+                    
+                    <h3>İş Arama İzni (Jobseeker Visa)</h3>
+                    <p>Mezuniyet belgenizi aldıktan sonra Yabancılar Dairesi'ne (Ausländerbehörde) başvurarak oturum izninizi <strong>18 ay</strong> süreyle uzatabilirsiniz. Bu süre boyunca geçiminizi sağladığınız sürece herhangi bir işte çalışabilir ve kendi alanınızda kalıcı bir iş arayabilirsiniz.</p>
+                    
+                    <h3>Mavi Kart (Blue Card)</h3>
+                    <p>Alanınızla ilgili ve belirli bir maaş sınırının (yıllık brüt yaklaşık 45.000€, eksik mesleklerde daha düşük) üzerinde bir iş bulduğunuzda, doğrudan <strong>AB Mavi Kart</strong> sahibi olursunuz. Mavi Kart, size çok hızlı bir şekilde (21-33 ay içinde) kalıcı oturum (süresiz oturum) hakkı kazandırır.</p>
+                `
+            },
+            'kultur': {
+                title: "Alman Kültürü ve Sosyal Uyum İpuçları",
+                content: `
+                    <p>Almanya'da yaşam, yazılı olan ve olmayan bazı kurallara dayanır. Bu kurallara uymak, sosyal hayata entegre olmanızı hızlandırır.</p>
+                    
+                    <h3>1. Dakiklik (Pünktlichkeit)</h3>
+                    <p>Almanya'da "zamanında gelmek", randevu saatinden 5 dakika önce orada olmak demektir. Derse, buluşmaya veya işe geç kalmak büyük saygısızlık olarak görülür.</p>
+                    
+                    <h3>2. Pazar Günü Sessizliği (Ruhezeit)</h3>
+                    <p>Pazar günleri marketler ve mağazalar kapalıdır. Ayrıca Pazar günü gürültü yapmak (matkap kullanmak, şişe cam kumbarasına şişe atmak, yüksek sesli müzik) yasaktır ve komşularınız şikayet edebilir.</p>
+                    
+                    <h3>3. Depozito Sistemi (Pfand)</h3>
+                    <p>Plastik ve cam şişelerin çoğu depozitoludur (genellikle 25 cent). Bu şişeleri çöpe atmamalı, marketlerdeki otomatlara iade ederek paranızı geri almalısınız.</p>
+                    
+                    <h3>4. Bürokraksi ve Posta</h3>
+                    <p>Almanya'da her şey mektupla halledilir. Posta kutunuzun üzerinde isminizin yazdığından emin olun ve kutunuzu her gün kontrol edin. Resmi mektupları asla atmayın, saklayın.</p>
+                `
+            },
+            'barinma': {
+                title: "WG Nedir? Almanya'da Ev Bulma Rehberi",
+                content: `
+                    <p>Almanya'da konaklama, özellikle büyük şehirlerde (Münih, Berlin, Hamburg) öğrenciler için en büyük sorundur. Yurtlar sınırlı olduğu için en yaygın çözüm "WG"dir.</p>
+                    
+                    <h3>WG (Wohngemeinschaft) Nedir?</h3>
+                    <p>WG, bir evin odalarının farklı kişilerce kiralandığı, mutfak ve banyonun ortak kullanıldığı "paylaşımlı ev" modelidir. Hem ekonomiktir hem de sosyalleşmek ve Almanca pratiği yapmak için harikadır.</p>
+                    
+                    <h3>Nereden Ev Bulunur?</h3>
+                    <ul>
+                        <li><strong>WG-Gesucht.de:</strong> Almanya'nın en popüler ev arama sitesidir.</li>
+                        <li><strong>Immobilienscout24:</strong> Daha çok tek başına daire arayanlar içindir.</li>
+                        <li><strong>Studierendenwerk:</strong> Devlet yurtları için üniversitenin bağlı olduğu bu kuruma başvurmalısınız. Bekleme süreleri uzundur (6-12 ay), bu yüzden kabul alır almaz başvurun.</li>
+                    </ul>
+                    
+                    <h3>Dolandırıcılara Dikkat!</h3>
+                    <p>Evi görmeden, anahtarı almadan asla para (depozito/kira) göndermeyin. Eğer ev sahibi "Şu an yurt dışındayım, anahtarı kargoyla göndereceğim, parayı Western Union ile at" diyorsa, bu %100 dolandırıcılıktır.</p>
+                `
+            },
+            'saglik': {
+                title: "Sağlık Sigortası: TK mı AOK mı?",
+                content: `
+                    <p>Almanya'da herkesin sağlık sigortası olması yasal zorunluluktur. Üniversiteye kayıt olurken sigorta belgenizi sunmanız gerekir. İki tür sigorta vardır:</p>
+                    
+                    <h3>1. Kamu Sigortası (Gesetzliche Krankenversicherung - GKV)</h3>
+                    <p>TK (Techniker Krankenkasse), AOK, Barmer gibi şirketlerdir. Öğrenciler için 30 yaşına kadar indirimli sabit fiyat (aylık yaklaşık 120€) sunarlar. Doktora gittiğinizde para ödemezsiniz, kartınızı okutmanız yeterlidir. En çok tavsiye edilen türdür.</p>
+                    
+                    <h3>2. Özel Sigorta (Private Krankenversicherung - PKV)</h3>
+                    <p>Mawista, Care Concept gibi şirketlerdir. Genellikle dil kursu öğrencileri veya 30 yaş üstü öğrenciler tercih eder. Daha ucuz olabilir (aylık 30€-60€) ancak kapsamı sınırlıdır ve doktora gittiğinizde parayı peşin ödeyip sonra şirketten geri almanız gerekebilir.</p>
+                    
+                    <p><strong>Tavsiye:</strong> Üniversite öğrencisiyseniz (Lisans/Master) kesinlikle Kamu Sigortası (TK/AOK) yaptırmanız önerilir. Expatrio veya Fintiba üzerinden bloke hesap açarken sigortanızı da paket olarak kolayca alabilirsiniz.</p>
+                `
+            }
+        };
+
+        // MODAL İŞLEMLERİ
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        function openModal(articleKey) {
+            const article = articles[articleKey];
+            if (article) {
+                modalTitle.textContent = article.title;
+                modalBody.innerHTML = article.content;
+                modalOverlay.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Arka plan kaymasını engelle
+            }
+        }
+
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Dışarı tıklandığında kapatma
+        window.onclick = function(event) {
+            if (event.target == modalOverlay) {
+                closeModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
