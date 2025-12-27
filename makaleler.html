@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makaleler & Yaşam Rehberi | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* GENEL AYARLAR (Diğer sayfalarla uyumlu) */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        
+        /* HEADER & MENÜ (MOBİL UYUMLU) */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 80px; width: auto; } 
+        .nav-links a { margin-left: 20px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+
+        /* SAYFA BAŞLIĞI (Hero) */
+        .page-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=1600');
+            background-size: cover; background-position: center;
+            padding: 100px 20px; text-align: center; color: white;
+        }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; }
+        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 800px; margin: 0 auto; }
+
+        /* BLOG GRID ALANI */
+        .blog-section { padding: 80px 10%; background-color: #fff; }
+        .blog-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 40px; 
+        }
+
+        /* BLOG KARTI TASARIMI */
+        .blog-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s;
+            border: 1px solid #eee; display: flex; flex-direction: column;
+        }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+        
+        .blog-img { width: 100%; height: 200px; object-fit: cover; }
+        
+        .blog-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-category { 
+            font-size: 0.8rem; color: #D62727; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; 
+        }
+        .blog-title { font-size: 1.3rem; margin: 0 0 15px 0; color: #0B2142; font-weight: 700; line-height: 1.4; }
+        .blog-excerpt { font-size: 0.95rem; color: #666; margin-bottom: 20px; flex-grow: 1; }
+        
+        .read-more {
+            text-decoration: none; color: #0B2142; font-weight: 700; border-bottom: 2px solid #D62727; 
+            align-self: flex-start; transition: 0.3s; padding-bottom: 2px;
+        }
+        .read-more:hover { color: #D62727; }
+
+        /* FOOTER */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+
+        /* MOBİL UYUMLULUK */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            .page-header h1 { font-size: 2rem; }
+        }
+        
+        /* WHATSAPP */
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="almanyada-egitim.html">Eğitim Rehberi</a>
+            <a href="makaleler.html" style="color: #D62727;">Makaleler</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Almanya Yaşam Rehberi</h1>
+        <p>Eğitimden kariyere, kültürden günlük yaşama kadar merak ettiğiniz her şey.</p>
+    </div>
+
+    <section class="blog-section">
+        <div class="blog-grid">
+            
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&w=800" alt="Yaşam Maliyeti" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Yaşam</span>
+                    <h3 class="blog-title">Almanya'da Aylık Öğrenci Giderleri 2025</h3>
+                    <p class="blog-excerpt">Kira, sağlık sigortası, market alışverişi ve ulaşım... Bir öğrencinin Almanya'da geçinmesi için gereken minimum bütçe nedir? Kalem kalem hesapladık.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800" alt="Çalışma İzni" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Kariyer</span>
+                    <h3 class="blog-title">Öğrenciyken Çalışmak: 120 Gün Kuralı</h3>
+                    <p class="blog-excerpt">Almanya'da okurken part-time çalışarak masraflarınızı nasıl çıkarabilirsiniz? Werkstudent nedir, Mini-Job nedir? Yasal çalışma haklarınız.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1551135049-8a33b5883817?auto=format&fit=crop&w=800" alt="Mezuniyet Sonrası" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Gelecek</span>
+                    <h3 class="blog-title">Mezuniyet Sonrası 18 Ay İş Arama Vizesi</h3>
+                    <p class="blog-excerpt">Diplomanızı aldıktan sonra Almanya'da kalmak çok kolay. İş arama vizesi süreci ve Mavi Kart (Blue Card) avantajları hakkında bilmeniz gerekenler.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=800" alt="Alman Kültürü" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Kültür</span>
+                    <h3 class="blog-title">Alman Kültürü ve Sosyal Uyum</h3>
+                    <p class="blog-excerpt">Dakiklik, pazar günleri sessizlik kuralı ve Pfand sistemi... Almanya'da sosyal hayata adapte olmanızı sağlayacak altın ipuçları.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800" alt="Konaklama" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Barınma</span>
+                    <h3 class="blog-title">WG Nedir? Almanya'da Ev Bulma Rehberi</h3>
+                    <p class="blog-excerpt">Yurt çıkmazsa ne yapmalısınız? WG (Öğrenci Evi) sistemi nasıl işler? Dolandırıcılardan korunma yolları ve en iyi ev arama siteleri.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1626125345510-4603468ee5ec?auto=format&fit=crop&w=800" alt="Sağlık Sigortası" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Bürokrasi</span>
+                    <h3 class="blog-title">Sağlık Sigortası: TK mı AOK mı?</h3>
+                    <p class="blog-excerpt">Almanya'da öğrenci vizesi için zorunlu olan sağlık sigortası türleri. Kamu (Public) ve Özel (Private) sigorta arasındaki farklar nelerdir?</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <a href="https://wa.me/4917612345678" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer><p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p></footer>
+
+</body>
+</html>
