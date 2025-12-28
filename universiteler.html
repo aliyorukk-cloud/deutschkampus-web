@@ -38,6 +38,58 @@
         .logo img { height: 80px; width: auto; } 
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
+
+        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
+        @media (max-width: 768px) {
+            /* Header Düzenlemesi */
+            header {
+                padding: 10px 15px;
+                flex-direction: column; /* Alt alta sırala */
+                gap: 15px;
+            }
+            .logo img {
+                height: 50px; /* Logoyu küçült */
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            }
+            .nav-links a {
+                margin: 0 5px;
+                font-size: 0.8rem; /* Menü yazılarını küçült */
+            }
+
+            /* Slider İçerik Düzenlemesi */
+            .content {
+                width: 90%;
+            }
+            .content h1 {
+                font-size: 1.8rem; /* Başlık boyutunu küçült (Önemli!) */
+                line-height: 1.2;
+            }
+            .content p {
+                font-size: 1rem;
+                margin-bottom: 25px;
+            }
+            .btn {
+                padding: 12px 30px; /* Buton padding azalt */
+                font-size: 0.9rem;
+            }
+
+            /* Diğer Bölümler */
+            .features h2, .pricing-section h2, .steps-section h2 {
+                font-size: 1.8rem;
+            }
+            .price-card.featured {
+                transform: scale(1); /* Mobilde öne çıkanı büyütme */
+            }
+        }
+    </style>
+</head>
+<body>
         
         /* HERO ALANI */
         .page-header {
