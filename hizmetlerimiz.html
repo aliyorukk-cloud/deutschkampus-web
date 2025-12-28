@@ -106,6 +106,30 @@
                 font-size: 0.8rem; /* Menü yazılarını küçült */
             }
 
+
+        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
+        @media (max-width: 768px) {
+            /* Header Düzenlemesi */
+            header {
+                padding: 10px 15px;
+                flex-direction: column; /* Alt alta sırala */
+                gap: 15px;
+            }
+            .logo img {
+                height: 50px; /* Logoyu küçült */
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                width: 100%;
+            }
+            .nav-links a {
+                margin: 0 5px;
+                font-size: 0.8rem; /* Menü yazılarını küçült */
+            }
+
     </style>
 </head>
 <body>
