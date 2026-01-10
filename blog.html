@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Rehber | DeutschKampus - Almanya Eğitim Rehberi</title>
+    <meta name="description" content="Almanya'da üniversite, vize süreçleri, bloke hesap ve yaşam hakkında güncel bilgiler ve rehber yazılar.">
+    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Blog Özel Stilleri */
+        .blog-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('images/library-bg.jpg'); /* Arkaplan resmi */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-img {
+            height: 200px;
+            background-color: #eee;
+            background-size: cover;
+            background-position: center;
+        }
+        .blog-content {
+            padding: 25px;
+        }
+        .blog-tag {
+            background: #eef2f6;
+            color: #0B2142;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .blog-title {
+            margin: 15px 0;
+            font-size: 1.4rem;
+            color: #0B2142;
+            line-height: 1.4;
+        }
+        .blog-desc {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .read-more {
+            color: #d90429;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+        .read-more i { margin-left: 5px; transition: 0.3s; }
+        .read-more:hover i { margin-left: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav style="background: #0B2142; padding: 15px; color: white; display: flex; justify-content: space-between; align-items: center;">
+        <div style="font-weight: bold; font-size: 1.5rem;">DeutschKampus</div>
+        <div>
+            <a href="index.html" style="color: white; margin-right: 15px; text-decoration: none;">Anasayfa</a>
+            <a href="blog.html" style="color: white; text-decoration: none;">Blog</a>
+        </div>
+    </nav>
+
+    <header class="blog-header">
+        <h1>DeutschKampus Bilgi Merkezi</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">Almanya eğitim yolculuğunuzda ihtiyacınız olan her şey.</p>
+    </header>
+
+    <div class="blog-container">
+        <div class="blog-grid">
+
+            <article class="blog-card">
+                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500');"></div>
+                <div class="blog-content">
+                    <span class="blog-tag">Üniversite Başvurusu</span>
+                    <h3 class="blog-title">Almanya'da Şartlı Kabul Nedir? Nasıl Alınır?</h3>
+                    <p class="blog-desc">Almancanız henüz yeterli değil mi? Hiç sorun değil. Şartlı kabul ile üniversite yerinizi şimdiden nasıl garantiye alabileceğinizi adım adım anlattık.</p>
+                    <a href="yazi-sartli-kabul.html" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=500');"></div>
+                <div class="blog-content">
+                    <span class="blog-tag">Vize & Finans</span>
+                    <h3 class="blog-title">2026 Bloke Hesap Tutarları ve En Ucuz Yöntemler</h3>
+                    <p class="blog-desc">Vize görüşmesine gitmeden önce bilmeniz gereken en güncel bloke hesap tutarları ve Fintiba/Expatrio karşılaştırmaları.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <div class="blog-img" style="background-image: url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500');"></div>
+                <div class="blog-content">
+                    <span class="blog-tag">Sistem & Notlar</span>
+                    <h3 class="blog-title">NC Puanı Hesaplama: Ortalamanız Almanya İçin Yeterli mi?</h3>
+                    <p class="blog-desc">Türkiye'deki lise veya üniversite notunuzu Bavyera formülüne göre nasıl çevirirsiniz? Basit hesaplama taktikleri.</p>
+                    <a href="#" class="read-more">Devamını Oku <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+
+</body>
+</html>
