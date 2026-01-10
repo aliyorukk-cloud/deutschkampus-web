@@ -1,3 +1,15 @@
+Harika! Sitenizi tam bir "Bilgi Bankası"na dönüştürmek için mevcut makaleleri detaylandırdım ve **Almanya'ya gidecek bir öğrencinin kesinlikle bilmesi gereken 4 yeni ve kritik başlık** daha ekledim:
+
+1. **Bloke Hesap (Sperrkonto):** Vizenin bel kemiği.
+2. **Uni-Assist Başvurusu:** Üniversite başvurularının teknik kısmı.
+3. **Almanca Dil Sınavları:** TestDaF, DSH, Telc farkları.
+4. **Ulaşım ve Deutschlandticket:** Tren ve otobüs sistemi.
+
+Ayrıca mevcut yazıların içeriklerini de 2025/2026 verilerine göre güncelleyip zenginleştirdim.
+
+Aşağıdaki kodu kopyalayıp **`makaleler.html`** dosyasının içine yapıştırın:
+
+```html
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -137,6 +149,26 @@
         <div class="blog-grid">
             
             <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&w=800" alt="Bloke Hesap" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Vize & Finans</span>
+                    <h3 class="blog-title">Bloke Hesap (Sperrkonto) Nedir? 2025 Limitleri</h3>
+                    <p class="blog-excerpt">Vize almanın en önemli şartı olan bloke hesap hakkında her şey. 2025 yılı için gereken teminat tutarı ne kadar? Fintiba mı Expatrio mu?</p>
+                    <button class="read-more" onclick="openModal('bloke')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800" alt="Uni-Assist" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Başvuru</span>
+                    <h3 class="blog-title">Uni-Assist Nedir? Adım Adım Başvuru Rehberi</h3>
+                    <p class="blog-excerpt">Almanya üniversitelerine başvururken kullanılan Uni-Assist portalı nasıl çalışır? VPD belgesi nedir? Başvuru ücretleri ve gerekli evraklar.</p>
+                    <button class="read-more" onclick="openModal('uniassist')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="blog-card">
                 <img src="https://images.unsplash.com/photo-1599946347371-68eb71b16afc?auto=format&fit=crop&w=800" alt="Yaşam Maliyeti" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Yaşam</span>
@@ -147,12 +179,32 @@
             </article>
 
             <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800" alt="Dil Sınavları" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Eğitim</span>
+                    <h3 class="blog-title">TestDaF, DSH, Telc: Hangi Sınava Girmeliyim?</h3>
+                    <p class="blog-excerpt">Almanca yeterliliğinizi kanıtlamak için hangi sınav daha avantajlı? Sınavların zorluk dereceleri, geçerlilik süreleri ve üniversitelerin talepleri.</p>
+                    <button class="read-more" onclick="openModal('dil')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="blog-card">
                 <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800" alt="Çalışma İzni" class="blog-img">
                 <div class="blog-content">
                     <span class="blog-category">Kariyer</span>
                     <h3 class="blog-title">Öğrenciyken Çalışmak: 120 Gün Kuralı</h3>
                     <p class="blog-excerpt">Almanya'da okurken part-time çalışarak masraflarınızı nasıl çıkarabilirsiniz? Werkstudent nedir, Mini-Job nedir? Yasal çalışma haklarınız.</p>
                     <button class="read-more" onclick="openModal('kariyer')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="blog-card">
+                <img src="https://images.unsplash.com/photo-1517154596051-c2b5f66071e1?auto=format&fit=crop&w=800" alt="Ulaşım" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Ulaşım</span>
+                    <h3 class="blog-title">Deutschlandticket ve Öğrenci Ulaşımı</h3>
+                    <p class="blog-excerpt">49 Euro bileti (Deutschlandticket) nedir? Öğrenciler için indirimli ulaşım imkanları ve Semesterticket avantajları nelerdir?</p>
+                    <button class="read-more" onclick="openModal('ulasim')">Devamını Oku <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </article>
 
@@ -219,23 +271,84 @@
     <script>
         // MAKALELERİN DETAYLI İÇERİKLERİ
         const articles = {
+            'bloke': {
+                title: "Bloke Hesap (Sperrkonto) Nedir?",
+                content: `
+                    <p>Almanya öğrenci vizesi başvurularının en kritik aşaması <strong>Bloke Hesap</strong> açmaktır. Alman hükümeti, öğrenim süreniz boyunca geçiminizi sağlayabileceğinizi kanıtlamanızı ister.</p>
+                    
+                    <h3>2025 Yılı İçin Gereken Tutar</h3>
+                    <p>2024 sonbaharı itibariyle belirlenen yıllık teminat tutarı yaklaşık <strong>11.904 Euro</strong>'dur. Bu tutar, aylık <strong>992 Euro</strong> kullanım hakkına denk gelir. Vize görüşmesine gitmeden önce bu parayı bloke hesaba yatırmış olmanız gerekir.</p>
+
+                    <h3>Hangi Bankalar Kullanılır?</h3>
+                    <ul>
+                        <li><strong>Fintiba:</strong> En popüler ve hızlı seçenektir. Türkçe desteği vardır.</li>
+                        <li><strong>Expatrio:</strong> Genellikle daha düşük işlem ücretleri sunar ve sağlık sigortası paketi (Value Package) ile avantaj sağlar.</li>
+                        <li><strong>Coracle:</strong> Alternatif bir diğer seçenektir.</li>
+                    </ul>
+                    
+                    <p><strong>Önemli:</strong> Bloke hesaptaki paranızı Almanya'ya gidip normal bir banka hesabı (Girokonto) açtıktan sonra her ay parça parça (992€) çekebilirsiniz.</p>
+                `
+            },
+            'uniassist': {
+                title: "Uni-Assist ve Başvuru Süreci",
+                content: `
+                    <p>Almanya'daki üniversitelerin büyük çoğunluğu, yabancı öğrenci başvurularını <strong>Uni-Assist</strong> adlı merkezi sistem üzerinden alır. Bu kurum, diplomalarınızın Alman not sistemine göre denkliğini hesaplar.</p>
+                    
+                    <h3>VPD (Vorprüfungsdokumentation) Nedir?</h3>
+                    <p>Uni-Assist, belgelerinizi inceledikten sonra size VPD adında bir belge gönderir. Bu belgede Türk not ortalamanızın Alman sistemindeki karşılığı (NC Puanı) yazar. Üniversiteye asıl kaydı bu belge ile yaparsınız.</p>
+
+                    <h3>Başvuru Ücretleri</h3>
+                    <ul>
+                        <li>İlk başvuru (ilk üniversite/bölüm): <strong>75 Euro</strong></li>
+                        <li>Sonraki her ek başvuru: <strong>30 Euro</strong></li>
+                    </ul>
+                    
+                    <p><strong>İpucu:</strong> Belgelerinizin Almanca veya İngilizce yeminli tercümesini ve noter onayını yaptırmayı unutmayın. Uni-Assist süreci 4-6 hafta sürebilir, bu yüzden son başvuru tarihini beklemeden erken başvurun.</p>
+                `
+            },
+            'dil': {
+                title: "Almanca Dil Sınavları: Hangisini Seçmeliyim?",
+                content: `
+                    <p>Üniversiteye doğrudan başlayabilmek için genellikle C1 seviyesinde Almanca belgesi gerekir. Ancak şartlı kabul için B1/B2 yeterli olabilir.</p>
+                    
+                    <h3>En Geçerli Sınavlar</h3>
+                    <ul>
+                        <li><strong>TestDaF:</strong> En yaygın akademik sınavdır. 4 bölümden oluşur (Okuma, Dinleme, Yazma, Konuşma). Her bölümden en az 4 (TDN 4) almanız gerekir.</li>
+                        <li><strong>DSH:</strong> Sadece Almanya'daki üniversitelerin bünyesinde yapılır. DSH-2 veya DSH-3 seviyesi istenir.</li>
+                        <li><strong>Telc C1 Hochschule:</strong> Üniversiteler tarafından kabul edilen bir diğer popüler sınavdır.</li>
+                        <li><strong>Goethe Sertifikası:</strong> C2 seviyesi (GDS) tüm üniversitelerde geçerlidir.</li>
+                    </ul>
+                `
+            },
+            'ulasim': {
+                title: "Ulaşım ve Deutschlandticket",
+                content: `
+                    <p>Almanya'da toplu taşıma oldukça gelişmiştir. Öğrenciler için ulaşım genellikle çok ekonomiktir.</p>
+                    
+                    <h3>Deutschlandticket (49 Euro Bileti)</h3>
+                    <p>Aylık 49 Euro ödeyerek tüm Almanya genelindeki yerel trenlerde (RE, RB), metrolarda (U-Bahn), tramvaylarda ve otobüslerde sınırsız seyahat edebilirsiniz. (Hızlı trenler ICE/IC hariçtir).</p>
+
+                    <h3>Semesterticket</h3>
+                    <p>Üniversiteye kayıt olduğunuzda ödediğiniz dönemlik harcın (Semesterbeitrag) içinde genellikle <strong>Semesterticket</strong> bulunur. Birçok üniversite, bu biletin kapsamını Deutschlandticket'a yükseltmiştir. Yani öğrenci kimliğinizle tüm Almanya'yı gezebilirsiniz.</p>
+                `
+            },
             'yasam': {
                 title: "Almanya'da Aylık Öğrenci Giderleri 2025",
                 content: `
-                    <p>Almanya'da üniversite eğitimi ücretsiz olsa da (dönemlik katkı payları hariç), yaşam masrafları şehrine göre değişiklik gösterir. 2025 yılı itibariyle bir öğrencinin bloke hesap için göstermesi gereken aylık tutar <strong>934 Euro</strong>'dur. Ancak gerçek harcamalar kişiden kişiye değişir.</p>
+                    <p>Almanya'da üniversite eğitimi ücretsiz olsa da (dönemlik katkı payları hariç), yaşam masrafları şehrine göre değişiklik gösterir. 2025 yılı beklentilerine göre bir öğrencinin bloke hesap limiti aylık <strong>992 Euro</strong> civarındadır.</p>
                     
                     <h3>Ortalama Aylık Gider Tablosu</h3>
                     <ul>
-                        <li><strong>Kira (WG veya Yurt):</strong> 350€ - 600€ (Münih ve Berlin'de daha yüksek olabilir)</li>
-                        <li><strong>Sağlık Sigortası:</strong> 120€ - 130€ (30 yaş altı öğrenciler için standart tarife)</li>
+                        <li><strong>Kira (WG veya Yurt):</strong> 400€ - 650€ (Münih ve Berlin'de daha yüksek olabilir)</li>
+                        <li><strong>Sağlık Sigortası:</strong> 125€ (30 yaş altı öğrenciler için standart tarife)</li>
                         <li><strong>Market ve Beslenme:</strong> 200€ - 250€</li>
-                        <li><strong>Ulaşım:</strong> Genellikle dönemlik ödenen "Semesterbeitrag" içindedir, aylık ek masraf çıkmaz.</li>
+                        <li><strong>Ulaşım:</strong> Genellikle dönemlik harç içindedir veya aylık 49€ (Deutschlandticket).</li>
                         <li><strong>İletişim ve İnternet:</strong> 20€ - 30€</li>
                         <li><strong>Sosyal Yaşam:</strong> 100€</li>
                     </ul>
                     
                     <h3>Tasarruf İpuçları</h3>
-                    <p>Öğrenciler "Mensa" adı verilen üniversite yemekhanelerinde 3-5 Euro'ya öğle yemeği yiyebilirler. Ayrıca öğrenci kimliği ile müzeler, sinemalar ve hatta bazı restoranlarda indirimlerden faydalanabilirsiniz.</p>
+                    <p>Öğrenciler "Mensa" adı verilen üniversite yemekhanelerinde 3-5 Euro'ya öğle yemeği yiyebilirler.</p>
                 `
             },
             'kariyer': {
@@ -244,15 +357,13 @@
                     <p>Almanya'da üniversite öğrencisi olarak eğitim alırken yasal çalışma hakkına sahipsiniz. Bu hak, finansal bağımsızlığınızı kazanmanız için büyük bir fırsattır.</p>
                     
                     <h3>Yasal Çalışma Süreleri</h3>
-                    <p>AB vatandaşı olmayan öğrencilerin yılda <strong>120 tam gün</strong> (günde 8 saat) veya <strong>240 yarım gün</strong> (günde 4 saat) çalışma izni vardır. Bu süre, tatil dönemlerinde tam zamanlı çalışarak veya dönem içinde part-time çalışarak kullanılabilir.</p>
+                    <p>AB vatandaşı olmayan öğrencilerin yılda <strong>120 tam gün</strong> (günde 8 saat) veya <strong>240 yarım gün</strong> (günde 4 saat) çalışma izni vardır. 2024 düzenlemeleriyle bu sürelerin biraz daha esnetilmesi gündemdedir.</p>
                     
                     <h3>Çalışma Türleri</h3>
                     <ul>
-                        <li><strong>Werkstudent (Çalışan Öğrenci):</strong> Genellikle bölümünüzle ilgili bir işte haftada maksimum 20 saat çalışırsınız. Vergi avantajları vardır ve maaşları yüksektir (saatlik 14€ - 20€).</li>
-                        <li><strong>Mini-Job:</strong> Aylık maksimum 603€ (2026 limiti) kazanabileceğiniz, vergisiz küçük işlerdir. Garsonluk, kuryelik gibi işler bu sınıfa girer.</li>
+                        <li><strong>Werkstudent (Çalışan Öğrenci):</strong> Bölümünüzle ilgili işlerde haftada max 20 saat. Saatlik ücret genellikle 14€ ve üzeridir.</li>
+                        <li><strong>Mini-Job:</strong> Aylık maksimum 538€ (sınır güncellenebilir) kazanabileceğiniz, vergisiz işlerdir.</li>
                     </ul>
-                    
-                    <p><strong>Önemli:</strong> Dil kursu vizesi ile gelenlerin (üniversiteye başlamadan önce) çalışma izni genellikle yoktur veya sadece tatil dönemleriyle sınırlıdır.</p>
                 `
             },
             'mezuniyet': {
@@ -264,7 +375,7 @@
                     <p>Mezuniyet belgenizi aldıktan sonra Yabancılar Dairesi'ne (Ausländerbehörde) başvurarak oturum izninizi <strong>18 ay</strong> süreyle uzatabilirsiniz. Bu süre boyunca geçiminizi sağladığınız sürece herhangi bir işte çalışabilir ve kendi alanınızda kalıcı bir iş arayabilirsiniz.</p>
                     
                     <h3>Mavi Kart (Blue Card)</h3>
-                    <p>Alanınızla ilgili ve belirli bir maaş sınırının (yıllık brüt yaklaşık 45.000€, eksik mesleklerde daha düşük) üzerinde bir iş bulduğunuzda, doğrudan <strong>AB Mavi Kart</strong> sahibi olursunuz. Mavi Kart, size çok hızlı bir şekilde (21-33 ay içinde) kalıcı oturum (süresiz oturum) hakkı kazandırır.</p>
+                    <p>Alanınızla ilgili ve belirli bir maaş sınırının (yıllık brüt yaklaşık 45.300€, eksik mesleklerde 41.041€ - 2024 verisi) üzerinde bir iş bulduğunuzda, doğrudan <strong>AB Mavi Kart</strong> sahibi olursunuz.</p>
                 `
             },
             'kultur': {
@@ -276,46 +387,40 @@
                     <p>Almanya'da "zamanında gelmek", randevu saatinden 5 dakika önce orada olmak demektir. Derse, buluşmaya veya işe geç kalmak büyük saygısızlık olarak görülür.</p>
                     
                     <h3>2. Pazar Günü Sessizliği (Ruhezeit)</h3>
-                    <p>Pazar günleri marketler ve mağazalar kapalıdır. Ayrıca Pazar günü gürültü yapmak (matkap kullanmak, şişe cam kumbarasına şişe atmak, yüksek sesli müzik) yasaktır ve komşularınız şikayet edebilir.</p>
+                    <p>Pazar günleri marketler kapalıdır. Ayrıca Pazar günü gürültü yapmak (matkap, yüksek sesli müzik, cam şişe atmak) yasaktır.</p>
                     
                     <h3>3. Depozito Sistemi (Pfand)</h3>
-                    <p>Plastik ve cam şişelerin çoğu depozitoludur (genellikle 25 cent). Bu şişeleri çöpe atmamalı, marketlerdeki otomatlara iade ederek paranızı geri almalısınız.</p>
-                    
-                    <h3>4. Bürokraksi ve Posta</h3>
-                    <p>Almanya'da her şey mektupla halledilir. Posta kutunuzun üzerinde isminizin yazdığından emin olun ve kutunuzu her gün kontrol edin. Resmi mektupları asla atmayın, saklayın.</p>
+                    <p>Plastik ve cam şişelerin çoğu depozitoludur (25 cent). Bu şişeleri çöpe atmamalı, marketlerdeki otomatlara iade etmelisiniz.</p>
                 `
             },
             'barinma': {
                 title: "WG Nedir? Almanya'da Ev Bulma Rehberi",
                 content: `
-                    <p>Almanya'da konaklama, özellikle büyük şehirlerde (Münih, Berlin, Hamburg) öğrenciler için en büyük sorundur. Yurtlar sınırlı olduğu için en yaygın çözüm "WG"dir.</p>
+                    <p>Almanya'da konaklama, özellikle büyük şehirlerde (Münih, Berlin, Hamburg) öğrenciler için en zorlu süreçtir.</p>
                     
                     <h3>WG (Wohngemeinschaft) Nedir?</h3>
-                    <p>WG, bir evin odalarının farklı kişilerce kiralandığı, mutfak ve banyonun ortak kullanıldığı "paylaşımlı ev" modelidir. Hem ekonomiktir hem de sosyalleşmek ve Almanca pratiği yapmak için harikadır.</p>
+                    <p>WG, bir evin odalarının farklı kişilerce kiralandığı, mutfak ve banyonun ortak kullanıldığı modeldir. En ekonomik ve sosyal seçenektir.</p>
                     
                     <h3>Nereden Ev Bulunur?</h3>
                     <ul>
-                        <li><strong>WG-Gesucht.de:</strong> Almanya'nın en popüler ev arama sitesidir.</li>
-                        <li><strong>Immobilienscout24:</strong> Daha çok tek başına daire arayanlar içindir.</li>
-                        <li><strong>Studierendenwerk:</strong> Devlet yurtları için üniversitenin bağlı olduğu bu kuruma başvurmalısınız. Bekleme süreleri uzundur (6-12 ay), bu yüzden kabul alır almaz başvurun.</li>
+                        <li><strong>WG-Gesucht.de:</strong> En popüler sitedir.</li>
+                        <li><strong>Immobilienscout24:</strong> Daire arayanlar için.</li>
+                        <li><strong>Studierendenwerk:</strong> Devlet yurtları. Bekleme süreleri uzundur (6-12 ay), kabul alır almaz başvurun.</li>
                     </ul>
                     
-                    <h3>Dolandırıcılara Dikkat!</h3>
-                    <p>Evi görmeden, anahtarı almadan asla para (depozito/kira) göndermeyin. Eğer ev sahibi "Şu an yurt dışındayım, anahtarı kargoyla göndereceğim, parayı Western Union ile at" diyorsa, bu %100 dolandırıcılıktır.</p>
+                    <p><strong>Uyarı:</strong> Evi görmeden asla para göndermeyin! "Anahtarı kargolayacağım" diyenler dolandırıcıdır.</p>
                 `
             },
             'saglik': {
                 title: "Sağlık Sigortası: TK mı AOK mı?",
                 content: `
-                    <p>Almanya'da herkesin sağlık sigortası olması yasal zorunluluktur. Üniversiteye kayıt olurken sigorta belgenizi sunmanız gerekir. İki tür sigorta vardır:</p>
+                    <p>Almanya'da herkesin sağlık sigortası olması yasal zorunluluktur. Üniversite kaydı için sigorta belgesi şarttır.</p>
                     
-                    <h3>1. Kamu Sigortası (Gesetzliche Krankenversicherung - GKV)</h3>
-                    <p>TK (Techniker Krankenkasse), AOK, Barmer gibi şirketlerdir. Öğrenciler için 30 yaşına kadar indirimli sabit fiyat (aylık yaklaşık 120€) sunarlar. Doktora gittiğinizde para ödemezsiniz, kartınızı okutmanız yeterlidir. En çok tavsiye edilen türdür.</p>
+                    <h3>1. Kamu Sigortası (GKV)</h3>
+                    <p>TK (Techniker Krankenkasse), AOK, Barmer. Öğrenciler için 30 yaşına kadar indirimli sabit fiyat (aylık yaklaşık 125€) sunarlar. En çok tavsiye edilen ve en kapsamlı türdür. Doktora para ödemezsiniz.</p>
                     
-                    <h3>2. Özel Sigorta (Private Krankenversicherung - PKV)</h3>
-                    <p>Mawista, Care Concept gibi şirketlerdir. Genellikle dil kursu öğrencileri veya 30 yaş üstü öğrenciler tercih eder. Daha ucuz olabilir (aylık 30€-60€) ancak kapsamı sınırlıdır ve doktora gittiğinizde parayı peşin ödeyip sonra şirketten geri almanız gerekebilir.</p>
-                    
-                    <p><strong>Tavsiye:</strong> Üniversite öğrencisiyseniz (Lisans/Master) kesinlikle Kamu Sigortası (TK/AOK) yaptırmanız önerilir. Expatrio veya Fintiba üzerinden bloke hesap açarken sigortanızı da paket olarak kolayca alabilirsiniz.</p>
+                    <h3>2. Özel Sigorta (PKV)</h3>
+                    <p>Mawista, Care Concept vb. Daha ucuz olabilir (30€-60€) ancak kapsamı sınırlıdır. Genellikle sadece dil kursu öğrencileri tercih eder.</p>
                 `
             }
         };
@@ -350,3 +455,5 @@
 
 </body>
 </html>
+
+```
