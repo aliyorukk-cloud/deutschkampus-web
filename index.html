@@ -36,20 +36,29 @@
     </script>
 
     <style>
-        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
+        /* --- GLOBAL STANDARTLAR --- */
         
         /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; background-color: #fcfcfc; }
         
-        /* HEADER & MENÜ (STANDART) */
+        /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
         
         .nav-links { display: flex; align-items: center; }
-        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a { 
+            margin-left: 30px; 
+            text-decoration: none; 
+            color: #0B2142; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+        }
+        /* MENÜ DOKUNULMADI (KIRMIZI HOVER DEVAM EDİYOR) */
         .nav-links a:not(.btn-portal):hover { color: #D62727; }
 
-        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
+        /* SARI ÖĞRENCİ PORTALI BUTONU */
         .nav-links .btn-portal { 
             background-color: #FFCC00; color: #0B2142 !important; 
             padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
@@ -101,15 +110,23 @@
         .card i { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
         .card h3 { color: #0B2142; margin-bottom: 15px; }
 
-        /* EĞİTİM TÜRLERİ KARŞILAŞTIRMA TABLOSU */
+        /* EĞİTİM TÜRLERİ KARŞILAŞTIRMA TABLOSU - DÜZELTME BURADA YAPILDI */
         .edu-types { padding: 80px 10%; background-color: #fff; border-top: 1px solid #eee; }
         .edu-types h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 40px; }
         .table-container { overflow-x: auto; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        
         thead { background-color: #0B2142; color: white; }
+        
+        /* DÜZELTME: Başlık satırının rengini sabitledik, hover'da değişmeyecek */
+        thead tr:hover { background-color: #0B2142 !important; }
+
         th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid #eee; }
         th { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; }
-        tr:hover { background-color: #f9f9f9; }
+        
+        /* Sadece içerik satırları (tbody) hover olunca renk değiştirsin */
+        tbody tr:hover { background-color: #f9f9f9; }
+
         .type-badge { padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; color: white; }
         .bg-uni { background-color: #3498db; }
         .bg-fh { background-color: #e67e22; }
