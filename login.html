@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap - DeutschKampus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* Sadece bu sayfaya özel basit CSS */
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0B2142, #1b263b); /* Koyu kurumsal arka plan */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .login-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            text-align: center;
+            width: 100%;
+            max-width: 380px;
+        }
+        .login-card h2 {
+            color: #0B2142;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 600;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            box-sizing: border-box; 
+            font-family: inherit;
+            transition: 0.3s;
+        }
+        .input-group input:focus {
+            border-color: #FFCC00;
+            outline: none;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #FFCC00;
+            color: #0B2142;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 10px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+        }
+        .btn-submit:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+        .back-link {
+            display: block;
+            margin-top: 25px;
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .back-link:hover {
+            color: #fff; /* Arka plan koyu olduğu için hoverda beyaz yapalım */
+        }
+        /* Login kartının içindeki link hover olunca görünmesi için */
+        .login-card .back-link:hover {
+             color: #0B2142;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <i class="fa-solid fa-user-graduate fa-4x" style="color:#0B2142; margin-bottom:20px;"></i>
+        <h2>Öğrenci Girişi</h2>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label>Öğrenci Numarası / Email</label>
+                <input type="text" id="username" placeholder="Örn: mert.yilmaz" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Şifre</label>
+                <input type="password" id="password" placeholder="******" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Giriş Yap</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
+    </div>
+
+    <script>
+        // BASİT GİRİŞ SİMÜLASYONU
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+            
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+
+            // Mert giriş yaparsa (Şifre: 1234)
+            if(user === "mert" && pass === "1234") {
+                alert("Giriş Başarılı! Hoş geldin Mert.");
+                // Burada Mert'in paneline yönlendireceğiz
+                // Şimdilik sadece uyarı veriyoruz çünkü panel dosyasını daha yapmadık :)
+            } else {
+                alert("Hatalı kullanıcı adı veya şifre! (İpucu: mert / 1234)");
+            }
+        });
+    </script>
+
+</body>
+</html>
