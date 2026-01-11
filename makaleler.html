@@ -17,10 +17,22 @@
         /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
+        
+        /* Nav Link Düzenlemesi */
+        .nav-links { display: flex; align-items: center; }
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: #D62727; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
 
-        /* SAYFA BAŞLIĞI (Hero) - NEUSCHWANSTEIN KALESİ (WIKIMEDIA SAĞLAM LİNK) */
+        /* SARI ÖĞRENCİ PORTALI BUTONU (REFERANS KODDAN ALINDI) */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; /* Büyük harf zorunluluğunu kaldırır */
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
+
+        /* SAYFA BAŞLIĞI (Hero) */
         .page-header {
             background: linear-gradient(rgba(11, 33, 66, 0.7), rgba(11, 33, 66, 0.6)), url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Schloss_Neuschwanstein_2013.jpg/1600px-Schloss_Neuschwanstein_2013.jpg');
             background-size: cover; background-position: center 60%;
@@ -98,6 +110,8 @@
             .logo img { height: 50px; }
             .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
             .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            /* Mobilde butonu tam genişlik yap */
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
             .page-header h1 { font-size: 2rem; }
         }
         
@@ -111,20 +125,6 @@
             z-index: 9999; text-decoration: none; transition: 0.3s;
         }
         .whatsapp-btn:hover { transform: scale(1.1); }
-
-        /* YENİ EKLENEN BUTON STİLİ */
-        .portal-btn {
-            background-color: #D62727;
-            color: white !important; /* !important ile mevcut link rengini ezdik */
-            padding: 10px 25px;
-            border-radius: 30px;
-            border: 2px solid #D62727;
-            box-shadow: 0 4px 10px rgba(214, 39, 39, 0.2);
-        }
-        .portal-btn:hover {
-            background-color: transparent !important;
-            color: #D62727 !important;
-        }
     </style>
 </head>
 <body>
@@ -139,7 +139,7 @@
             <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a>
             <a href="iletisim.html">İletişim</a>
-            <a href="ogrenci-portali.html" class="portal-btn">Öğrenci Portalı</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
         </nav>
     </header>
 
