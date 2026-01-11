@@ -34,11 +34,22 @@
         /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.8; background-color: #f9f9f9; }
         
-        /* HEADER */
+        /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
+        
+        /* Nav Link Düzenlemesi */
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: #D62727; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
+
+        /* SARI ÖĞRENCİ PORTALI BUTONU */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; /* Büyük harf zorunluluğunu kaldırır */
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
 
         /* HERO (BAŞLIK) ALANI */
         .about-header {
@@ -106,6 +117,9 @@
                 margin: 0 5px;
                 font-size: 0.8rem; /* Menü yazılarını küçült */
             }
+            /* Mobilde butonu tam genişlik yap */
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+        }
 
         
         /* WHATSAPP */
@@ -132,6 +146,7 @@
             <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
             <a href="hakkimizda.html" style="color: #D62727;">Hakkımızda</a>
             <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
         </nav>
     </header>
 
