@@ -1,63 +1,59 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kabul Aldığımız Üniversiteler | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF9PCGG0SB"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-NF9PCGG0SB');
     </script>
 
-    <meta name="description" content="DeutschKampus ile Almanya'da üniversite eğitimi, vize danışmanlığı, NC hesaplama ve şartlı kabul süreçlerinde profesyonel destek alın. Hayallerinizi ertelemeyin.">
-    <meta name="keywords" content="Almanya eğitim danışmanlığı, Almanya üniversite başvurusu, Almanya vizesi, NC hesaplama, Almanya'da üniversite okumak, şartlı kabul, DeutschKampus, blok hesap">
-    <meta name="author" content="DeutschKampus">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="DeutschKampus | Almanya'da Geleceğini Tasarla">
-    <meta property="og:description" content="Profesyonel akademik danışmanlık ve vize rehberliği. Ücretsiz ön görüşme için tıklayın.">
-    <meta property="og:image" content="https://deutschkampus.com/logo.png">
-    <meta property="og:url" content="https://deutschkampus.com">
-    <meta property="og:type" content="website">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kabul Aldığımız Üniversiteler | DeutschKampus</title>
-    <link rel="icon" href="logo.png" type="image/png">
+    <meta name="description" content="Profesyonel akademik danışmanlık ve vize rehberliği. Ücretsiz ön görüşme için tıklayın.">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* --- GENEL TASARIM --- */
+        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
+        
+        /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #f4f7f6; }
         
-        /* HEADER */
+        /* HEADER & MENÜ (STANDART) */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
         
-        /* MENÜ DÜZENİ GÜNCELLENDİ (Buton hizalaması için) */
-        .nav-links { display: flex; align-items: center; } 
+        .nav-links { display: flex; align-items: center; }
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: #D62727; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
 
-        /* YENİ EKLENEN: PORTAL BUTONU STİLİ */
+        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
         .nav-links .btn-portal { 
             background-color: #FFCC00; color: #0B2142 !important; 
             padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
             display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; 
         }
         .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
 
-        /* HERO ALANI */
+        /* SAYFA BAŞLIĞI (HERO) - STANDART */
         .page-header {
             background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('https://upload.wikimedia.org/wikipedia/commons/5/5c/Ruhr-Universit%C3%A4t_Bochum_Luftaufnahme_2014.jpg');
             background-size: cover; background-position: center;
-            padding: 100px 20px; text-align: center; color: white;
+            padding: 120px 20px; /* Standart Yükseklik */
+            text-align: center; color: white;
         }
-        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; }
-        .page-header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; } 
+        .page-header p { font-size: 1.2rem; opacity: 1; max-width: 800px; margin: 0 auto; font-weight: 500; }
+
+        /* --- SAYFAYA ÖZEL STİLLER --- */
 
         /* ARAMA KUTUSU */
         .search-container { text-align: center; margin-top: -30px; margin-bottom: 40px; }
@@ -133,7 +129,9 @@
         
         .modal-footer { padding: 20px 40px; background: #f9f9f9; border-radius: 0 0 20px 20px; text-align: right; }
         
-        /* WHATSAPP */
+        /* FOOTER & WHATSAPP (STANDART) */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
         .whatsapp-btn {
             position: fixed; bottom: 30px; right: 30px;
             background-color: #25D366; color: white;
@@ -144,42 +142,16 @@
         }
         .whatsapp-btn:hover { transform: scale(1.1); }
 
-        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
+        /* --- MOBİL UYUMLULUK (STANDART) --- */
         @media (max-width: 768px) {
-            /* Header Düzenlemesi */
-            header {
-                padding: 10px 15px;
-                flex-direction: column; /* Alt alta sırala */
-                gap: 15px;
-            }
-            .logo img {
-                height: 50px; /* Logoyu küçült */
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-            .nav-links a {
-                margin: 0 5px;
-                font-size: 0.8rem; /* Menü yazılarını küçült */
-            }
-            /* Mobilde butonu tam genişlik yap */
-            .nav-links .btn-portal { width: 100%; justify-content: center; }
-
-            /* Slider İçerik Düzenlemesi */
-            .page-header h1 {
-                font-size: 1.8rem;
-                line-height: 1.2;
-            }
-            .page-header p {
-                font-size: 1rem;
-            }
-            .search-input {
-                width: 90%;
-            }
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+            
+            .page-header h1 { font-size: 2rem; }
+            .search-input { width: 90%; }
         }
     </style>
 </head>
@@ -310,7 +282,7 @@
                 city: "Dortmund",
                 domain: "tu-dortmund.de",
                 summary: "Yapay Zeka, Veri Bilimi ve Lojistik alanlarında uzmanlaşmış; kampüsü içinde kendine ait bir asma raylı sistem (H-Bahn) bulunan yenilikçi üniversite.",
-                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKlasik mühendislikten ziyade yeni nesil teknolojilere odaklanır. <strong>İstatistik, Veri Bilimi (Data Science), Bilgisayar Mühendisliği, Lojistik</strong> ve <strong>Biyokimya Mühendisliği</strong> fakülteleri Almanya'da öncüdür.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Dil Şartı:</strong> Genellikle DSH-2 veya TestDaF 16 puan (her bölümden en az 4) istenir.\n<strong>Şartlı Kabul:</strong> TU Dortmund, dil okuluna kayıtlı öğrencilere "şartlı kabul" belgesi verebilen üniversiteler arasındadır (Bölüme göre değişebilir, kontrol edilmelidir).\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konaklama:</strong> Dortmund, Ruhr bölgesinin merkezidir ve kiralar Almanya ortalamasının altındadır. Öğrenciler uygun fiyata konaklama bulabilir.\n<strong>Ulaşım (NRW Ticket):</strong> Öğrencilere verilen "Semesterticket", tüm Kuzey Ren-Vestfalya eyaletinde (Köln, Düsseldorf, Essen vb.) ücretsiz ulaşım sağlar. Bu, Almanya'daki en kapsamlı ulaşım avantajıdır.`
+                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKlasik mühendislikten ziyade yeni nesil teknolojilere odaklanır. <strong>İstatistik, Veri Bilimi (Data Science), Bilgisayar Mühendisliği, Lojistik</strong> ve <strong>Biyokimya Mühendisliği</strong> fakülteleri Almanya'da öncüdür.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Başvuru:</strong> Uni-Assist üzerinden yapılır.\n<strong>Dil Şartı:</strong> Genellikle DSH-2 veya TestDaF 16 puan (her bölümden en az 4) istenir.\n<strong>Şartlı Kabul:</strong> TU Dortmund, dil okuluna kayıtlı öğrencilere "şartlı kabul" belgesi verebilen üniversiteler arasındadır (Bölüme göre değişir, kontrol edilmelidir).\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Konaklama:</strong> Dortmund, Ruhr bölgesinin merkezidir ve kiralar Almanya ortalamasının altındadır. Öğrenciler uygun fiyata konaklama bulabilir.\n<strong>Ulaşım (NRW Ticket):</strong> Öğrencilere verilen "Semesterticket", tüm Kuzey Ren-Vestfalya eyaletinde (Köln, Düsseldorf, Essen vb.) ücretsiz ulaşım sağlar. Bu, Almanya'daki en kapsamlı ulaşım avantajıdır.`
             },
             {
                 name: "Technische Universität Clausthal (TU Clausthal)",
@@ -395,7 +367,7 @@
                 domain: "uni-koeln.de",
                 customLogo: "UzK.png",
                 summary: "50.000'i aşkın öğrencisiyle Almanya'nın en büyüklerinden; İşletme, Medya ve Hukuk alanında lider, Türk öğrenciler için sosyal açıdan en rahat şehir.",
-                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKöln Üniversitesi, özellikle <strong>"WiSo Faculty" (İşletme, İktisat ve Sosyal Bilimler)</strong> ile dünya çapında bir markadır. Hukuk, Psikoloji ve Medya Bilimleri bölümleri de çok prestijlidir. Şehir bir medya üssü (RTL, WDR merkezleri burada) olduğu için iletişim öğrencileri için staj cennetidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Rekabet (NC):</strong> İşletme (BWL) ve Psikoloji bölümlerine girmek çok zordur; NC (Not Ortalaması) çok yüksektir. Başvurular <strong>Uni-Assist</strong> üzerinden yapılır.\n<strong>TestAS:</strong> AB dışından gelen öğrenciler için (Türkiye dahil), İşletme ve İktisat başvurularında <strong>TestAS sınav sonucu sunmak</strong> kabul şansını ciddi oranda artırır, hatta bazen zorunlu tutulabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 kesindir. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesi başvuru anında istenir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Sosyal Yaşam:</strong> Köln, Türk nüfusunun en yoğun olduğu şehirdir. Öğrenciler yabancılık çekmez, Türk marketleri ve restoranları her köşe başındadır.\n<strong>Konaklama:</strong> Konut piyasası gergindir. "Kölner Studierendenwerk" yurtlarına bekleme süresi uzundur. Ancak çevre ilçelerden veya banliyölerde ev bulup trenle merkeze gelmek yaygındır.`
+                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKöln Üniversitesi, özellikle <strong>"WiSo Faculty" (İşletme, İktisat ve Sosyal Bilimler)</strong> ile dünya çapında bir markadır. Hukuk, Psikoloji ve Medya Bilimleri bölümleri de çok prestijlidir. Şehir bir medya üssü (RTL, WDR merkezleri burada) olduğu için iletişim öğrencileri için staj cennetidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Rekabet (NC):</strong> İşletme (BWL) ve Psikoloji bölümlerine girmek çok zordur; NC (Not Ortalaması) çok yüksektir. Başvurular <strong>Uni-Assist</strong> üzerinden yürütülür.\n<strong>TestAS:</strong> AB dışından gelen öğrenciler için (Türkiye dahil), İşletme ve İktisat başvurularında <strong>TestAS sınav sonucu sunmak</strong> kabul şansını ciddi oranda artırır, hatta bazen zorunlu tutulabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 kesindir. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesi başvuru anında istenir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Sosyal Yaşam:</strong> Köln, Türk nüfusunun en yoğun olduğu şehirdir. Öğrenciler yabancılık çekmez, Türk marketleri ve restoranları her köşe başındadır.\n<strong>Konaklama:</strong> Konut piyasası gergindir. "Kölner Studierendenwerk" yurtlarına bekleme süresi uzundur. Ancak çevre ilçelerden veya banliyölerde ev bulup trenle merkeze gelmek yaygındır.`
             },
             {
                 name: "Ruprecht-Karls-Universität Heidelberg",
@@ -620,7 +592,7 @@
                 city: "Berlin",
                 domain: "htw-berlin.de",
                 customLogo: "HTWBerlin.png",
-                summary: "Başkentin en popüler FH'sı; Oyun Tasarımı, Moda ve İşletme Bilişimi alanlarında yaratıcı ve teknik zekayı birleştiren modern okul.",
+                summary: "Başkentin en popüler FH'sı; Oyun Tasarımı, Moda ve İşletme Bilişimi alanında yaratıcı ve teknik zekayı birleştiren modern okul.",
                 detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nBerlin'in start-up ruhunu en iyi yansıtan okuldur. <strong>Game Design (Oyun Tasarımı), Moda Tasarımı, Wirtschaftsinformatik</strong> ve <strong>Makine Mühendisliği</strong> bölümleri çok talep görür. Spree nehri kıyısında harika bir kampüsü vardır.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Seçicilik:</strong> Tasarım bölümleri için yetenek sınavı ve portfolyo (Mappe) sunumu şarttır.\n<strong>Mühendislik:</strong> NC puanları Berlin'deki diğer üniversitelere göre daha erişilebilirdir ancak eğitim kalitesi çok yüksektir.\n<strong>Başvuru:</strong> Uni-Assist ile yapılır.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Lokasyon:</strong> Doğu Berlin tarafındadır (Oberschöneweide).\n<strong>Konut:</strong> Şehir merkezine göre kiralar daha uygundur. Sanatçıların ve öğrencilerin yoğun olduğu bir bölgedir.`
             },
             {
