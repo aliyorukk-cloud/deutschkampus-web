@@ -24,23 +24,53 @@
         /* GENEL */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; background-color: #fcfcfc; }
         
-        /* HEADER */
-        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        /* HEADER (Üst Menü) */
+        header { 
+            background-color: #ffffff; 
+            padding: 15px 50px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+
         .logo img { height: 80px; width: auto; } 
-        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+
+        /* MENÜ LİNKLERİ VE BUTON HİZALAMASI (Burayı Güncelledik) */
+        .nav-links {
+            display: flex;          /* Yan yana dizilme */
+            align-items: center;    /* Dikey ortalama */
+            gap: 20px;             /* Öğeler arası boşluk */
+        }
+
+        .nav-links a { 
+            text-decoration: none; 
+            color: #0B2142; 
+            font-weight: 600; 
+            font-size: 0.95rem; 
+            text-transform: uppercase; 
+            transition: 0.3s; 
+            /* margin-left kaldırıldı, yerine gap kullanıldı */
+        }
         .nav-links a:hover { color: #D62727; }
 
-        /* YENİ EKLENEN: ÖĞRENCİ PORTALI BUTON STİLİ */
+        /* ÖĞRENCİ PORTALI BUTONU STİLİ */
         .nav-links .btn-portal {
-            background-color: #FFCC00; /* Alman Sarısı/Altın */
+            background-color: #FFCC00; /* Alman Sarısı */
             color: #0B2142 !important; /* Lacivert Yazı */
-            padding: 10px 25px;
+            padding: 10px 20px;
             border-radius: 50px;
             border: 2px solid #FFCC00;
             display: inline-flex;
             align-items: center;
             gap: 8px; /* İkon ile yazı arası boşluk */
+            font-weight: 700;
+            white-space: nowrap; /* Yazının alt satıra kaymasını engeller */
         }
+        
         .nav-links .btn-portal:hover {
             background-color: transparent;
             color: #FFCC00 !important;
@@ -215,11 +245,11 @@
                 display: flex;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 10px;
+                gap: 15px;
                 width: 100%;
             }
             .nav-links a {
-                margin: 0 5px;
+                margin: 0; /* Mobilde margin'i sıfırla, gap kullanıyoruz */
                 font-size: 0.8rem; /* Menü yazılarını küçült */
             }
             
@@ -227,7 +257,8 @@
             .nav-links .btn-portal {
                 padding: 8px 15px;
                 font-size: 0.8rem;
-                margin-top: 5px;
+                width: 100%; /* Mobilde butonu genişlet */
+                justify-content: center; /* Yazıyı ortala */
             }
 
             /* Slider İçerik Düzenlemesi */
@@ -260,24 +291,18 @@
 <body>
 
     <header>
-    <a href="index.html" class="logo">
-        <img src="logo.png" alt="DeutschKampus Logo">
-    </a>
-
-    <nav class="nav-links">
-        <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
-        <a href="almanyada-egitim.html">Eğitim Rehberi</a>
-        <a href="universiteler.html">Üniversiteler</a>
-        <a href="makaleler.html">Makaleler</a>
-        <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-        <a href="hakkimizda.html">Hakkımızda</a>
-        <a href="iletisim.html">İletişim</a>
-        
-        <a href="login.html" class="btn-portal">
-            <i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı
-        </a>
-    </nav>
-</header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
+        <nav class="nav-links">
+            <a href="index.html" style="color: #D62727;">Ana Sayfa</a>
+            <a href="almanyada-egitim.html">Eğitim Rehberi</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="makaleler.html">Makaleler</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
+        </nav>
+    </header>
 
     <a href="https://wa.me/4917672489386" class="whatsapp-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
 
