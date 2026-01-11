@@ -21,61 +21,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* GENEL */
+        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
+        
+        /* GENEL AYARLAR */
         body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; background-color: #fcfcfc; }
         
-        /* HEADER (Üst Menü) */
-        header { 
-            background-color: #ffffff; 
-            padding: 15px 50px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-        }
-
+        /* HEADER & MENÜ (STANDART) */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
-
-        /* MENÜ LİNKLERİ VE BUTON HİZALAMASI (Burayı Güncelledik) */
-        .nav-links {
-            display: flex;          /* Yan yana dizilme */
-            align-items: center;    /* Dikey ortalama */
-            gap: 20px;             /* Öğeler arası boşluk */
-        }
-
-        .nav-links a { 
-            text-decoration: none; 
-            color: #0B2142; 
-            font-weight: 600; 
-            font-size: 0.95rem; 
-            text-transform: uppercase; 
-            transition: 0.3s; 
-            /* margin-left kaldırıldı, yerine gap kullanıldı */
-        }
-        .nav-links a:hover { color: #D62727; }
-
-        /* ÖĞRENCİ PORTALI BUTONU STİLİ */
-        .nav-links .btn-portal {
-            background-color: #FFCC00; /* Alman Sarısı */
-            color: #0B2142 !important; /* Lacivert Yazı */
-            padding: 10px 20px;
-            border-radius: 50px;
-            border: 2px solid #FFCC00;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px; /* İkon ile yazı arası boşluk */
-            font-weight: 700;
-            white-space: nowrap; /* Yazının alt satıra kaymasını engeller */
-        }
         
-        .nav-links .btn-portal:hover {
-            background-color: transparent;
-            color: #FFCC00 !important;
-            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
+
+        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; 
         }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
+
+        /* --- ANA SAYFAYA ÖZEL STİLLER --- */
 
         /* WHATSAPP */
         .whatsapp-btn {
@@ -230,61 +198,24 @@
 
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; }
 
-        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
+        /* --- MOBİL UYUMLULUK (STANDART) --- */
         @media (max-width: 768px) {
-            /* Header Düzenlemesi */
-            header {
-                padding: 10px 15px;
-                flex-direction: column; /* Alt alta sırala */
-                gap: 15px;
-            }
-            .logo img {
-                height: 50px; /* Logoyu küçült */
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-                width: 100%;
-            }
-            .nav-links a {
-                margin: 0; /* Mobilde margin'i sıfırla, gap kullanıyoruz */
-                font-size: 0.8rem; /* Menü yazılarını küçült */
-            }
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            /* Mobilde butonu tam genişlik yap */
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
             
-            /* Mobil için Portal Butonu Ayarı */
-            .nav-links .btn-portal {
-                padding: 8px 15px;
-                font-size: 0.8rem;
-                width: 100%; /* Mobilde butonu genişlet */
-                justify-content: center; /* Yazıyı ortala */
-            }
-
             /* Slider İçerik Düzenlemesi */
-            .content {
-                width: 90%;
-            }
-            .content h1 {
-                font-size: 1.8rem; /* Başlık boyutunu küçült (Önemli!) */
-                line-height: 1.2;
-            }
-            .content p {
-                font-size: 1rem;
-                margin-bottom: 25px;
-            }
-            .btn {
-                padding: 12px 30px; /* Buton padding azalt */
-                font-size: 0.9rem;
-            }
+            .content { width: 90%; }
+            .content h1 { font-size: 1.8rem; line-height: 1.2; }
+            .content p { font-size: 1rem; margin-bottom: 25px; }
+            .btn { padding: 12px 30px; font-size: 0.9rem; }
 
             /* Diğer Bölümler */
-            .features h2, .pricing-section h2, .steps-section h2 {
-                font-size: 1.8rem;
-            }
-            .price-card.featured {
-                transform: scale(1); /* Mobilde öne çıkanı büyütme */
-            }
+            .features h2, .pricing-section h2, .steps-section h2 { font-size: 1.8rem; }
+            .price-card.featured { transform: scale(1); }
         }
     </style>
 </head>
@@ -489,7 +420,7 @@
                     <i class="fa-solid fa-plus icon-plus"></i>
                 </button>
                 <div class="accordion-content">
-                    <p>"Numerus Clausus" (Kapalı Sayı) demektir. Popüler bölümlere girişte not ortalaması barajıdır. Almanya'da not sistemi ters işler: <strong>1.0 en yüksek (pekiyi), 4.0 en düşük geçer nottur.</strong></p>
+                    <p>"Numerus Clausus" (Kapalı Sayı) demektir. Popüler bölümler (Tıp, Psikoloji, İşletme vb.) girişte not ortalaması barajıdır. Almanya'da not sistemi ters işler: <strong>1.0 en yüksek (pekiyi), 4.0 en düşük geçer nottur.</strong></p>
                     
                     <div class="nc-calculator">
                         <h4>NC Hesaplama Robotu (Bavyera Formülü)</h4>
