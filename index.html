@@ -30,6 +30,23 @@
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
 
+        /* YENİ EKLENEN: ÖĞRENCİ PORTALI BUTON STİLİ */
+        .nav-links .btn-portal {
+            background-color: #FFCC00; /* Alman Sarısı/Altın */
+            color: #0B2142 !important; /* Lacivert Yazı */
+            padding: 10px 25px;
+            border-radius: 50px;
+            border: 2px solid #FFCC00;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px; /* İkon ile yazı arası boşluk */
+        }
+        .nav-links .btn-portal:hover {
+            background-color: transparent;
+            color: #FFCC00 !important;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.4);
+        }
+
         /* WHATSAPP */
         .whatsapp-btn {
             position: fixed; bottom: 30px; right: 30px;
@@ -205,6 +222,13 @@
                 margin: 0 5px;
                 font-size: 0.8rem; /* Menü yazılarını küçült */
             }
+            
+            /* Mobil için Portal Butonu Ayarı */
+            .nav-links .btn-portal {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+                margin-top: 5px;
+            }
 
             /* Slider İçerik Düzenlemesi */
             .content {
@@ -245,6 +269,7 @@
             <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a>
             <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
         </nav>
     </header>
 
