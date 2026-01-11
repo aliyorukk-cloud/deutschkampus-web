@@ -1,64 +1,59 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF9PCGG0SB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-NF9PCGG0SB');
-    </script>
-
-    <meta name="description" content="DeutschKampus ile Almanya'da üniversite eğitimi, vize danışmanlığı, NC hesaplama ve şartlı kabul süreçlerinde profesyonel destek alın. Hayallerinizi ertelemeyin.">
-    <meta name="keywords" content="Almanya eğitim danışmanlığı, Almanya üniversite başvurusu, Almanya vizesi, NC hesaplama, Almanya'da üniversite okumak, şartlı kabul, DeutschKampus, blok hesap">
-    <meta name="author" content="DeutschKampus">
-    <meta name="robots" content="index, follow">
-
-    <meta property="og:title" content="DeutschKampus | Almanya'da Geleceğini Tasarla">
-    <meta property="og:description" content="Profesyonel akademik danışmanlık ve vize rehberliği. Ücretsiz ön görüşme için tıklayın.">
-    <meta property="og:image" content="https://deutschkampus.com/logo.png">
-    <meta property="og:url" content="https://deutschkampus.com">
-    <meta property="og:type" content="website">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hakkımızda | DeutschKampus</title>
     
     <link rel="icon" href="logo.png" type="image/png">
     
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF9PCGG0SB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NF9PCGG0SB');
+    </script>
+
+    <meta name="description" content="DeutschKampus kurucusu ve vizyonu hakkında bilgiler.">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        /* GENEL AYARLAR */
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.8; background-color: #f9f9f9; }
+        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
         
-        /* HEADER & MENÜ */
+        /* GENEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; overflow-x: hidden; }
+        
+        /* HEADER & MENÜ (STANDART) */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
         
-        /* Nav Link Düzenlemesi */
+        .nav-links { display: flex; align-items: center; }
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:not(.btn-portal):hover { color: #D62727; }
 
-        /* SARI ÖĞRENCİ PORTALI BUTONU */
+        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
         .nav-links .btn-portal { 
             background-color: #FFCC00; color: #0B2142 !important; 
             padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
             display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
-            text-transform: none; /* Büyük harf zorunluluğunu kaldırır */
+            text-transform: none; 
         }
         .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
 
-        /* HERO (BAŞLIK) ALANI */
-        .about-header {
+        /* SAYFA BAŞLIĞI (HERO) - STANDART */
+        .page-header {
             background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600');
             background-size: cover; background-position: center;
-            padding: 120px 20px; text-align: center; color: white;
+            padding: 120px 20px; /* Standart Yükseklik */
+            text-align: center; color: white;
         }
-        .about-header h1 { font-size: 3rem; margin: 0 0 20px 0; font-weight: 700; }
-        .about-header p { font-size: 1.3rem; opacity: 0.9; max-width: 700px; margin: 0 auto; font-weight: 300; }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; } 
+        .page-header p { font-size: 1.2rem; opacity: 1; max-width: 800px; margin: 0 auto; font-weight: 500; }
+
+        /* --- SAYFAYA ÖZEL STİLLER --- */
 
         /* HİKAYE BÖLÜMÜ */
         .story-section { padding: 80px 10%; background: white; display: flex; flex-wrap: wrap; align-items: center; gap: 50px; }
@@ -92,37 +87,9 @@
         }
         .cta-btn:hover { background-color: white; color: #D62727; }
 
-        /* FOOTER */
+        /* FOOTER & WHATSAPP (STANDART) */
         footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
-
-        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
-        @media (max-width: 768px) {
-            /* Header Düzenlemesi */
-            header {
-                padding: 10px 15px;
-                flex-direction: column; /* Alt alta sırala */
-                gap: 15px;
-            }
-            .logo img {
-                height: 50px; /* Logoyu küçült */
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-            .nav-links a {
-                margin: 0 5px;
-                font-size: 0.8rem; /* Menü yazılarını küçült */
-            }
-            /* Mobilde butonu tam genişlik yap */
-            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
-        }
-
         
-        /* WHATSAPP */
         .whatsapp-btn {
             position: fixed; bottom: 30px; right: 30px;
             background-color: #25D366; color: white;
@@ -132,6 +99,17 @@
             z-index: 9999; text-decoration: none; transition: 0.3s;
         }
         .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* --- MOBİL UYUMLULUK (STANDART) --- */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+            
+            .page-header h1 { font-size: 2rem; }
+        }
     </style>
 </head>
 <body>
@@ -150,7 +128,7 @@
         </nav>
     </header>
 
-    <div class="about-header">
+    <div class="page-header">
         <h1>Hikayemiz & Vizyonumuz</h1>
         <p>Almanya'da eğitim yolculuğu sadece bir okul kaydı değildir; yeni bir hayatın inşasıdır.</p>
     </div>
