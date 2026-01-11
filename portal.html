@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Paneli | Mert Yılmaz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* TEMEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f6f9; color: #333; }
+        
+        /* HEADER (Basitleştirilmiş) */
+        header { background: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .logo { font-weight: 700; font-size: 1.2rem; color: #0B2142; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .user-name { font-weight: 600; color: #0B2142; }
+        .logout-btn { color: #d62727; text-decoration: none; font-size: 0.9rem; border: 1px solid #d62727; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+        .logout-btn:hover { background: #d62727; color: white; }
+
+        /* ANA KONTEYNER */
+        .dashboard-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+
+        /* HOŞGELDİN & DURUM ÇUBUĞU */
+        .welcome-section { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); margin-bottom: 30px; }
+        .welcome-header h1 { margin: 0 0 10px 0; color: #0B2142; }
+        .status-bar-container { background: #eee; height: 15px; border-radius: 10px; margin-top: 20px; overflow: hidden; position: relative; }
+        .status-bar-fill { background: #27ae60; height: 100%; width: 50%; border-radius: 10px; } /* %50 Doluluk */
+        .status-labels { display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.8rem; color: #666; font-weight: 600; }
+        .current-status { color: #27ae60; font-weight: bold; margin-top: 10px; display: block; }
+
+        /* GRID YAPISI (3 Sütun) */
+        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        /* KART STİLLERİ */
+        .dash-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
+        .dash-card h3 { margin-top: 0; color: #0B2142; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        
+        /* LİSTELER */
+        .file-list, .task-list { list-style: none; padding: 0; margin: 0; }
+        
+        /* Dosya Listesi */
+        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
+        .file-item:last-child { border-bottom: none; }
+        .file-info { display: flex; align-items: center; gap: 10px; }
+        .file-icon { color: #e67e22; font-size: 1.2rem; }
+        .download-btn { background: #f0f2f5; color: #0B2142; padding: 5px 12px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; }
+        .download-btn:hover { background: #0B2142; color: white; }
+
+        /* Görev Listesi */
+        .task-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 0.95rem; }
+        .task-item input[type="checkbox"] { accent-color: #27ae60; width: 18px; height: 18px; }
+        .task-done { text-decoration: line-through; color: #aaa; }
+        
+        /* Özel Kutu: Akademi */
+        .academy-box { background: linear-gradient(135deg, #0B2142, #162a4d); color: white; }
+        .academy-box h3 { color: #FFCC00; border-color: rgba(255,255,255,0.1); }
+        .academy-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; transition: 0.3s; cursor: pointer; }
+        .academy-item:hover { background: rgba(255,255,255,0.2); }
+        .academy-text strong { display: block; font-size: 1rem; }
+        .academy-text small { color: #ccc; font-size: 0.8rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .status-labels span { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">
+            <img src="logo.png" height="40" alt=""> DeutschKampus Panel
+        </a>
+        <div class="user-info">
+            <span class="user-name">👤 Mert Yılmaz</span>
+            <a href="index.html" class="logout-btn">Çıkış</a>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        
+        <section class="welcome-section">
+            <div class="welcome-header">
+                <h1>Hoş geldin, Mert! 👋</h1>
+                <p>Paderborn Üniversitesi başvuruların tamamlandı. Şu an okullardan cevap bekliyoruz.</p>
+            </div>
+            
+            <span class="current-status">Durum: Okul Cevabı Bekleniyor (%50)</span>
+            <div class="status-bar-container">
+                <div class="status-bar-fill"></div>
+            </div>
+            <div class="status-labels">
+                <span>Başvuru</span>
+                <span>Evrak Kontrolü</span>
+                <span style="color:#27ae60">Üni. Başvurusu</span>
+                <span>Kabul</span>
+                <span>Vize</span>
+            </div>
+        </section>
+
+        <div class="dashboard-grid">
+            
+            <div class="dash-card">
+                <h3><i class="fa-solid fa-folder-open"></i> Belge Kasası</h3>
+                <ul class="file-list">
+                    <li class="file-item">
+                        <div class="file-info">
+                            <i class="fa-solid fa-file-pdf file-icon"></i>
+                            <span>Uni-Assist_Dekont.pdf</span>
+                        </div>
+                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
+                    </li>
+                    <li class="file-item">
+                        <div class="file-info">
+                            <i class="fa-solid fa-file-pdf file-icon"></i>
+                            <span>Lise_Transkript_Noterli.pdf</span>
+                        </div>
+                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
+                    </li>
+                    <li class="file-item">
+                        <div class="file-info">
+                            <i class="fa-solid fa-file-pdf file-icon"></i>
+                            <span>Pasaport_Tarama.pdf</span>
+                        </div>
+                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="dash-card academy-box">
+                <h3><i class="fa-solid fa-graduation-cap"></i> DK Akademi</h3>
+                <p style="font-size:0.9rem; opacity:0.8; margin-bottom:20px;">Sana özel hazırladığımız rehberler.</p>
+                
+                <div class="academy-item" onclick="alert('Vize Rehberi PDF\'i açılıyor...')">
+                    <i class="fa-solid fa-book-open fa-2x" style="color:#FFCC00"></i>
+                    <div class="academy-text">
+                        <strong>Vize Mülakat Rehberi</strong>
+                        <small>Ali Hoca'nın özel notları (PDF)</small>
+                    </div>
+                </div>
+
+                <div class="academy-item" onclick="alert('Video açılıyor...')">
+                    <i class="fa-solid fa-play-circle fa-2x" style="color:#FFCC00"></i>
+                    <div class="academy-text">
+                        <strong>Bloke Hesap Nasıl Açılır?</strong>
+                        <small>Adım adım video anlatım</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dash-card">
+                <h3><i class="fa-solid fa-list-check"></i> Yapılacaklar</h3>
+                <ul class="task-list">
+                    <li class="task-item task-done">
+                        <input type="checkbox" checked disabled>
+                        <span>Danışmanlık ücretini öde</span>
+                    </li>
+                    <li class="task-item task-done">
+                        <input type="checkbox" checked disabled>
+                        <span>Evrakları sisteme yükle</span>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox">
+                        <span><strong>Bloke Hesap Açılışı</strong> (Expatrio)</span>
+                    </li>
+                    <li class="task-item">
+                        <input type="checkbox">
+                        <span>Vize Rehberini oku</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
