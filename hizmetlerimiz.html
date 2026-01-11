@@ -20,8 +20,19 @@
         /* HEADER & MENÜ */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
+        
+        /* Nav Link Düzenlemesi (Hover rengi butonu etkilemesin diye güncellendi) */
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
-        .nav-links a:hover { color: #D62727; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
+
+        /* SARI ÖĞRENCİ PORTALI BUTONU (DİĞER SAYFALARLA AYNI) */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; /* Büyük harf zorunluluğunu kaldırır */
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
 
         /* SAYFA BAŞLIĞI (Hero) */
         .page-header {
@@ -85,51 +96,13 @@
 
         /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
         @media (max-width: 768px) {
-            /* Header Düzenlemesi */
-            header {
-                padding: 10px 15px;
-                flex-direction: column; /* Alt alta sırala */
-                gap: 15px;
-            }
-            .logo img {
-                height: 50px; /* Logoyu küçült */
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-            .nav-links a {
-                margin: 0 5px;
-                font-size: 0.8rem; /* Menü yazılarını küçült */
-            }
-
-
-        /* --- MOBİL UYUMLULUK (RESPONSIVE CSS) --- */
-        @media (max-width: 768px) {
-            /* Header Düzenlemesi */
-            header {
-                padding: 10px 15px;
-                flex-direction: column; /* Alt alta sırala */
-                gap: 15px;
-            }
-            .logo img {
-                height: 50px; /* Logoyu küçült */
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                width: 100%;
-            }
-            .nav-links a {
-                margin: 0 5px;
-                font-size: 0.8rem; /* Menü yazılarını küçült */
-            }
-
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            /* Mobilde butonu tam genişlik yap */
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+        }
     </style>
 </head>
 <body>
@@ -144,6 +117,7 @@
             <a href="hizmetlerimiz.html" style="color: #D62727;">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a>
             <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
         </nav>
     </header>
 
