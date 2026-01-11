@@ -36,8 +36,19 @@
         /* HEADER */
         header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
         .logo img { height: 80px; width: auto; } 
+        
+        /* MENÜ DÜZENİ GÜNCELLENDİ (Buton hizalaması için) */
+        .nav-links { display: flex; align-items: center; } 
         .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
+
+        /* YENİ EKLENEN: PORTAL BUTONU STİLİ */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
 
         /* HERO ALANI */
         .page-header {
@@ -155,6 +166,8 @@
                 margin: 0 5px;
                 font-size: 0.8rem; /* Menü yazılarını küçült */
             }
+            /* Mobilde butonu tam genişlik yap */
+            .nav-links .btn-portal { width: 100%; justify-content: center; }
 
             /* Slider İçerik Düzenlemesi */
             .page-header h1 {
@@ -182,6 +195,7 @@
             <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a> 
             <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
         </nav>
     </header>
 
@@ -380,7 +394,7 @@
                 domain: "uni-koeln.de",
                 customLogo: "UzK.png",
                 summary: "50.000'i aşkın öğrencisiyle Almanya'nın en büyüklerinden; İşletme, Medya ve Hukuk alanında lider, Türk öğrenciler için sosyal açıdan en rahat şehir.",
-                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKöln Üniversitesi, özellikle <strong>"WiSo Faculty" (İşletme, İktisat ve Sosyal Bilimler)</strong> ile dünya çapında bir markadır. Hukuk, Psikoloji ve Medya Bilimleri bölümleri de çok prestijlidir. Şehir bir medya üssü (RTL, WDR merkezleri burada) olduğu için iletişim öğrencileri için staj cennetidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Rekabet (NC):</strong> İşletme (BWL) ve Psikoloji bölümlerine girmek çok zordur; NC (Not Ortalaması) çok yüksektir. Başvurular <strong>Uni-Assist</strong> üzerinden yapılır.\n<strong>TestAS:</strong> AB dışından gelen öğrenciler için (Türkiye dahil), İşletme ve İktisat başvurularında <strong>TestAS sınav sonucu sunmak</strong> kabul şansını ciddi oranda artırır, hatta bazen zorunlu tutulabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 kesindir. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesi başvuru anında istenir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Sosyal Yaşam:</strong> Köln, Türk nüfusunun en yoğun olduğu şehirdir. Öğrenciler yabancılık çekmez, Türk marketleri ve restoranları her köşe başındadır.\n<strong>Konaklama:</strong> Konut piyasası gergindir. "Kölner Studierendenwerk" yurtlarına bekleme süresi uzundur. Ancak çevre ilçelerden veya banliyölerden ev bulup trenle merkeze gelmek yaygındır.`
+                detail: `🏫 <strong>Akademik Profil ve Popüler Bölümler:</strong>\nKöln Üniversitesi, özellikle <strong>"WiSo Faculty" (İşletme, İktisat ve Sosyal Bilimler)</strong> ile dünya çapında bir markadır. Hukuk, Psikoloji ve Medya Bilimleri bölümleri de çok prestijlidir. Şehir bir medya üssü (RTL, WDR merkezleri burada) olduğu için iletişim öğrencileri için staj cennetidir.\n\n📝 <strong>Başvuru ve Kabul Şartları (Kritik Bilgiler):</strong>\n<strong>Rekabet (NC):</strong> İşletme (BWL) ve Psikoloji bölümlerine girmek çok zordur; NC (Not Ortalaması) çok yüksektir. Başvurular <strong>Uni-Assist</strong> üzerinden yapılır.\n<strong>TestAS:</strong> AB dışından gelen öğrenciler için (Türkiye dahil), İşletme ve İktisat başvurularında <strong>TestAS sınav sonucu sunmak</strong> kabul şansını ciddi oranda artırır, hatta bazen zorunlu tutulabilir.\n<strong>Dil Şartı:</strong> DSH-2 veya TestDaF 4x4 kesindir. Şartlı kabul imkanları kısıtlıdır, genellikle dil belgesi başvuru anında istenir.\n\n🏠 <strong>Yurt ve Konaklama İmkanları:</strong>\n<strong>Sosyal Yaşam:</strong> Köln, Türk nüfusunun en yoğun olduğu şehirdir. Öğrenciler yabancılık çekmez, Türk marketleri ve restoranları her köşe başındadır.\n<strong>Konaklama:</strong> Konut piyasası gergindir. "Kölner Studierendenwerk" yurtlarına bekleme süresi uzundur. Ancak çevre ilçelerden veya banliyölerde ev bulup trenle merkeze gelmek yaygındır.`
             },
             {
                 name: "Ruprecht-Karls-Universität Heidelberg",
