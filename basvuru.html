@@ -20,7 +20,7 @@
     <style>
         body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f7f6; color: #333; }
         
-        /* HEADER (Portal Butonu Eklendi) */
+        /* HEADER (Kısa Versiyon + Portal Butonu) */
         header { background-color: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .logo img { height: 60px; width: auto; }
         
@@ -28,7 +28,7 @@
         .nav-links a { text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
         .nav-links a:hover { color: #D62727; }
 
-        /* PORTAL BUTONU CSS */
+        /* YENİ EKLENEN: Portal Butonu Stili */
         .nav-links .btn-portal { 
             background-color: #FFCC00; color: #0B2142 !important; 
             padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
@@ -75,7 +75,7 @@
             margin: 30px 0 20px 0; color: #0B2142; font-weight: 700; border-radius: 0 8px 8px 0;
         }
 
-        /* YENİ EKLENEN: BÜTÇE UYARI KUTUSU */
+        /* YENİ EKLENEN: BÜTÇE UYARI KUTUSU (Google Ads Filtresi) */
         .budget-box {
             background-color: #fff3cd;
             border: 1px solid #ffeeba;
@@ -107,6 +107,7 @@
             <a href="index.html">Ana Sayfa</a>
             <a href="almanyada-egitim.html">Eğitim Rehberi</a>
             <a href="universiteler.html">Üniversiteler</a>
+            <a href="makaleler.html">Makaleler</a>
             <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
             <a href="hakkimizda.html">Hakkımızda</a>
             <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
@@ -116,11 +117,15 @@
     <div class="form-container">
         <div class="form-header">
             <h1>Ücretsiz Profil Analizi</h1>
-            <p>Almanya hedeflerinizi inceleyelim, size uygun üniversite ve vize yol haritasını <strong>24 saat içinde</strong> çıkaralım.</p>
+            <p>Almanya eğitim yolculuğunuzu planlamamız için lütfen bilgileri eksiksiz doldurun.</p>
         </div>
 
         <form action="https://formspree.io/f/mbdjkygd" method="POST">
             
+            <input type="text" name="_gotcha" style="display:none" />
+
+            <input type="hidden" name="_subject" value="Yeni Profil Analiz Başvurusu!" />
+
             <div class="section-title">1. Kişisel Bilgiler</div>
             <div class="row">
                 <div class="col form-group">
@@ -138,32 +143,34 @@
                     <input type="email" name="email" required placeholder="ornek@gmail.com">
                 </div>
                 <div class="col form-group">
-                    <label>Telefon (WhatsApp)</label>
+                    <label>Telefon Numarası</label>
                     <input type="tel" name="telefon" required placeholder="05XX XXX XX XX">
                 </div>
             </div>
+            <div class="form-group">
+                <label>Yaşadığınız Şehir</label>
+                <input type="text" name="sehir" placeholder="İstanbul, Ankara...">
+            </div>
 
-            <div class="section-title">2. Akademik Durum</div>
+            <div class="section-title">2. Eğitim Durumu</div>
+            <div class="form-group">
+                <label>Şu anki Durumunuz</label>
+                <select name="egitim_durumu">
+                    <option value="lise_ogrencisi">Lise Öğrencisi</option>
+                    <option value="lise_mezunu">Lise Mezunu</option>
+                    <option value="universite_ogrencisi">Üniversite Öğrencisi (Lisans)</option>
+                    <option value="universite_mezunu">Üniversite Mezunu</option>
+                </select>
+            </div>
             <div class="row">
                 <div class="col form-group">
-                    <label>Eğitim Seviyeniz</label>
-                    <select name="egitim_durumu" required>
-                        <option value="" disabled selected>Seçiniz...</option>
-                        <option value="Lise Öğrencisi">Lise Öğrencisi</option>
-                        <option value="Lise Mezunu">Lise Mezunu</option>
-                        <option value="Üniversite Öğrencisi">Üniversite Öğrencisi</option>
-                        <option value="Üniversite Mezunu">Üniversite Mezunu</option>
-                    </select>
+                    <label>Mezun Olunan Okul / Bölüm</label>
+                    <input type="text" name="okul_bolum" placeholder="Örn: Anadolu Lisesi / Fen Lisesi">
                 </div>
                 <div class="col form-group">
-                    <label>Ortalamanız (Lise/Üni)</label>
-                    <input type="text" name="ortalama" required placeholder="Örn: 85 veya 2.80">
+                    <label>Not Ortalaması (OBP / GPA)</label>
+                    <input type="text" name="ortalama" placeholder="Örn: 85/100 veya 3.20/4.00">
                 </div>
-            </div>
-            
-            <div class="form-group">
-                <label>Almanca / İngilizce Seviyeniz?</label>
-                <input type="text" name="dil_seviyesi" placeholder="Örn: Almanca A2, İngilizce B1">
             </div>
 
             <div class="form-group budget-box">
@@ -171,29 +178,51 @@
                 <p>Almanya vizesi için bankada (Bloke Hesap) yaklaşık <strong>12.000 Euro</strong> göstermeniz gerekmektedir. Bu bütçeyi sağlayabilir misiniz?</p>
                 <select name="butce_onayi" required style="border: 2px solid #856404;">
                     <option value="" disabled selected>Lütfen dürüstçe seçiniz...</option>
-                    <option value="Evet, bütçemiz hazır">✅ Evet, bu bütçeyi hazırlayabiliriz.</option>
-                    <option value="Hayır, burs arıyorum">❌ Hayır, burs arıyorum (Bütçem yok).</option>
-                    <option value="Ailemle görüşmeliyim">🤔 Belki, ailemle görüşmeliyim.</option>
+                    <option value="Evet, bütçemiz hazır"> Evet, bu bütçeyi hazırlayabiliriz.</option>
+                    <option value="Hayır, burs arıyorum"> Hayır, burs arıyorum (Bütçem yok).</option>
+                    <option value="Ailemle görüşmeliyim"> Belki, ailemle görüşmeliyim.</option>
                 </select>
             </div>
 
-            <div class="section-title">3. Hedefiniz</div>
+            <div class="section-title">3. Hedef ve Dil Seviyesi</div>
+            <div class="row">
+                <div class="col form-group">
+                    <label>Almanca Seviyeniz</label>
+                    <select name="almanca_seviye">
+                        <option value="0">Hiç bilmiyorum (A0)</option>
+                        <option value="A1">Başlangıç (A1)</option>
+                        <option value="A2">Temel (A2)</option>
+                        <option value="B1">Orta (B1)</option>
+                        <option value="B2">İyi (B2)</option>
+                        <option value="C1">İleri (C1)</option>
+                    </select>
+                </div>
+                <div class="col form-group">
+                    <label>İngilizce Seviyeniz</label>
+                    <select name="ingilizce_seviye">
+                        <option value="0">Hiç bilmiyorum</option>
+                        <option value="B1">Orta</option>
+                        <option value="C1">İleri</option>
+                    </select>
+                </div>
+            </div>
             <div class="form-group">
-                <label>Okumak İstediğiniz Bölüm / Alan</label>
-                <input type="text" name="hedef_bolum" required placeholder="Örn: Bilgisayar Mühendisliği, Psikoloji...">
+                <label>Almanya'da Okumak İstediğiniz Bölüm?</label>
+                <input type="text" name="hedef_bolum" placeholder="Örn: Bilgisayar Mühendisliği, Psikoloji...">
             </div>
 
+            <div class="section-title">4. Mesajınız</div>
             <div class="form-group">
-                <label>Eklemek İstedikleriniz</label>
-                <textarea name="mesaj" rows="3" placeholder="Varsa özel durumunuzu yazabilirsiniz."></textarea>
+                <label>Eklemek İstedikleriniz / Sorularınız</label>
+                <textarea name="mesaj" rows="4" placeholder="Varsa özel durumunuzu veya sorularınızı buraya yazabilirsiniz."></textarea>
             </div>
 
             <div class="form-group checkbox-group">
                 <input type="checkbox" required>
-                <label>Analiz sonucumun bana iletilmesini kabul ediyorum.</label>
+                <label>Kişisel verilerimin işlenmesini ve benimle iletişime geçilmesini kabul ediyorum.</label>
             </div>
 
-            <button type="submit" class="submit-btn">ÜCRETSİZ ANALİZİ BAŞLAT <i class="fa-solid fa-arrow-right"></i></button>
+            <button type="submit" class="submit-btn">ÜCRETSİZ ANALİZİ BAŞLAT <i class="fa-solid fa-paper-plane"></i></button>
         </form>
     </div>
 
