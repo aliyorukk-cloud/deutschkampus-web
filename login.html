@@ -115,7 +115,6 @@
     </div>
 
     <script>
-        
         // BASİT GİRİŞ SİMÜLASYONU
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault(); 
@@ -123,11 +122,18 @@
             var user = document.getElementById('username').value;
             var pass = document.getElementById('password').value;
 
+            // KONTROL: Konsola yazdıralım ki çalıştığını görelim
+            console.log("Giriş deneniyor:", user, pass);
+
             // Mert giriş yaparsa (Şifre: 1234)
             if(user === "mert" && pass === "1234") {
-                // BURAYI GÜNCELLEDİK:
+                // Eğer portal.html dosyası yoksa 404 hatası alırsın.
                 window.location.href = "portal.html"; 
             } else {
                 alert("Hatalı kullanıcı adı veya şifre! (İpucu: mert / 1234)");
             }
         });
+    </script>
+
+</body>
+</html>
