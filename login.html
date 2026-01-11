@@ -124,14 +124,9 @@
 
             // Mert giriş yaparsa (Şifre: 1234)
             if(user === "mert" && pass === "1234") {
-                alert("Giriş Başarılı! Hoş geldin Mert.");
-                // Burada Mert'in paneline yönlendireceğiz
-                // Şimdilik sadece uyarı veriyoruz çünkü panel dosyasını daha yapmadık :)
+                // BURAYI GÜNCELLEDİK:
+                window.location.href = "portal.html"; 
             } else {
                 alert("Hatalı kullanıcı adı veya şifre! (İpucu: mert / 1234)");
             }
         });
-    </script>
-
-</body>
-</html>
