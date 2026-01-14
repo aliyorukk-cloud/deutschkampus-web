@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum | DeutschKampus</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* STANDART CSS (Diğer sayfalarla aynı) */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; }
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 80px; width: auto; } 
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: #D62727; }
+        .nav-links .btn-portal { background-color: #FFCC00; color: #0B2142 !important; padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-transform: none; }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
+        
+        /* FOOTER */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; }
+        footer a { color: #FFCC00; text-decoration: none; margin: 0 10px; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+
+        /* YASAL METİN ALANI */
+        .legal-content { max-width: 800px; margin: 60px auto; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
+        .legal-content h1 { color: #0B2142; border-bottom: 2px solid #FFCC00; padding-bottom: 10px; margin-bottom: 30px; }
+        .legal-content h2 { color: #0B2142; margin-top: 25px; font-size: 1.3rem; }
+        .legal-content p { margin-bottom: 15px; color: #555; }
+        
+        /* MOBİL */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .nav-links { justify-content: center; gap: 10px; width: 100%; flex-wrap: wrap; }
+            .legal-content { margin: 20px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="almanyada-egitim.html">Eğitim Rehberi</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="makaleler.html">Makaleler</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
+        </nav>
+    </header>
+
+    <div class="legal-content">
+        <h1>Datenschutzerklärung</h1>
+        
+        <p>Angaben gemäß § 5 TMG</p>
+        <p><strong>DeutschKampus</strong><br>
+        Musterstraße 1<br>
+        50667 Köln, Deutschland</p>
+
+        <h2>Kontakt</h2>
+        <p>Telefon: +49 176 724 89 386<br>
+        E-Mail: info@deutschkampus.com</p>
+
+        </div>
+
+    <footer>
+        <p style="margin-bottom: 15px;">
+            <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
+        </p>
+        <p>&copy; 2025 DeutschKampus. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+</body>
+</html>
