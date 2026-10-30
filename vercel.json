@@ -1,0 +1,1 @@
+{"routes":[{"src":"^/(?!yakinda\\.html$|logo\\.png$).*","dest":"/yakinda.html"},{"handle":"filesystem"}]}
