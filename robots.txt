@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /login.html
 Disallow: /portal.html
+Disallow: /admin.html
 
 Sitemap: https://www.deutschkampus.com/sitemap.xml

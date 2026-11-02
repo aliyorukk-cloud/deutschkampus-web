@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>Yönetim | DeutschKampus</title>
+<link rel="stylesheet" href="fa.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="common.css">
+</head><body>
+<header><a href="index.html"><img src="logo.png" alt="DeutschKampus"></a><div><span class="pill">Yönetim</span> <button class="btn ghost small" id="out">Çıkış</button></div></header>
+<div class="wrap" id="app"><div class="card">Yükleniyor…</div></div>
+<script>window.DK_CFG={url:"https://kqtbjhiheiqrpvocoudw.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxdGJqaGloZWlxcnB2b2NvdWR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2NTEyMjUsImV4cCI6MjEwOTIyNzIyNX0.a2WSq4qbWkElQsVDERIZgWsMM4spvJC7xytyNKJmOSQ"};</script>
+<script src="dk.js"></script>
+<script>
+let ME=null,CUR=null;const $=id=>document.getElementById(id);
+const opt=(map,sel)=>Object.keys(map).map(k=>'<option value="'+k+'"'+(k===sel?' selected':'')+'>'+map[k]+'</option>').join('');
+$('out').onclick=async()=>{await DK.signOut();location.href='login.html'};
+(async()=>{
+ const s=await DK.session();if(!s){location.href='login.html';return}
+ const mine=await DK.get('profiles','select=*&limit=200');
+ const uid=await DK.uid();const me=mine.find(p=>p.id===uid&&p.role==='admin');ME=me;
+ if(!me){location.href='portal.html';return}
+ list(mine.filter(p=>p.role==='student'));
+})().catch(e=>{$('app').innerHTML='<div class="card"><div class="err">'+esc(e.message)+'</div></div>'});
+function list(st){
+ $('app').innerHTML='<div class="card"><h2>Öğrenciler ('+st.length+')</h2>'+(st.length?'<table><tr><th>Ad</th><th>E-posta</th><th>Hedef</th><th></th></tr>'+st.map(p=>'<tr><td>'+esc(p.full_name||'—')+'</td><td>'+esc(p.email)+'</td><td>'+esc(p.target||'')+'</td><td><button class="btn small" onclick="openS(\''+p.id+'\')">Aç</button></td></tr>').join('')+'</table>':'<p class="muted">Henüz öğrenci yok. Supabase panelinden "Invite user" ile e-posta daveti gönderin; öğrenci şifresini kendisi belirler ve burada görünür.</p>')+'</div>';
+}
+async function openS(id){
+ const q='student_id=eq.'+id;
+ const [pr,steps,apps,docs,msgs,pays]=await Promise.all([DK.get('profiles','id=eq.'+id),DK.get('steps',q+'&order=position'),DK.get('applications',q+'&order=created_at'),DK.get('documents',q+'&order=id'),DK.get('messages',q+'&order=created_at'),DK.get('payments',q+'&order=id')]);
+ CUR=pr[0];const p=CUR;
+ let h='<p><button class="btn ghost small" onclick="location.reload()">← Öğrenci listesi</button></p>';
+ h+='<div class="card"><h2>'+esc(p.email)+'</h2><div class="row"><div><label>Ad Soyad</label><input id="pn" value="'+esc(p.full_name||'')+'"></div><div><label>Hedef (bölüm / şehir)</label><input id="pt" value="'+esc(p.target||'')+'"></div></div><div style="margin-top:10px"><button class="btn small" onclick="saveP()">Kaydet</button></div></div>';
+ h+='<div class="card"><h2>Süreç adımları</h2><table>'+steps.map(s=>'<tr><td>'+esc(s.position+'. '+s.title)+'</td><td><select onchange="patch(\'steps\','+s.id+',{status:this.value,updated_at:new Date().toISOString()})">'+opt(L.step,s.status)+'</select></td><td><input placeholder="Not (öğrenci görür)" value="'+esc(s.note||'')+'" onchange="patch(\'steps\','+s.id+',{note:this.value})"></td></tr>').join('')+'</table></div>';
+ h+='<div class="card"><h2>Başvurular</h2><table>'+apps.map(a=>'<tr><td>'+esc(a.university)+'<div class="muted">'+esc(a.program||'')+'</div></td><td><input type="date" value="'+(a.deadline||'')+'" onchange="patch(\'applications\','+a.id+',{deadline:this.value||null})"></td><td><select onchange="patch(\'applications\','+a.id+',{status:this.value})">'+opt(L.app,a.status)+'</select></td><td><button class="btn small ghost" onclick="del(\'applications\','+a.id+')">Sil</button></td></tr>').join('')+'</table><div class="row" style="margin-top:10px"><input id="au" placeholder="Üniversite"><input id="ap" placeholder="Bölüm"><button class="btn small" onclick="addApp()">Ekle</button></div></div>';
+ h+='<div class="card"><h2>Belgeler</h2><table>'+docs.map(d=>'<tr><td>'+esc(d.title)+'</td><td><select onchange="patch(\'documents\','+d.id+',{status:this.value})">'+opt(L.doc,d.status)+'</select></td><td>'+(d.file_path?'<button class="btn small ghost" onclick="openF(\''+esc(d.file_path)+'\')">Dosyayı aç</button>':'<span class="muted">yok</span>')+'</td><td><input placeholder="Not" value="'+esc(d.note||'')+'" onchange="patch(\'documents\','+d.id+',{note:this.value})"></td></tr>').join('')+'</table><div class="row" style="margin-top:10px"><input id="dn" placeholder="Yeni belge adı"><button class="btn small" onclick="addDoc()">Belge iste</button></div></div>';
+ h+='<div class="card"><h2>Mesajlar</h2>'+msgs.map(m=>'<div class="msg '+(m.sender==='admin'?'student':'admin')+'"><small>'+(m.sender==='admin'?'Siz':'Öğrenci')+' · '+new Date(m.created_at).toLocaleString('tr-TR')+'</small>'+esc(m.body)+'</div>').join('')+'<textarea id="rm" rows="3" placeholder="Yanıt…" style="margin-top:10px"></textarea><div style="margin-top:8px"><button class="btn small" onclick="reply()">Gönder</button></div></div>';
+ h+='<div class="card"><h2>Ödemeler</h2><table>'+pays.map(x=>'<tr><td>'+esc(x.label)+'</td><td>'+Number(x.amount).toFixed(2)+' €</td><td>'+esc(x.due_note||'')+'</td><td><select onchange="patch(\'payments\','+x.id+',{status:this.value,paid_at:this.value===\'paid\'?new Date().toISOString().slice(0,10):null})">'+opt(L.pay,x.status)+'</select></td></tr>').join('')+'</table><div class="row" style="margin-top:10px"><input id="pl" placeholder="Kalem (örn. 1. taksit)"><input id="pa" type="number" step="0.01" placeholder="Tutar €"><input id="pnn" placeholder="Not"><button class="btn small" onclick="addPay()">Ekle</button></div></div>';
+ $('app').innerHTML=h;window.scrollTo(0,0);
+}
+async function patch(t,id,row){try{await DK.patch(t,'id=eq.'+id,row)}catch(e){alert(e.message)}}
+async function del(t,id){if(!confirm('Silinsin mi?'))return;await DK.del(t,'id=eq.'+id);openS(CUR.id)}
+async function saveP(){await DK.patch('profiles','id=eq.'+CUR.id,{full_name:$('pn').value,target:$('pt').value});alert('Kaydedildi')}
+async function addApp(){if(!$('au').value.trim())return;await DK.insert('applications',{student_id:CUR.id,university:$('au').value.trim(),program:$('ap').value.trim()});openS(CUR.id)}
+async function addDoc(){if(!$('dn').value.trim())return;await DK.insert('documents',{student_id:CUR.id,title:$('dn').value.trim()});openS(CUR.id)}
+async function addPay(){if(!$('pl').value.trim()||!$('pa').value)return;await DK.insert('payments',{student_id:CUR.id,label:$('pl').value.trim(),amount:$('pa').value,due_note:$('pnn').value.trim()});openS(CUR.id)}
+async function reply(){const t=$('rm').value.trim();if(!t)return;await DK.insert('messages',{student_id:CUR.id,sender:'admin',body:t});openS(CUR.id)}
+async function openF(p){try{window.open(await DK.signedUrl(p),'_blank')}catch(e){alert(e.message)}}
+</script></body></html>

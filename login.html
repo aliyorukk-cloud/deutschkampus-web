@@ -1,139 +1,36 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head><meta name="robots" content="noindex, nofollow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Yap - DeutschKampus</title>
-    <link rel="stylesheet" href="site.css">
-    <link rel="stylesheet" href="fa.css">
-    
-    <style>
-        /* Sadece bu sayfaya özel basit CSS */
-        body {
-            margin: 0;
-            background: linear-gradient(135deg, #0B2142, #1b263b); /* Koyu kurumsal arka plan */
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .login-card {
-            background: white;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            text-align: center;
-            width: 100%;
-            max-width: 380px;
-        }
-        .login-card h2 {
-            color: #0B2142;
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
-            color: #555;
-            font-weight: 600;
-        }
-        .input-group input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            box-sizing: border-box; 
-            font-family: inherit;
-            transition: 0.3s;
-        }
-        .input-group input:focus {
-            border-color: #FFCC00;
-            outline: none;
-        }
-        .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background-color: #FFCC00;
-            color: #0B2142;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            margin-top: 10px;
-            transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
-        }
-        .btn-submit:hover {
-            background-color: #e6b800;
-            transform: translateY(-2px);
-        }
-        .back-link {
-            display: block;
-            margin-top: 25px;
-            color: #aaa;
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-        .back-link:hover {
-            color: #fff; /* Arka plan koyu olduğu için hoverda beyaz yapalım */
-        }
-        /* Login kartının içindeki link hover olunca görünmesi için */
-        .login-card .back-link:hover {
-             color: #0B2142;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="login-card">
-        <i class="fa-solid fa-user-graduate fa-4x" style="color:#0B2142; margin-bottom:20px;"></i>
-        <h2>Öğrenci Girişi</h2>
-        
-        <form id="loginForm">
-            <div class="input-group">
-                <label>Öğrenci Numarası / Email</label>
-                <input type="text" id="username" placeholder="Örn: mert.yilmaz" required>
-            </div>
-            
-            <div class="input-group">
-                <label>Şifre</label>
-                <input type="password" id="password" placeholder="******" required>
-            </div>
-
-            <button type="submit" class="btn-submit">Giriş Yap</button>
-        </form>
-
-        <a href="index.html" class="back-link">← Ana Sayfaya Dön</a>
-    </div>
-
-    <script>
-        // BASİT GİRİŞ SİMÜLASYONU
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); 
-            
-            var user = document.getElementById('username').value;
-            var pass = document.getElementById('password').value;
-
-            // KONTROL: Konsola yazdıralım ki çalıştığını görelim
-            console.log("Giriş deneniyor:", user, pass);
-
-            // Mert giriş yaparsa (Şifre: 1234)
-            if(user === "mert" && pass === "1234") {
-                // Eğer portal.html dosyası yoksa 404 hatası alırsın.
-                window.location.href = "portal.html"; 
-            } else {
-                alert("Hatalı kullanıcı adı veya şifre! (İpucu: mert / 1234)");
-            }
-        });
-    </script>
-
-</body>
-</html>
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>Öğrenci Girişi | DeutschKampus</title>
+<link rel="stylesheet" href="fa.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="common.css">
+</head><body>
+<header><a href="index.html"><img src="logo.png" alt="DeutschKampus"></a><a class="back" href="index.html">← Ana sayfa</a></header>
+<div class="wrap" style="max-width:440px">
+ <div class="card" id="loginBox"><h2>Öğrenci Girişi</h2>
+  <form id="f1"><label>E-posta</label><input type="email" id="em" required autocomplete="username">
+  <label>Şifre</label><input type="password" id="pw" required autocomplete="current-password">
+  <div style="margin-top:14px"><button class="btn" style="width:100%">Giriş Yap</button></div></form>
+  <p class="muted" style="margin-top:14px"><a href="#" id="forgot">Şifremi unuttum</a></p>
+  <p class="muted">Hesap, danışmanlık sözleşmesi sonrası size e-posta ile tanımlanır.</p>
+  <div id="msg"></div></div>
+ <div class="card" id="setBox" style="display:none"><h2 id="setTitle">Şifre belirleyin</h2>
+  <form id="f2"><label>Yeni şifre (en az 10 karakter)</label><input type="password" id="np" minlength="10" required autocomplete="new-password">
+  <div style="margin-top:14px"><button class="btn" style="width:100%">Şifreyi Kaydet</button></div></form><div id="msg2"></div></div>
+</div>
+<script>window.DK_CFG={url:"https://kqtbjhiheiqrpvocoudw.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxdGJqaGloZWlxcnB2b2NvdWR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2NTEyMjUsImV4cCI6MjEwOTIyNzIyNX0.a2WSq4qbWkElQsVDERIZgWsMM4spvJC7xytyNKJmOSQ"};</script>
+<script src="dk.js"></script>
+<script>
+const $=id=>document.getElementById(id);
+async function go(){const s=await DK.session();if(!s)return false;
+ try{const uid=await DK.uid();const p=await DK.get('profiles','select=role&id=eq.'+uid);location.href=(p[0]&&p[0].role==='admin')?'admin.html':'portal.html';return true}catch(e){return false}}
+(async()=>{const t=DK.fromHash();
+ if(t==='invite'||t==='recovery'||t==='signup'){$('loginBox').style.display='none';$('setBox').style.display='block';$('setTitle').textContent=t==='invite'?'Hoş geldiniz — şifrenizi belirleyin':'Yeni şifre belirleyin';return}
+ await go()})();
+$('f1').onsubmit=async e=>{e.preventDefault();$('msg').innerHTML='';
+ try{await DK.signIn($('em').value.trim(),$('pw').value);if(!await go())throw new Error('Profil okunamadı')}
+ catch(err){$('msg').innerHTML='<div class="err">Giriş başarısız. E-posta veya şifre hatalı olabilir.</div>'}};
+$('forgot').onclick=async e=>{e.preventDefault();const em=$('em').value.trim();if(!em){$('msg').innerHTML='<div class="err">Önce e-posta adresinizi yazın.</div>';return}
+ try{await DK.recover(em)}catch(x){}$('msg').innerHTML='<div class="ok">Bu adres kayıtlıysa şifre sıfırlama bağlantısı gönderildi.</div>'};
+$('f2').onsubmit=async e=>{e.preventDefault();
+ try{await DK.setPassword($('np').value);$('msg2').innerHTML='<div class="ok">Şifre kaydedildi, yönlendiriliyorsunuz…</div>';setTimeout(go,900)}
+ catch(err){$('msg2').innerHTML='<div class="err">'+esc(err.message)+'</div>'}};
+</script></body></html>

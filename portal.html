@@ -1,179 +1,46 @@
 <!DOCTYPE html>
-<html lang="tr">
-<head><meta name="robots" content="noindex, nofollow">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Öğrenci Paneli | Mert Yılmaz</title>
-    <link rel="stylesheet" href="site.css">
-    <link rel="stylesheet" href="fa.css">
-    
-    <style>
-        /* TEMEL AYARLAR */
-        body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f6f9; color: #333; }
-        
-        /* HEADER (Basitleştirilmiş) */
-        header { background: #fff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-weight: 700; font-size: 1.2rem; color: #0B2142; text-decoration: none; display: flex; align-items: center; gap: 10px; }
-        .user-info { display: flex; align-items: center; gap: 15px; }
-        .user-name { font-weight: 600; color: #0B2142; }
-        .logout-btn { color: #d62727; text-decoration: none; font-size: 0.9rem; border: 1px solid #d62727; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
-        .logout-btn:hover { background: #d62727; color: white; }
-
-        /* ANA KONTEYNER */
-        .dashboard-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-
-        /* HOŞGELDİN & DURUM ÇUBUĞU */
-        .welcome-section { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); margin-bottom: 30px; }
-        .welcome-header h1 { margin: 0 0 10px 0; color: #0B2142; }
-        .status-bar-container { background: #eee; height: 15px; border-radius: 10px; margin-top: 20px; overflow: hidden; position: relative; }
-        .status-bar-fill { background: #27ae60; height: 100%; width: 50%; border-radius: 10px; } /* %50 Doluluk */
-        .status-labels { display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.8rem; color: #666; font-weight: 600; }
-        .current-status { color: #27ae60; font-weight: bold; margin-top: 10px; display: block; }
-
-        /* GRID YAPISI (3 Sütun) */
-        .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        /* KART STİLLERİ */
-        .dash-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); }
-        .dash-card h3 { margin-top: 0; color: #0B2142; border-bottom: 2px solid #f0f0f0; padding-bottom: 15px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-        
-        /* LİSTELER */
-        .file-list, .task-list { list-style: none; padding: 0; margin: 0; }
-        
-        /* Dosya Listesi */
-        .file-item { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid #eee; }
-        .file-item:last-child { border-bottom: none; }
-        .file-info { display: flex; align-items: center; gap: 10px; }
-        .file-icon { color: #e67e22; font-size: 1.2rem; }
-        .download-btn { background: #f0f2f5; color: #0B2142; padding: 5px 12px; border-radius: 5px; text-decoration: none; font-size: 0.8rem; font-weight: bold; transition: 0.3s; }
-        .download-btn:hover { background: #0B2142; color: white; }
-
-        /* Görev Listesi */
-        .task-item { display: flex; align-items: center; gap: 10px; padding: 10px 0; font-size: 0.95rem; }
-        .task-item input[type="checkbox"] { accent-color: #27ae60; width: 18px; height: 18px; }
-        .task-done { text-decoration: line-through; color: #aaa; }
-        
-        /* Özel Kutu: Akademi */
-        .academy-box { background: linear-gradient(135deg, #0B2142, #162a4d); color: white; }
-        .academy-box h3 { color: #FFCC00; border-color: rgba(255,255,255,0.1); }
-        .academy-item { background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; gap: 15px; transition: 0.3s; cursor: pointer; }
-        .academy-item:hover { background: rgba(255,255,255,0.2); }
-        .academy-text strong { display: block; font-size: 1rem; }
-        .academy-text small { color: #ccc; font-size: 0.8rem; }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .status-labels span { font-size: 0.7rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <a href="index.html" class="logo">
-            <img src="logo.png" height="40" alt=""> DeutschKampus Panel
-        </a>
-        <div class="user-info">
-            <span class="user-name">👤 Mert Yılmaz</span>
-            <a href="index.html" class="logout-btn">Çıkış</a>
-        </div>
-    </header>
-
-    <div class="dashboard-container">
-        
-        <section class="welcome-section">
-            <div class="welcome-header">
-                <h1>Hoş geldin, Mert! 👋</h1>
-                <p>Paderborn Üniversitesi başvuruların tamamlandı. Şu an okullardan cevap bekliyoruz.</p>
-            </div>
-            
-            <span class="current-status">Durum: Okul Cevabı Bekleniyor (%50)</span>
-            <div class="status-bar-container">
-                <div class="status-bar-fill"></div>
-            </div>
-            <div class="status-labels">
-                <span>Başvuru</span>
-                <span>Evrak Kontrolü</span>
-                <span style="color:#27ae60">Üni. Başvurusu</span>
-                <span>Kabul</span>
-                <span>Vize</span>
-            </div>
-        </section>
-
-        <div class="dashboard-grid">
-            
-            <div class="dash-card">
-                <h3><i class="fa-solid fa-folder-open"></i> Belge Kasası</h3>
-                <ul class="file-list">
-                    <li class="file-item">
-                        <div class="file-info">
-                            <i class="fa-solid fa-file-pdf file-icon"></i>
-                            <span>Uni-Assist_Dekont.pdf</span>
-                        </div>
-                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
-                    </li>
-                    <li class="file-item">
-                        <div class="file-info">
-                            <i class="fa-solid fa-file-pdf file-icon"></i>
-                            <span>Lise_Transkript_Noterli.pdf</span>
-                        </div>
-                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
-                    </li>
-                    <li class="file-item">
-                        <div class="file-info">
-                            <i class="fa-solid fa-file-pdf file-icon"></i>
-                            <span>Pasaport_Tarama.pdf</span>
-                        </div>
-                        <a href="#" class="download-btn" onclick="alert('Dosya iniyor...')">İndir</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="dash-card academy-box">
-                <h3><i class="fa-solid fa-graduation-cap"></i> DK Akademi</h3>
-                <p style="font-size:0.9rem; opacity:0.8; margin-bottom:20px;">Sana özel hazırladığımız rehberler.</p>
-                
-                <div class="academy-item" onclick="alert('Vize Rehberi PDF\'i açılıyor...')">
-                    <i class="fa-solid fa-book-open fa-2x" style="color:#FFCC00"></i>
-                    <div class="academy-text">
-                        <strong>Vize Mülakat Rehberi</strong>
-                        <small>Ali Hoca'nın özel notları (PDF)</small>
-                    </div>
-                </div>
-
-                <div class="academy-item" onclick="alert('Video açılıyor...')">
-                    <i class="fa-solid fa-play-circle fa-2x" style="color:#FFCC00"></i>
-                    <div class="academy-text">
-                        <strong>Bloke Hesap Nasıl Açılır?</strong>
-                        <small>Adım adım video anlatım</small>
-                    </div>
-                </div>
-            </div>
-
-            <div class="dash-card">
-                <h3><i class="fa-solid fa-list-check"></i> Yapılacaklar</h3>
-                <ul class="task-list">
-                    <li class="task-item task-done">
-                        <input type="checkbox" checked disabled>
-                        <span>Danışmanlık ücretini öde</span>
-                    </li>
-                    <li class="task-item task-done">
-                        <input type="checkbox" checked disabled>
-                        <span>Evrakları sisteme yükle</span>
-                    </li>
-                    <li class="task-item">
-                        <input type="checkbox">
-                        <span><strong>Bloke Hesap Açılışı</strong> (Expatrio)</span>
-                    </li>
-                    <li class="task-item">
-                        <input type="checkbox">
-                        <span>Vize Rehberini oku</span>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-</body>
-</html>
+<html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow"><title>Öğrenci Paneli | DeutschKampus</title>
+<link rel="stylesheet" href="fa.css"><link rel="stylesheet" href="site.css"><link rel="stylesheet" href="common.css">
+</head><body>
+<header><a href="index.html"><img src="logo.png" alt="DeutschKampus"></a><div><span id="who" class="muted"></span> <button class="btn ghost small" id="out">Çıkış</button></div></header>
+<div class="wrap" id="app"><div class="card">Yükleniyor…</div></div>
+<script>window.DK_CFG={url:"https://kqtbjhiheiqrpvocoudw.supabase.co",key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtxdGJqaGloZWlxcnB2b2NvdWR3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM2NTEyMjUsImV4cCI6MjEwOTIyNzIyNX0.a2WSq4qbWkElQsVDERIZgWsMM4spvJC7xytyNKJmOSQ"};</script>
+<script src="dk.js"></script>
+<script>
+let ME=null;
+const money=n=>Number(n).toLocaleString('tr-TR',{minimumFractionDigits:2})+' €';
+const dt=d=>d?new Date(d).toLocaleDateString('tr-TR'):'—';
+document.getElementById('out').onclick=async()=>{await DK.signOut();location.href='login.html'};
+async function load(){
+ const s=await DK.session(); if(!s){location.href='login.html';return}
+ const uid=await DK.uid();const p=await DK.get('profiles','select=*&id=eq.'+uid); ME=p[0]; if(!ME){location.href='login.html';return}
+ if(ME.role==='admin'){location.href='admin.html';return}
+ document.getElementById('who').textContent=ME.full_name||ME.email;
+ const id='student_id=eq.'+ME.id;
+ const [steps,apps,docs,msgs,pays]=await Promise.all([
+  DK.get('steps',id+'&order=position'),DK.get('applications',id+'&order=created_at'),DK.get('documents',id+'&order=id'),
+  DK.get('messages',id+'&order=created_at'),DK.get('payments',id+'&order=id')]);
+ render(steps,apps,docs,msgs,pays);
+}
+function render(steps,apps,docs,msgs,pays){
+ let h='<div class="card"><h2>Merhaba'+(ME.full_name?' '+esc(ME.full_name):'')+'</h2><p class="muted" style="margin:0">'+(ME.target?'Hedefiniz: '+esc(ME.target):'Sürecinizin güncel durumu aşağıda.')+'</p></div>';
+ h+='<div class="card"><h2>Süreç adımları</h2><div class="steps">'+steps.map(s=>'<div class="step '+s.status+'"><b>'+esc(s.position+'. '+s.title)+'</b><span class="pill '+s.status+'">'+L.step[s.status]+'</span>'+(s.note?'<div class="muted" style="margin-top:6px">'+esc(s.note)+'</div>':'')+'</div>').join('')+'</div></div>';
+ h+='<div class="card"><h2>Üniversite başvurularınız</h2>'+(apps.length?'<table><tr><th>Üniversite</th><th>Bölüm</th><th>Son tarih</th><th>Durum</th></tr>'+apps.map(a=>'<tr><td>'+esc(a.university)+'</td><td>'+esc(a.program||'')+'</td><td>'+dt(a.deadline)+'</td><td><span class="pill '+a.status+'">'+L.app[a.status]+'</span>'+(a.note?'<div class="muted">'+esc(a.note)+'</div>':'')+'</td></tr>').join('')+'</table>':'<p class="muted">Henüz başvuru eklenmedi. Üniversite seçimini birlikte belirleyeceğiz.</p>')+'</div>';
+ h+='<div class="card"><h2>Belgeleriniz</h2><p class="muted">PDF, JPG veya PNG, en fazla 10 MB. Belgeleriniz yalnızca size ve DeutschKampus ekibine görünür.</p><table><tr><th>Belge</th><th>Durum</th><th></th></tr>'+docs.map(d=>'<tr><td>'+esc(d.title)+(d.note?'<div class="muted">'+esc(d.note)+'</div>':'')+'</td><td><span class="pill '+d.status+'">'+L.doc[d.status]+'</span></td><td>'+(d.status==='approved'?'':'<label class="btn small ghost" style="display:inline-block;margin:0">'+(d.file_path?'Yenile':'Yükle')+'<input type="file" accept=".pdf,.jpg,.jpeg,.png" style="display:none" onchange="up('+d.id+',this)"></label>')+'</td></tr>').join('')+'</table><div id="upm"></div></div>';
+ h+='<div class="card"><h2>Mesajlar</h2><div id="thread">'+msgs.map(m=>'<div class="msg '+m.sender+'"><small>'+(m.sender==='admin'?'DeutschKampus':'Siz')+' · '+new Date(m.created_at).toLocaleString('tr-TR')+'</small>'+esc(m.body)+'</div>').join('')+(msgs.length?'':'<p class="muted">Henüz mesaj yok.</p>')+'</div><textarea id="nm" rows="3" placeholder="Mesajınızı yazın…" style="margin-top:10px"></textarea><div style="margin-top:8px"><button class="btn" onclick="send()">Gönder</button></div></div>';
+ h+='<div class="card"><h2>Ödemeler</h2>'+(pays.length?'<table><tr><th>Kalem</th><th>Tutar</th><th>Not</th><th>Durum</th></tr>'+pays.map(x=>'<tr><td>'+esc(x.label)+'</td><td>'+money(x.amount)+'</td><td>'+esc(x.due_note||'')+'</td><td><span class="pill '+x.status+'">'+L.pay[x.status]+'</span></td></tr>').join('')+'</table>':'<p class="muted">Ödeme planı sözleşmeyle birlikte burada görünecek.</p>')+'</div>';
+ document.getElementById('app').innerHTML=h;
+}
+async function up(id,inp){const f=inp.files[0];if(!f)return;const m=document.getElementById('upm');
+ if(f.size>10*1024*1024){m.innerHTML='<div class="err">Dosya 10 MB\'tan büyük.</div>';return}
+ const ext=(f.name.split('.').pop()||'bin').toLowerCase().replace(/[^a-z0-9]/g,'');
+ if(!['pdf','jpg','jpeg','png'].includes(ext)){m.innerHTML='<div class="err">Sadece PDF, JPG veya PNG.</div>';return}
+ m.innerHTML='<div class="muted">Yükleniyor…</div>';
+ try{const path=ME.id+'/'+id+'-'+Date.now()+'.'+ext;await DK.upload(path,f);
+  await DK.patch('documents','id=eq.'+id,{status:'uploaded',file_path:path,uploaded_at:new Date().toISOString()});await load()}
+ catch(e){m.innerHTML='<div class="err">'+esc(e.message)+'</div>'}}
+async function send(){const t=document.getElementById('nm').value.trim();if(!t)return;
+ try{await DK.insert('messages',{student_id:ME.id,sender:'student',body:t});await load()}catch(e){alert(e.message)}}
+load().catch(e=>{document.getElementById('app').innerHTML='<div class="card"><div class="err">'+esc(e.message)+'</div></div>'});
+</script></body></html>
