@@ -1,110 +1,220 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>İletişim | DeutschKampus</title>
-<meta name="description" content="DeutschKampus ile e-posta yoluyla iletişime geçin.">
-<style>
-:root{--navy:#0B2142;--gold:#FFCC00;--ink:#1d2433;--muted:#5b6475;--line:#e4e7ee;--bg:#f7f8fb}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
-a{color:inherit}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.bar{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.brand{font-weight:800;font-size:1.25rem;color:var(--navy);text-decoration:none;letter-spacing:.2px}
-.brand span{color:#c99a00}
-nav a{margin-left:22px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--navy)}
-nav a:hover{color:#b88a00}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.hero{background:var(--navy);color:#fff;padding:64px 0 56px}
-.hero h1{margin:0 0 14px;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.2}
-.hero p{margin:0;max-width:640px;color:#d4dae8;font-size:1.08rem}
-.tag{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px;margin-bottom:18px;letter-spacing:.4px}
-section{padding:56px 0}
-h2{color:var(--navy);font-size:1.6rem;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 30px;max-width:680px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px;counter-reset:s}
-.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;counter-increment:s}
-.step::before{content:counter(s);display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:10px}
-.step h3{margin:0 0 6px;font-size:1.02rem;color:var(--navy)}
-.step p{margin:0;color:var(--muted);font-size:.93rem}
-.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
-.card.hl{border:2px solid var(--gold);box-shadow:0 10px 30px rgba(11,33,66,.08)}
-.card h3{margin:0;color:var(--navy);font-size:1.25rem}
-.price{font-size:2.3rem;font-weight:800;color:var(--navy);margin:8px 0 2px}
-.price small{font-size:.9rem;font-weight:600;color:var(--muted)}
-.card .for{color:var(--muted);font-size:.92rem;margin:0 0 16px}
-.card ul{list-style:none;margin:0 0 22px;padding:0}
-.card li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px solid #f0f2f6}
-.card li::before{content:"✓";position:absolute;left:0;color:#2f8f4e;font-weight:800}
-.btn{margin-top:auto;display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:10px}
-.btn:hover{background:#13306a}
-.card.hl .btn{background:var(--gold);color:var(--navy)}
-.note{font-size:.88rem;color:var(--muted);margin-top:18px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
-.box h3{margin:0 0 10px;color:var(--navy);font-size:1.1rem}
-.box ul{margin:0;padding-left:20px;color:var(--ink)}
-.box li{margin:5px 0;font-size:.95rem}
-.box.no{border-left:5px solid #c0392b}
-.box.yes{border-left:5px solid #2f8f4e}
-details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;color:var(--navy)}
-details p{margin:10px 0 0;color:var(--muted);font-size:.95rem}
-.cta{background:var(--navy);color:#fff;text-align:center;padding:56px 20px}
-.cta h2{color:#fff}
-.cta p{color:#d4dae8;max-width:560px;margin:0 auto 22px}
-.cta a.mail{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;text-decoration:none;padding:14px 26px;border-radius:10px}
-footer{padding:28px 20px;text-align:center;color:var(--muted);font-size:.88rem}
-footer a{margin:0 8px;text-decoration:none;font-weight:600;color:var(--navy)}
-@media(max-width:640px){nav a{margin:0 14px 0 0}.hero{padding:44px 0 40px}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="fa.css">
+    <link rel="stylesheet" href="site.css">
 
-.prose{max-width:760px}.prose h2{margin-top:34px;font-size:1.25rem}.prose p,.prose li{font-size:.97rem}.prose ul{padding-left:20px}.todo{background:#fff4cc;border:1px solid #e6c200;padding:0 4px;border-radius:4px}.warn{background:#fff4cc;border:1px solid #e6c200;border-radius:10px;padding:12px 16px;font-size:.9rem;margin-bottom:24px}.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-</style>
+    <style>
+        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
+        
+        /* GENEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; overflow-x: hidden; }
+        
+        /* HEADER & MENÜ (STANDART) */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 80px; width: auto; } 
+        
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
+
+        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; 
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
+
+        /* SAYFA BAŞLIĞI (HERO) - STANDART */
+        .page-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.9), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?auto=format&fit=crop&w=1600');
+            background-size: cover; background-position: center;
+            padding: 120px 20px; /* Standart Yükseklik */
+            text-align: center; color: white;
+        }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; } 
+        .page-header p { font-size: 1.2rem; opacity: 1; max-width: 800px; margin: 0 auto; font-weight: 500; }
+
+        /* --- SAYFAYA ÖZEL STİLLER --- */
+
+        /* İLETİŞİM KUTULARI */
+        .contact-container {
+            max-width: 1100px; margin: 50px auto; padding: 0 20px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;
+        }
+
+        .contact-info-box {
+            background: white; padding: 30px; border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center;
+            border: 1px solid #eee;
+        }
+        .contact-icon { font-size: 2.5rem; color: #D62727; margin-bottom: 20px; }
+        .contact-title { font-size: 1.2rem; color: #0B2142; font-weight: 700; margin-bottom: 15px; }
+        .contact-text { color: #555; font-size: 0.95rem; margin-bottom: 5px; }
+        .contact-link { color: #0B2142; font-weight: 600; text-decoration: none; border-bottom: 2px solid #D62727; }
+
+        /* FORM VE BANKA ALANI */
+        .content-grid {
+            max-width: 1100px; margin: 0 auto 80px auto; padding: 0 20px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 50px;
+        }
+
+        /* İletişim Formu */
+        .contact-form { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: #0B2142; }
+        .form-group input, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-family: inherit; font-size: 0.95rem; box-sizing: border-box;
+        }
+        .form-group textarea { height: 120px; resize: vertical; }
+        .submit-btn {
+            background-color: #0B2142; color: white; border: none; padding: 15px 30px;
+            font-size: 1rem; font-weight: 700; border-radius: 8px; cursor: pointer; width: 100%; transition: 0.3s;
+        }
+        .submit-btn:hover { background-color: #D62727; }
+
+        /* Banka Kartı */
+        .bank-card {
+            background: #f0f4f8; border-left: 5px solid #25D366; padding: 30px; border-radius: 10px; height: fit-content;
+        }
+        .bank-header { display: flex; align-items: center; margin-bottom: 20px; color: #0B2142; font-size: 1.3rem; font-weight: 700; }
+        .bank-details { background: white; padding: 20px; border-radius: 8px; border: 1px solid #ddd; }
+        .iban-box { font-size: 1.2rem; font-weight: 700; color: #0B2142; letter-spacing: 1px; word-break: break-all; margin: 15px 0; }
+        
+        /* FOOTER & WHATSAPP (STANDART) */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* --- MOBİL UYUMLULUK (STANDART) --- */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+            
+            .content-grid { grid-template-columns: 1fr; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
-<header>
-  <div class="bar">
-    <a class="brand" href="index.html">Deutsch<span>Kampus</span></a>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="universiteler.html">Üniversiteler</a>
-      <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-      <a href="rehber.html">Rehber</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
-  </div>
-</header>
-<div class="hero">
-  <div class="wrap">
-    <span class="tag">İLETİŞİM</span>
-    <h1>Bize yazın</h1>
-    <p>İlk iletişim e-postayla kurulur. Yazılı yazışma, durumunuzu doğru anlamamızı ve size net bir yanıt vermemizi sağlar.</p>
-  </div>
-</div>
-<section>
-  <div class="wrap prose">
-    <h2 style="margin-top:0">E-posta</h2>
-    <p><a href="mailto:info@deutschkampus.com" style="font-weight:700;color:var(--navy)">info@deutschkampus.com</a></p>
-    <p>E-postalara 3 iş günü içinde yanıt vermeyi hedefliyoruz.</p>
-    <h2>İlk e-postada neleri yazın?</h2>
-    <ul>
-      <li>Öğrenim durumunuz (lise veya üniversite, mezuniyet yılı)</li>
-      <li>Not ortalamanız</li>
-      <li>Dil seviyeniz ve varsa dil sertifikalarınız (Almanca / İngilizce)</li>
-      <li>Hedeflediğiniz bölüm ve şehirler</li>
-      <li>Başvuru dönemi: hangi dönem için başvurmak istiyorsunuz?</li>
-    </ul>
-    <h2>Görüşme</h2>
-    <p>Telefon veya görüntülü görüşme, paket kapsamında başvuru aşamasında yapılır. İlk iletişim e-postayla başlar.</p>
-  </div>
-</section>
 
-<footer>
-  <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
-  <div style="margin-top:8px">&copy; 2026 DeutschKampus</div>
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="almanyada-egitim.html">Eğitim Rehberi</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="makaleler.html">Makaleler</a>
+            <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html" style="color: #D62727;">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <h1>Bizimle İletişime Geçin</h1>
+        <p>Almanya hayalinizi gerçekleştirmek için ilk adımı atın. Sorularınızı yanıtlamaktan mutluluk duyarız.</p>
+    </div>
+
+    <div class="contact-container">
+        <div class="contact-info-box">
+            <i class="fa-brands fa-whatsapp contact-icon" style="color: #25D366;"></i>
+            <h3 class="contact-title">WhatsApp & Telefon</h3>
+            <p class="contact-text">Hızlı iletişim için bize yazın.</p>
+            <a href="https://wa.me/4917672489386" class="contact-link">+49 176 724 89 386</a>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">(Sadece mesaj yoluyla iletişime geçiniz)</p>
+        </div>
+
+        <div class="contact-info-box">
+            <i class="fa-regular fa-envelope contact-icon"></i>
+            <h3 class="contact-title">E-Posta</h3>
+            <p class="contact-text">Resmi başvurular ve iş birlikleri için.</p>
+            <a href="mailto:info@deutschkampus.com" class="contact-link">info@deutschkampus.com</a>
+        </div>
+
+        <div class="contact-info-box">
+            <i class="fa-solid fa-location-dot contact-icon"></i>
+            <h3 class="contact-title">Online Danışmanlık</h3>
+            <p class="contact-text">Merkez Ofisimiz:</p>
+            <p class="contact-text" style="font-weight: 600;">Hürth, Almanya</p>
+            <p style="font-size: 0.8rem; color: #888;">(Görüşmelerimiz online yapılmaktadır)</p>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        
+        <div class="contact-form">
+            <h3 style="margin-top: 0; color: #0B2142;">Mesaj Gönderin</h3>
+            <form action="mailto:info@deutschkampus.com" method="post" enctype="text/plain"> <div class="form-group">
+                    <label>Adınız Soyadınız</label>
+                    <input type="text" name="name" required placeholder="Örn: Ahmet Yılmaz">
+                </div>
+                <div class="form-group">
+                    <label>E-Posta Adresiniz</label>
+                    <input type="email" name="email" required placeholder="ornek@email.com">
+                </div>
+                <div class="form-group">
+                    <label>Konu</label>
+                    <select name="subject" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+                        <option>Genel Bilgi</option>
+                        <option>Üniversite Başvurusu</option>
+                        <option>Vize İşlemleri</option>
+                        <option>Diğer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mesajınız</label>
+                    <textarea name="message" required placeholder="Sorunuzu buraya yazabilirsiniz..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">GÖNDER</button>
+            </form>
+        </div>
+
+        <div class="bank-card">
+            <div class="bank-header">
+                <i class="fa-solid fa-envelope-open-text" style="margin-right: 10px;"></i> Nasıl İlerliyoruz?
+            </div>
+            <div class="bank-details">
+                <p style="margin-top:0"><strong>1. Yazın.</strong> Notlarınızı, dil seviyenizi ve hedeflerinizi e-postayla paylaşın; ön değerlendirmeyi yazılı olarak iletelim.</p>
+                <p><strong>2. Plan ve paket.</strong> Uygun yol haritasını birlikte belirleriz. Kapsam ve ücret yazılı sözleşmeyle netleşir.</p>
+                <p style="margin-bottom:0"><strong>3. Görüşme.</strong> Telefon veya görüntülü görüşmeyi başvuru aşamasında yapıyoruz.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="https://wa.me/4917672489386" class="whatsapp-btn" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+    <p style="margin-bottom: 15px;">
+        <a href="impressum.html" style="color: #FFCC00; text-decoration: none; margin: 0 10px; font-weight: 600;">Impressum</a> | 
+        <a href="datenschutz.html" style="color: #FFCC00; text-decoration: none; margin: 0 10px; font-weight: 600;">Datenschutz</a>
+    </p>
+    <p>&copy; 2026 DeutschKampus. Tüm Hakları Saklıdır.</p>
 </footer>
+
 </body>
 </html>

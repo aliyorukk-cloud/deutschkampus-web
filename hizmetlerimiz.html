@@ -1,206 +1,237 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hizmetlerimiz | DeutschKampus</title>
-<meta name="description" content="Almanya'da üniversite başvurusu için adım adım başvuru desteği. Başvuru Paketi ve Genişletilmiş Paket.">
-<style>
-:root{--navy:#0B2142;--gold:#FFCC00;--ink:#1d2433;--muted:#5b6475;--line:#e4e7ee;--bg:#f7f8fb}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
-a{color:inherit}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.bar{max-width:1080px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.brand{font-weight:800;font-size:1.25rem;color:var(--navy);text-decoration:none;letter-spacing:.2px}
-.brand span{color:#c99a00}
-nav a{margin-left:22px;text-decoration:none;font-weight:600;font-size:.92rem;color:var(--navy)}
-nav a:hover{color:#b88a00}
-.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-.hero{background:var(--navy);color:#fff;padding:64px 0 56px}
-.hero h1{margin:0 0 14px;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.2}
-.hero p{margin:0;max-width:640px;color:#d4dae8;font-size:1.08rem}
-.tag{display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px;margin-bottom:18px;letter-spacing:.4px}
-section{padding:56px 0}
-h2{color:var(--navy);font-size:1.6rem;margin:0 0 8px}
-.sub{color:var(--muted);margin:0 0 30px;max-width:680px}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));gap:14px;counter-reset:s}
-.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;counter-increment:s}
-.step::before{content:counter(s);display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:10px}
-.step h3{margin:0 0 6px;font-size:1.02rem;color:var(--navy)}
-.step p{margin:0;color:var(--muted);font-size:.93rem}
-.pk{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
-.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-direction:column}
-.card.hl{border:2px solid var(--gold);box-shadow:0 10px 30px rgba(11,33,66,.08)}
-.card h3{margin:0;color:var(--navy);font-size:1.25rem}
-.price{font-size:2.3rem;font-weight:800;color:var(--navy);margin:8px 0 2px}
-.price small{font-size:.9rem;font-weight:600;color:var(--muted)}
-.card .for{color:var(--muted);font-size:.92rem;margin:0 0 16px}
-.card ul{list-style:none;margin:0 0 22px;padding:0}
-.card li{padding:7px 0 7px 26px;position:relative;font-size:.95rem;border-bottom:1px solid #f0f2f6}
-.card li::before{content:"✓";position:absolute;left:0;color:#2f8f4e;font-weight:800}
-.btn{margin-top:auto;display:block;text-align:center;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:13px 18px;border-radius:10px}
-.btn:hover{background:#13306a}
-.card.hl .btn{background:var(--gold);color:var(--navy)}
-.note{font-size:.88rem;color:var(--muted);margin-top:18px}
-.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
-.box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
-.box h3{margin:0 0 10px;color:var(--navy);font-size:1.1rem}
-.box ul{margin:0;padding-left:20px;color:var(--ink)}
-.box li{margin:5px 0;font-size:.95rem}
-.box.no{border-left:5px solid #c0392b}
-.box.yes{border-left:5px solid #2f8f4e}
-details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 18px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:700;color:var(--navy)}
-details p{margin:10px 0 0;color:var(--muted);font-size:.95rem}
-.cta{background:var(--navy);color:#fff;text-align:center;padding:56px 20px}
-.cta h2{color:#fff}
-.cta p{color:#d4dae8;max-width:560px;margin:0 auto 22px}
-.cta a.mail{display:inline-block;background:var(--gold);color:var(--navy);font-weight:800;text-decoration:none;padding:14px 26px;border-radius:10px}
-footer{padding:28px 20px;text-align:center;color:var(--muted);font-size:.88rem}
-footer a{margin:0 8px;text-decoration:none;font-weight:600;color:var(--navy)}
-@media(max-width:640px){nav a{margin:0 14px 0 0}.hero{padding:44px 0 40px}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hizmetlerimiz | DeutschKampus</title>
+    
+    <link rel="icon" href="logo.png" type="image/png">
+
+
+    <meta name="description" content="Almanya eğitim danışmanlığı paketleri ve fiyatları.">
+    
+    <link rel="stylesheet" href="fa.css">
+    <link rel="stylesheet" href="site.css">
+
+    <style>
+        /* --- GLOBAL STANDARTLAR (TÜM SAYFALARDA AYNI) --- */
+        
+        /* GENEL AYARLAR */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; background-color: #fcfcfc; overflow-x: hidden; }
+        
+        /* HEADER & MENÜ (STANDART) */
+        header { background-color: #ffffff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .logo img { height: 80px; width: auto; } 
+        
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: #0B2142; font-weight: 600; font-size: 0.95rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:not(.btn-portal):hover { color: #D62727; }
+
+        /* SARI ÖĞRENCİ PORTALI BUTONU (STANDART) */
+        .nav-links .btn-portal { 
+            background-color: #FFCC00; color: #0B2142 !important; 
+            padding: 8px 20px; border-radius: 50px; border: 2px solid #FFCC00; 
+            display: inline-flex; align-items: center; gap: 8px; font-weight: 700; 
+            text-transform: none; 
+        }
+        .nav-links .btn-portal:hover { background-color: transparent; color: #FFCC00 !important; }
+
+        /* SAYFA BAŞLIĞI (HERO) - STANDART */
+        .page-header {
+            background: linear-gradient(rgba(11, 33, 66, 0.8), rgba(11, 33, 66, 0.8)), url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600');
+            background-size: cover; background-position: center;
+            padding: 120px 20px; /* Standart Yükseklik */
+            text-align: center; color: white;
+        }
+        .page-header h1 { font-size: 3rem; margin: 0 0 10px 0; font-weight: 700; } 
+        .page-header p { font-size: 1.2rem; opacity: 1; max-width: 800px; margin: 0 auto; font-weight: 500; }
+
+        /* --- SAYFAYA ÖZEL STİLLER --- */
+
+        /* GİRİŞ METNİ */
+        .intro-section { padding: 60px 10%; text-align: center; background-color: #fff; }
+        .intro-text { max-width: 900px; margin: 0 auto; font-size: 1.1rem; color: #555; }
+        .intro-text h2 { color: #0B2142; margin-bottom: 20px; }
+
+        /* SÜREÇ DETAYLARI */
+        .process-details { padding: 60px 10%; background-color: #f9f9f9; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .process-item h3 { color: #D62727; display: flex; align-items: center; gap: 10px; }
+        .process-item i { font-size: 1.5rem; }
+        .process-item p { font-size: 0.95rem; color: #444; }
+
+        /* PAKETLER GRID */
+        .pricing-section { padding: 80px 10%; background-color: #fcfcfc; }
+        .pricing-section h2 { text-align: center; color: #0B2142; font-size: 2.2rem; margin-bottom: 50px; }
+        .pricing-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+        
+        .price-card {
+            flex: 1; min-width: 280px; max-width: 350px;
+            background: white; border: 1px solid #eee; border-radius: 20px;
+            overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex; flex-direction: column;
+        }
+        .price-card.featured { border: 2px solid #D62727; transform: scale(1.05); z-index: 2; box-shadow: 0 10px 30px rgba(214, 39, 39, 0.15); }
+        .price-card:hover { transform: translateY(-10px); }
+        
+        .price-header { background: #0B2142; color: white; padding: 30px; text-align: center; }
+        .featured .price-header { background: #D62727; }
+        .price-header h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+        .price-header .price { font-size: 2.2rem; font-weight: bold; }
+        .price-header .sub { font-size: 0.85rem; opacity: 0.8; }
+        
+        .price-body { padding: 25px; flex-grow: 1; }
+        .price-body ul { list-style: none; padding: 0; margin: 0; }
+        .price-body li { padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #555; font-size: 0.95rem; }
+        .price-body li i { color: #27ae60; margin-right: 10px; }
+        .price-body li.disabled { color: #aaa; text-decoration: line-through; }
+        .price-body li.disabled i { color: #ccc; }
+        
+        .price-footer { padding: 20px; text-align: center; background: #fcfcfc; }
+        .price-btn { 
+            display: block; padding: 12px; border-radius: 50px; 
+            background: #0B2142; color: white; text-decoration: none; font-weight: bold; transition: 0.3s;
+        }
+        .featured .price-btn { background: #D62727; }
+        .price-btn:hover { opacity: 0.9; }
+        .price-note { text-align: center; margin-top: 30px; font-size: 0.9rem; color: #777; }
+
+        /* FOOTER & WHATSAPP (STANDART) */
+        footer { background-color: #0B2142; color: white; text-align: center; padding: 40px; margin-top: 0; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); }
+        
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #25D366; color: white;
+            width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 35px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 9999; text-decoration: none; transition: 0.3s;
+        }
+        .whatsapp-btn:hover { transform: scale(1.1); }
+
+        /* --- MOBİL UYUMLULUK (STANDART) --- */
+        @media (max-width: 768px) {
+            header { padding: 10px 15px; flex-direction: column; gap: 15px; }
+            .logo img { height: 50px; }
+            .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+            .nav-links a { margin: 0 5px; font-size: 0.8rem; }
+            .nav-links .btn-portal { width: 100%; justify-content: center; margin-left: 0; }
+            
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <div class="bar">
-    <a class="brand" href="index.html">Deutsch<span>Kampus</span></a>
-    <nav>
-      <a href="index.html">Ana Sayfa</a>
-      <a href="universiteler.html">Üniversiteler</a>
-      <a href="hizmetlerimiz.html">Hizmetlerimiz</a>
-      <a href="rehber.html">Rehber</a>
-      <a href="iletisim.html">İletişim</a>
-    </nav>
-  </div>
-</header>
+    <header>
+        <a href="index.html" class="logo"><img src="logo.png" alt="DeutschKampus Logo"></a>
+        <nav class="nav-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="almanyada-egitim.html">Eğitim Rehberi</a>
+            <a href="universiteler.html">Üniversiteler</a>
+            <a href="makaleler.html">Makaleler</a>
+            <a href="hizmetlerimiz.html" style="color: #D62727;">Hizmetlerimiz</a>
+            <a href="hakkimizda.html">Hakkımızda</a>
+            <a href="iletisim.html">İletişim</a>
+            <a href="login.html" class="btn-portal"><i class="fa-solid fa-user-graduate"></i> Öğrenci Portalı</a>
+        </nav>
+    </header>
 
-<div class="hero">
-  <div class="wrap">
-    <span class="tag">TÜRKİYE'DEN ALMANYA'YA</span>
-    <h1>Almanya'da üniversite başvurusu, adım adım yanınızda</h1>
-    <p>Bölüm ve üniversite seçiminden belge hazırlığına, motivasyon mektubundan başvuru takibine kadar süreci birlikte yürütüyoruz. Önce yazışarak başlıyoruz, görüşmeyi başvuru aşamasında yapıyoruz.</p>
-  </div>
-</div>
+    <section class="page-header">
+        <h1>Hizmet Paketlerimiz</h1>
+        <p>Bütçenize ve hedeflerinize en uygun danışmanlık çözümünü seçin.</p>
+    </section>
 
-<section>
-  <div class="wrap">
-    <h2>Süreç nasıl işliyor?</h2>
-    <p class="sub">Acele etmeden, her adımı yazılı olarak netleştirerek ilerliyoruz.</p>
-    <div class="steps">
-      <div class="step"><h3>İlk e-posta</h3><p>Durumunuzu, notlarınızı, dil seviyenizi ve hedeflerinizi e-postayla paylaşıyorsunuz. Ön değerlendirme yazılı olarak size döner.</p></div>
-      <div class="step"><h3>Plan ve paket</h3><p>Uygun yol haritasını ve paketi birlikte belirliyoruz. Kapsam ve ücret yazılı sözleşmeyle netleşir.</p></div>
-      <div class="step"><h3>Belgeler ve hazırlık</h3><p>Belge listesi, motivasyon mektubu ve CV düzenlemesi, üniversite ve bölüm seçimi e-posta üzerinden yürür.</p></div>
-      <div class="step"><h3>Başvuru aşaması</h3><p>Başvurular gönderilmeden önce bir telefon veya görüntülü görüşmeyle son kontrolü birlikte yapıyoruz.</p></div>
-      <div class="step"><h3>Takip</h3><p>Başvuruların durumunu izliyor, gelen yazışmalar ve sonuçlarda sizi yönlendiriyoruz.</p></div>
-    </div>
-  </div>
-</section>
+    <section class="intro-section">
+        <div class="intro-text">
+            <h2>Neden Profesyonel Danışmanlık?</h2>
+            <p>Almanya'da üniversite eğitimi, sadece bir başvuru formundan ibaret değildir. Doğru bölüm seçimi, belgelerin eksiksiz hazırlanması ve bürokratik süreçlerin yönetimi, kabul almanızı sağlayan en önemli faktörlerdir. Biz, sizi sadece bir "dosya numarası" olarak görmüyor; akademik geçmişinize ve kariyer hedeflerinize özel bir yol haritası çiziyoruz.</p>
+        </div>
+    </section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2>Paketler</h2>
-    <p class="sub">İki paket, net kapsam. Ücrete Uni-Assist, çeviri, noter ve üniversite başvuru harçları dahil değildir.</p>
-    <div class="pk">
-      <div class="card">
-        <h3>Başvuru Paketi</h3>
-        <div class="price">450 € <small>/ kişi</small></div>
-        <p class="for">İlk kez başvuranlar ve tek bir hedefe odaklananlar için</p>
-        <ul>
-          <li>E-posta ile ön değerlendirme ve hedef belirleme</li>
-          <li>Kişiye özel belge listesi ve takvim</li>
-          <li>Motivasyon mektubu ve CV düzenleme</li>
-          <li>5 üniversiteye başvuru hazırlığı ve takibi</li>
-          <li>Başvuru aşamasında 1 görüşme (telefon veya video)</li>
-        </ul>
-        <a class="btn" href="mailto:info@deutschkampus.com?subject=Ba%C5%9Fvuru%20Paketi">Bu paket için yazın</a>
-      </div>
-      <div class="card hl">
-        <h3>Genişletilmiş Paket</h3>
-        <div class="price">750 € <small>/ kişi</small></div>
-        <p class="for">Birden fazla bölüm ve şehirde şansını denemek isteyenler için</p>
-        <ul>
-          <li>Başvuru Paketi'nin tüm içeriği</li>
-          <li>10 üniversiteye başvuru hazırlığı ve takibi</li>
-          <li>Ek revizyon hakkı (mektup ve CV)</li>
-          <li>Başvuru sonrası durum takibi ve yazışma desteği</li>
-          <li>Kabul sonrası yol haritası: kayıt, sağlık sigortası ve bloke hesap hakkında genel bilgilendirme</li>
-          <li>2 görüşme (başvuru öncesi ve kabul sonrası)</li>
-        </ul>
-        <a class="btn" href="mailto:info@deutschkampus.com?subject=Geni%C5%9Fletilmi%C5%9F%20Paket">Bu paket için yazın</a>
-      </div>
-    </div>
-    <div class="two" style="margin-top:22px">
-      <div class="box">
-        <h3>Ödeme</h3>
-        <ul>
-          <li>Ücretin yarısı başlangıçta, yazılı sözleşmenin imzalanmasıyla ödenir.</li>
-          <li>Kalan yarısı, ilk kabul belgesini aldıktan sonra ödenir.</li>
-          <li>Fiyatlar toplam fiyatlardır, ayrıca KDV eklenmez.</li>
-        </ul>
-      </div>
-      <div class="box">
-        <h3>Ek üniversite</h3>
-        <ul>
-          <li>Paketteki sayının üzerindeki her ek üniversite için 10 €.</li>
-          <li>Ödeme planı ve kapsam yazılı sözleşmede ayrıntılı olarak belirtilir.</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note">Uni-Assist, çeviri, noter ve üniversite başvuru harçları bu ücretlere dahil değildir ve ayrıca ilgili kurumlara ödenir.</p>
-  </div>
-</section>
+    <section class="pricing-section">
+        <div class="pricing-grid">
+            
+                        <div class="price-card">
+                <div class="price-header">
+                    <h3>Başvuru Paketi</h3>
+                    <div class="price">450€</div>
+                    <div class="sub">İlk kez başvuranlar için</div>
+                </div>
+                <div class="price-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> E-posta ile ön değerlendirme</li>
+                        <li><i class="fa-solid fa-check"></i> 5 üniversiteye başvuru hazırlığı ve takibi</li>
+                        <li><i class="fa-solid fa-check"></i> Kişiye özel belge listesi ve takvim</li>
+                        <li><i class="fa-solid fa-check"></i> Motivasyon mektubu ve CV düzenleme</li>
+                        <li><i class="fa-solid fa-check"></i> Başvuru aşamasında 1 görüşme</li>
+                        <li style="font-size: 0.85rem; font-style: italic; color: #666; border-bottom: none; margin-top: 10px;">
+                            <i class="fa-solid fa-check"></i> Ücretin yarısı sözleşmeyle, kalan yarısı ilk kabul belgesinden sonra ödenir.
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-footer">
+                    <a href="iletisim.html" class="price-btn">Bize Yazın</a>
+                </div>
+            </div>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2>Neleri yapıyoruz, neleri yapmıyoruz?</h2>
-    <p class="sub">Beklentilerin baştan net olması herkes için en iyisi.</p>
-    <div class="two">
-      <div class="box yes">
-        <h3>Yaptıklarımız</h3>
-        <ul>
-          <li>Üniversite ve bölüm araştırması, başvuru koşullarının karşılaştırılması</li>
-          <li>Belge listesi, takvim ve başvuru organizasyonu</li>
-          <li>Motivasyon mektubu ve CV'nin Alman akademik formatına uygun hazırlanması</li>
-          <li>Başvuru formlarının doldurulmasına ve takibine destek</li>
-          <li>Süreç boyunca yazılı yönlendirme</li>
-        </ul>
-      </div>
-      <div class="box no">
-        <h3>Yapmadıklarımız</h3>
-        <ul>
-          <li>Kabul garantisi vermiyoruz. Karar her zaman üniversitenindir.</li>
-          <li>Vize ve oturum süreçlerinde belge hazırlığı ve genel bilgilendirme ile yanınızdayız. Hukuki değerlendirme gerektiren durumlarda sizi yetkili bir hukuk danışmanına yönlendiririz.</li>
-          <li>Resmi çeviri, noter ve apostil işlemlerini kendimiz yapmıyoruz.</li>
-          <li>Uni-Assist ve üniversite başvuru harçlarını ücrete dahil etmiyoruz.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="price-card featured">
+                <div class="price-header">
+                    <h3>Genişletilmiş Paket</h3>
+                    <div class="price">750€</div>
+                    <div class="sub">Birden fazla bölüm ve şehir için</div>
+                </div>
+                <div class="price-body">
+                    <ul>
+                        <li><i class="fa-solid fa-check"></i> Başvuru Paketi'nin tüm içeriği</li>
+                        <li><i class="fa-solid fa-check"></i> 10 üniversiteye başvuru hazırlığı ve takibi</li>
+                        <li><i class="fa-solid fa-check"></i> Ek revizyon hakkı (mektup ve CV)</li>
+                        <li><i class="fa-solid fa-check"></i> Başvuru sonrası durum takibi ve yazışma desteği</li>
+                        <li><i class="fa-solid fa-check"></i> Kabul sonrası yol haritası (genel bilgilendirme)</li>
+                        <li><i class="fa-solid fa-check"></i> 2 görüşme (başvuru öncesi ve kabul sonrası)</li>
+                        <li style="font-size: 0.85rem; font-style: italic; color: #666; border-bottom: none; margin-top: 10px;">
+                            <i class="fa-solid fa-check"></i> Ücretin yarısı sözleşmeyle, kalan yarısı ilk kabul belgesinden sonra ödenir.
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-footer">
+                    <a href="iletisim.html" class="price-btn">Bize Yazın</a>
+                </div>
+            </div>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <h2 style="margin-bottom:22px">Sık sorulan sorular</h2>
-    <details><summary>Neden önce e-posta, görüşme neden sonra?</summary><p>Notlarınızı, belgelerinizi ve hedeflerinizi yazılı olarak görmek, görüşmeyi verimli yapmamızı sağlar. Böylece başvuru aşamasındaki görüşmede doğrudan kararlara ve son kontrollere odaklanırız.</p></details>
-    <details><summary>Başvuru için hangi dil seviyesi gerekir?</summary><p>Bölüme ve programa göre değişir. Almanca ya da İngilizce programlar için farklı dil belgeleri istenir. Ön değerlendirmede durumunuza uygun seçenekleri yazılı olarak değerlendiririz.</p></details>
-    <details><summary>Vize işlemlerinde yardımcı oluyor musunuz?</summary><p>Evet. Vize sürecinin genel adımlarını ve gerekli belgeleri anlatıyor, belge hazırlığında size destek oluyoruz. Kişisel hukuki bir değerlendirme gerektiren durumlarda sizi konsolosluğa veya yetkili bir hukuk danışmanına yönlendiririz.</p></details>
-    <details><summary>Kabul alacağımı garanti ediyor musunuz?</summary><p>Hayır. Kabul kararı üniversiteler tarafından verilir. Biz başvurunuzu güçlü ve eksiksiz hazırlamanıza yardımcı oluruz.</p></details>
-    <details><summary>Nasıl başlarım?</summary><p>info@deutschkampus.com adresine kısaca durumunuzu yazmanız yeterli: öğrenim durumunuz, not ortalamanız, dil seviyeniz ve hedeflediğiniz bölüm.</p></details>
-  </div>
-</section>
+        </div>
+        <p class="price-note">Fiyatlar toplam fiyatlardır, KDV eklenmez (§ 19 UStG). Pakette yer alan sayının üzerindeki her ek üniversite 10 €. Uni-Assist, çeviri, noter ve üniversite başvuru harçları dahil değildir. Kabul garantisi verilmez; karar her zaman üniversitenindir. Kapsam ve ödeme planı yazılı sözleşmede belirtilir.</p>
+    </section>
 
-<div class="cta">
-  <h2>Başlamak için bize yazın</h2>
-  <p>Durumunuzu kısaca anlatın, size yazılı olarak dönelim.</p>
-  <a class="mail" href="mailto:info@deutschkampus.com">info@deutschkampus.com</a>
-</div>
+    <section class="process-details">
+        <h2 style="text-align: center; color: #0B2142; margin-bottom: 40px;">Hizmet Kapsamımızda Neler Var?</h2>
+        <div class="process-grid">
+            <div class="process-item">
+                <h3><i class="fa-solid fa-magnifying-glass-chart"></i> Üniversite ve Bölüm Analizi</h3>
+                <p>Not ortalamanız, dil seviyeniz ve bütçenize en uygun üniversiteleri analiz ediyoruz. Kabul garantisi veremeyiz; ancak profilinize en uygun okullara odaklanıyoruz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-file-contract"></i> Profesyonel Evrak Yönetimi</h3>
+                <p>Motivasyon mektubu (Motivationsschreiben) ve CV'nizi Alman akademik formatına uygun hale getiriyoruz. Tercüme ve noter onayı süreçlerinde sizi doğru adreslere yönlendiriyoruz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-passport"></i> Vize Sürecinde Destek</h3>
+                <p>Vize ve oturum sürecinde belge listesi hazırlığı ile bloke hesap ve sağlık sigortası konularında genel bilgilendirme sağlıyoruz. Hukuki değerlendirme gerektiren durumlarda sizi yetkili bir hukuk danışmanına yönlendiririz.</p>
+            </div>
+            <div class="process-item">
+                <h3><i class="fa-solid fa-language"></i> Dil Okulu ve Şartlı Kabul</h3>
+                <p>Henüz Almanca bilmiyorsanız, dil kursu ve şartlı kabul seçeneklerini birlikte değerlendiriyoruz.</p>
+            </div>
+        </div>
+    </section>
 
-<footer>
-  <a href="impressum.html">Impressum</a> | <a href="datenschutz.html">Datenschutz</a>
-  <div style="margin-top:8px">&copy; 2026 DeutschKampus</div>
+    <a href="https://wa.me/4917672489386" class="whatsapp-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <footer>
+    <p style="margin-bottom: 15px;">
+        <a href="impressum.html" style="color: #FFCC00; text-decoration: none; margin: 0 10px; font-weight: 600;">Impressum</a> | 
+        <a href="datenschutz.html" style="color: #FFCC00; text-decoration: none; margin: 0 10px; font-weight: 600;">Datenschutz</a>
+    </p>
+    <p>&copy; 2026 DeutschKampus. Tüm Hakları Saklıdır.</p>
 </footer>
 
 </body>
