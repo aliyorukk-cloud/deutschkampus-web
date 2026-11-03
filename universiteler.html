@@ -662,6 +662,8 @@
             }
         ];
 
+        const LOGO_FILES = {"tum.de":"logo-tum-de.png","rwth-aachen.de":"logo-rwth-aachen-de.png","kit.edu":"logo-kit-edu.png","uni-stuttgart.de":"logo-uni-stuttgart-de.png","tu-dresden.de":"logo-tu-dresden-de.png","tu-dortmund.de":"logo-tu-dortmund-de.png","uni-due.de":"logo-uni-due-de.png","uni-paderborn.de":"logo-uni-paderborn-de.jpg","uni-wuppertal.de":"logo-uni-wuppertal-de.png","uni-heidelberg.de":"logo-uni-heidelberg-de.png","uni-frankfurt.de":"logo-uni-frankfurt-de.png","hu-berlin.de":"logo-hu-berlin-de.png","fau.de":"logo-fau-de.png","uni-hohenheim.de":"logo-uni-hohenheim-de.png","uni-bayreuth.de":"logo-uni-bayreuth-de.png","rptu.de":"logo-rptu-de.png","uni-jena.de":"logo-uni-jena-de.png","uni-leipzig.de":"logo-uni-leipzig-de.png","uni-halle.de":"logo-uni-halle-de.png","tu-freiberg.de":"logo-tu-freiberg-de.png","uol.de":"logo-uol-de.png","th-koeln.de":"logo-th-koeln-de.png","hm.edu":"logo-hm-edu.png","hs-esslingen.de":"logo-hs-esslingen-de.png","uni-wuerzburg.de":"logo-uni-wuerzburg-de.png","tuhh.de":"logo-tuhh-de.png","uni-bielefeld.de":"logo-uni-bielefeld-de.png"};
+
         // SAYFA YÜKLENİNCE KARTLARI OLUŞTUR
         const grid = document.getElementById('uniGrid');
         
@@ -675,7 +677,7 @@
                     logoUrl = uni.customLogo;
                 } else {
                     // Özel logo yoksa kendi sunucumuzdaki genel simge kullanılır (üçüncü taraf istek yok)
-                    logoUrl = 'uni-default.svg';
+                    logoUrl = LOGO_FILES[uni.domain] || 'uni-default.svg';
                 }
                 
                 const card = document.createElement('div');
@@ -728,7 +730,7 @@
                 if (uni.customLogo) {
                     modalLogo.src = uni.customLogo;
                 } else {
-                    modalLogo.src = 'uni-default.svg';
+                    modalLogo.src = LOGO_FILES[uni.domain] || 'uni-default.svg';
                 }
                 
                 modalLogo.onerror = function() { this.src = 'uni-default.svg'; };
