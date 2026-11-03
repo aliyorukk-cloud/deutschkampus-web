@@ -674,8 +674,8 @@
                 if (uni.customLogo) {
                     logoUrl = uni.customLogo;
                 } else {
-                    // YOKSA GOOGLE API KULLAN
-                    logoUrl = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
+                    // Özel logo yoksa kendi sunucumuzdaki genel simge kullanılır (üçüncü taraf istek yok)
+                    logoUrl = 'uni-default.svg';
                 }
                 
                 const card = document.createElement('div');
@@ -728,10 +728,10 @@
                 if (uni.customLogo) {
                     modalLogo.src = uni.customLogo;
                 } else {
-                    modalLogo.src = `https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://${uni.domain}&size=128`;
+                    modalLogo.src = 'uni-default.svg';
                 }
                 
-                modalLogo.onerror = function() { this.src = 'https://via.placeholder.com/80?text=UNI'; };
+                modalLogo.onerror = function() { this.src = 'uni-default.svg'; };
                 modalWeb.href = `https://${uni.domain}`;
                 
                 modalOverlay.style.display = 'flex';
