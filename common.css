@@ -16,3 +16,5 @@ label{font-weight:600;font-size:.85rem;color:#0B2142;display:block;margin:10px 0
 table{width:100%;border-collapse:collapse;font-size:.9rem}td,th{padding:9px 6px;border-bottom:1px solid #eef1f5;text-align:left;vertical-align:middle}th{color:#64748b;font-size:.75rem;text-transform:uppercase}
 .msg{padding:10px 14px;border-radius:12px;margin:8px 0;max-width:85%;font-size:.9rem;white-space:pre-wrap}.msg.admin{background:#e7ecf3}.msg.student{background:#fff3c4;margin-left:auto}.msg small{display:block;color:#64748b;font-size:.7rem}
 .err{color:#b91c1c;font-size:.85rem;margin-top:8px}.ok{color:#15803d;font-size:.85rem;margin-top:8px}.muted{color:#64748b;font-size:.85rem}
+
+@media(max-width:640px){table,tbody{display:block}tr{display:block;padding:10px 0;border-bottom:1px solid #eef1f5}tr:has(th){display:none}td{display:block;border:0;padding:3px 0}td .btn,td select,td input{width:100%}.card{padding:18px}}

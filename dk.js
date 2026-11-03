@@ -5,13 +5,27 @@
   function save(s) { try { localStorage.setItem(SKEY, JSON.stringify(s)); } catch (e) {} }
   function clear() { try { localStorage.removeItem(SKEY); } catch (e) {} }
   function norm(d) { return { access_token: d.access_token, refresh_token: d.refresh_token, expires_at: d.expires_at || (Math.floor(Date.now() / 1000) + (d.expires_in || 3600)), user: d.user }; }
+  function trErr(m) {
+    var t = String(m), map = [
+      ['New password should be different', 'Yeni şifre eskisiyle aynı olamaz. Lütfen farklı bir şifre yazın.'],
+      ['Password should be at least', 'Şifre en az 10 karakter olmalıdır.'],
+      ['Invalid login credentials', 'E-posta veya şifre hatalı.'],
+      ['Token has expired or is invalid', 'Bağlantının süresi dolmuş veya daha önce kullanılmış. Giriş sayfasından "Şifremi unuttum" ile yeni bağlantı isteyin.'],
+      ['Email link is invalid or has expired', 'Bağlantının süresi dolmuş veya daha önce kullanılmış. Giriş sayfasından "Şifremi unuttum" ile yeni bağlantı isteyin.'],
+      ['session_id claim in JWT does not exist', 'Oturum süresi dolmuş. Lütfen e-postadaki bağlantıyı yeniden açın.'],
+      ['rate limit', 'Çok sık deneme yapıldı. Lütfen birkaç dakika sonra tekrar deneyin.'],
+      ['Failed to fetch', 'Bağlantı kurulamadı. İnternetinizi kontrol edin.']
+    ];
+    for (var i = 0; i < map.length; i++) if (t.toLowerCase().indexOf(map[i][0].toLowerCase()) > -1) return map[i][1];
+    return t;
+  }
   async function raw(path, opts, token) {
     opts = opts || {};
     var h = Object.assign({ apikey: C.key, 'Content-Type': 'application/json' }, opts.headers || {});
     h.Authorization = 'Bearer ' + (token || C.key);
     var r = await fetch(C.url + path, Object.assign({}, opts, { headers: h }));
     var t = await r.text(), j = null; try { j = t ? JSON.parse(t) : null; } catch (e) {}
-    if (!r.ok) { var m = (j && (j.msg || j.message || j.error_description || j.error)) || ('HTTP ' + r.status); var err = new Error(m); err.status = r.status; throw err; }
+    if (!r.ok) { var m = trErr((j && (j.msg || j.message || j.error_description || j.error)) || ('HTTP ' + r.status)); var err = new Error(m); err.status = r.status; throw err; }
     return j;
   }
   async function session() {

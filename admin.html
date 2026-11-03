@@ -19,7 +19,7 @@ $('out').onclick=async()=>{await DK.signOut();location.href='login.html'};
  list(mine.filter(p=>p.role==='student'));
 })().catch(e=>{$('app').innerHTML='<div class="card"><div class="err">'+esc(e.message)+'</div></div>'});
 function list(st){
- $('app').innerHTML='<div class="card"><h2>Öğrenciler ('+st.length+')</h2>'+(st.length?'<table><tr><th>Ad</th><th>E-posta</th><th>Hedef</th><th></th></tr>'+st.map(p=>'<tr><td>'+esc(p.full_name||'—')+'</td><td>'+esc(p.email)+'</td><td>'+esc(p.target||'')+'</td><td><button class="btn small" onclick="openS(\''+p.id+'\')">Aç</button></td></tr>').join('')+'</table>':'<p class="muted">Henüz öğrenci yok. Supabase panelinden "Invite user" ile e-posta daveti gönderin; öğrenci şifresini kendisi belirler ve burada görünür.</p>')+'</div>';
+ $('app').innerHTML='<div class="card"><h2>Öğrenciler ('+st.length+')</h2>'+(st.length?'<table><tr><th>Ad</th><th>E-posta</th><th>Hedef</th><th></th></tr>'+st.map(p=>'<tr><td>'+esc(p.full_name||'—')+'</td><td>'+esc(p.email)+'</td><td>'+esc(p.target||'')+'</td><td><button class="btn small" onclick="openS(\''+p.id+'\')">Aç</button></td></tr>').join('')+'</table>':'<p class="muted">Henüz öğrenci yok. Supabase panelinde Authentication → Users → Add user → Send invitation ile e-posta daveti gönderin; öğrenci şifresini kendisi belirler ve burada görünür.</p>')+'</div>';
 }
 async function openS(id){
  const q='student_id=eq.'+id;
