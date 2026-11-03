@@ -22,7 +22,9 @@
 const $=id=>document.getElementById(id);
 async function go(){const s=await DK.session();if(!s)return false;
  try{const uid=await DK.uid();const p=await DK.get('profiles','select=role&id=eq.'+uid);location.href=(p[0]&&p[0].role==='admin')?'admin.html':'portal.html';return true}catch(e){return false}}
-(async()=>{const t=DK.fromHash();
+const Q=new URLSearchParams(location.search),TH=Q.get('token_hash'),TT=Q.get('type');
+(async()=>{if(TH&&(TT==='invite'||TT==='recovery')){$('loginBox').style.display='none';$('setBox').style.display='block';$('setTitle').textContent=TT==='invite'?'Hoş geldiniz — şifrenizi belirleyin':'Yeni şifre belirleyin';return}
+ const t=DK.fromHash();
  if(t==='invite'||t==='recovery'||t==='signup'){$('loginBox').style.display='none';$('setBox').style.display='block';$('setTitle').textContent=t==='invite'?'Hoş geldiniz — şifrenizi belirleyin':'Yeni şifre belirleyin';return}
  await go()})();
 $('f1').onsubmit=async e=>{e.preventDefault();$('msg').innerHTML='';
@@ -31,6 +33,6 @@ $('f1').onsubmit=async e=>{e.preventDefault();$('msg').innerHTML='';
 $('forgot').onclick=async e=>{e.preventDefault();const em=$('em').value.trim();if(!em){$('msg').innerHTML='<div class="err">Önce e-posta adresinizi yazın.</div>';return}
  try{await DK.recover(em)}catch(x){}$('msg').innerHTML='<div class="ok">Bu adres kayıtlıysa şifre sıfırlama bağlantısı gönderildi.</div>'};
 $('f2').onsubmit=async e=>{e.preventDefault();
- try{await DK.setPassword($('np').value);$('msg2').innerHTML='<div class="ok">Şifre kaydedildi, yönlendiriliyorsunuz…</div>';setTimeout(go,900)}
+ try{if(TH&&!await DK.session()){await DK.verify(TT,TH);history.replaceState(null,'',location.pathname)}await DK.setPassword($('np').value);$('msg2').innerHTML='<div class="ok">Şifre kaydedildi, yönlendiriliyorsunuz…</div>';setTimeout(go,900)}
  catch(err){$('msg2').innerHTML='<div class="err">'+esc(err.message)+'</div>'}};
 </script></body></html>

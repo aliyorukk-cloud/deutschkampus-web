@@ -32,6 +32,7 @@
     signIn: async function (email, password) { var s = norm(await raw('/auth/v1/token?grant_type=password', { method: 'POST', body: JSON.stringify({ email: email, password: password }) })); save(s); return s; },
     signOut: async function () { var s = load(); try { if (s) await raw('/auth/v1/logout', { method: 'POST' }, s.access_token); } catch (e) {} clear(); },
     recover: function (email) { return raw('/auth/v1/recover', { method: 'POST', body: JSON.stringify({ email: email }) }); },
+    verify: async function (type, th) { var s = norm(await raw('/auth/v1/verify', { method: 'POST', body: JSON.stringify({ type: type, token_hash: th }) })); save(s); return s; },
     setPassword: function (pw) { return authed('/auth/v1/user', { method: 'PUT', body: JSON.stringify({ password: pw }) }); },
     fromHash: function () {
       var h = location.hash.replace(/^#/, ''); if (!h) return null;
